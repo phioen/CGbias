@@ -1,0 +1,214 @@
+\begin{thebibliography}{34}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
+  {Taylor}}]{bacon2006}
+{Bacon}, D.~J., {Goldberg}, D.~M., {Rowe}, B.~T.~P., \& {Taylor}, A.~N. 2006,
+  \mnras, 365, 414
+
+\bibitem[{{Bartelmann} \& {Schneider}(2001)}]{2001PhR...340..291B}
+{Bartelmann}, M. \& {Schneider}, P. 2001, \physrep, 340, 291
+
+\bibitem[{{Bertin} \& {Arnouts}(1996)}]{1996A&AS..117..393B}
+{Bertin}, E. \& {Arnouts}, S. 1996, \aaps, 117, 393
+
+\bibitem[{{Coleman} {et~al.}(1980){Coleman}, {Wu}, \&
+  {Weedman}}]{1980ApJS...43..393C}
+{Coleman}, G.~D., {Wu}, C.-C., \& {Weedman}, D.~W. 1980, \apjs, 43, 393
+
+\bibitem[{{Cropper} {et~al.}(2013){Cropper}, {Hoekstra}, {Kitching}, {Massey},
+  {Amiaux}, {Miller}, {Mellier}, {Rhodes}, {Rowe}, {Pires}, {Saxton}, \&
+  {Scaramella}}]{2013MNRAS.431.3103C}
+{Cropper}, M., {Hoekstra}, H., {Kitching}, T., {et~al.} 2013, \mnras, 431, 3103
+
+\bibitem[{{Cypriano} {et~al.}(2010){Cypriano}, {Amara}, {Voigt}, {Bridle},
+  {Abdalla}, {R{\'e}fr{\'e}gier}, {Seiffert}, \&
+  {Rhodes}}]{2010MNRAS.405..494C}
+{Cypriano}, E.~S., {Amara}, A., {Voigt}, L.~M., {et~al.} 2010, \mnras, 405, 494
+
+\bibitem[{{Davis} {et~al.}(2007){Davis}, {Guhathakurta}, {Konidaris}, {Newman},
+  {Ashby}, {Biggs}, {Barmby}, {Bundy}, {Chapman}, {Coil}, {Conselice},
+  {Cooper}, {Croton}, {Eisenhardt}, {Ellis}, {Faber}, {Fang}, {Fazio},
+  {Georgakakis}, {Gerke}, {Goss}, {Gwyn}, {Harker}, {Hopkins}, {Huang},
+  {Ivison}, {Kassin}, {Kirby}, {Koekemoer}, {Koo}, {Laird}, {Le Floc'h}, {Lin},
+  {Lotz}, {Marshall}, {Martin}, {Metevier}, {Moustakas}, {Nandra}, {Noeske},
+  {Papovich}, {Phillips}, {Rich}, {Rieke}, {Rigopoulou}, {Salim},
+  {Schiminovich}, {Simard}, {Smail}, {Small}, {Weiner}, {Willmer}, {Willner},
+  {Wilson}, {Wright}, \& {Yan}}]{davis2007}
+{Davis}, M., {Guhathakurta}, P., {Konidaris}, N.~P., {et~al.} 2007, \apjl, 660,
+  L1
+
+\bibitem[{Frigo \& Johnson(2005)}]{fftw05}
+Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
+  issue on ``Program Generation, Optimization, and Platform Adaptation''
+
+\bibitem[{{Goldberg} \& {Natarajan}(2002)}]{2002ApJ...564...65G}
+{Goldberg}, D.~M. \& {Natarajan}, P. 2002, \apj, 564, 65
+
+\bibitem[{{Grogin} {et~al.}(2011){Grogin}, {Kocevski}, {Faber}, {Ferguson},
+  {Koekemoer}, {Riess}, {Acquaviva}, {Alexander}, {Almaini}, {Ashby}, {Barden},
+  {Bell}, {Bournaud}, {Brown}, {Caputi}, {Casertano}, {Cassata}, {Castellano},
+  {Challis}, {Chary}, {Cheung}, {Cirasuolo}, {Conselice}, {Roshan Cooray},
+  {Croton}, {Daddi}, {Dahlen}, {Dav{\'e}}, {de Mello}, {Dekel}, {Dickinson},
+  {Dolch}, {Donley}, {Dunlop}, {Dutton}, {Elbaz}, {Fazio}, {Filippenko},
+  {Finkelstein}, {Fontana}, {Gardner}, {Garnavich}, {Gawiser}, {Giavalisco},
+  {Grazian}, {Guo}, {Hathi}, {H{\"a}ussler}, {Hopkins}, {Huang}, {Huang},
+  {Jha}, {Kartaltepe}, {Kirshner}, {Koo}, {Lai}, {Lee}, {Li}, {Lotz}, {Lucas},
+  {Madau}, {McCarthy}, {McGrath}, {McIntosh}, {McLure}, {Mobasher},
+  {Moustakas}, {Mozena}, {Nandra}, {Newman}, {Niemi}, {Noeske}, {Papovich},
+  {Pentericci}, {Pope}, {Primack}, {Rajan}, {Ravindranath}, {Reddy}, {Renzini},
+  {Rix}, {Robaina}, {Rodney}, {Rosario}, {Rosati}, {Salimbeni}, {Scarlata},
+  {Siana}, {Simard}, {Smidt}, {Somerville}, {Spinrad}, {Straughn}, {Strolger},
+  {Telford}, {Teplitz}, {Trump}, {van der Wel}, {Villforth}, {Wechsler},
+  {Weiner}, {Wiklind}, {Wild}, {Wilson}, {Wuyts}, {Yan}, \& {Yun}}]{grogin2011}
+{Grogin}, N.~A., {Kocevski}, D.~D., {Faber}, S.~M., {et~al.} 2011, \apjs, 197,
+  35
+
+\bibitem[{{Heymans} {et~al.}(2006){Heymans}, {Van Waerbeke}, {Bacon}, {Berge},
+  {Bernstein}, {Bertin}, {Bridle}, {Brown}, {Clowe}, {Dahle}, {Erben}, {Gray},
+  {Hetterscheidt}, {Hoekstra}, {Hudelot}, {Jarvis}, {Kuijken}, {Margoniner},
+  {Massey}, {Mellier}, {Nakajima}, {Refregier}, {Rhodes}, {Schrabback}, \&
+  {Wittman}}]{2006MNRAS.368.1323H}
+{Heymans}, C., {Van Waerbeke}, L., {Bacon}, D., {et~al.} 2006, \mnras, 368,
+  1323
+
+\bibitem[{{Hoekstra} {et~al.}(1998){Hoekstra}, {Franx}, {Kuijken}, \&
+  {Squires}}]{1998ApJ...504..636H}
+{Hoekstra}, H., {Franx}, M., {Kuijken}, K., \& {Squires}, G. 1998, \apj, 504,
+  636
+
+\bibitem[{{Hoekstra} \& {Jain}(2008)}]{2008ARNPS..58...99H}
+{Hoekstra}, H. \& {Jain}, B. 2008, Annual Review of Nuclear and Particle
+  Science, 58, 99
+
+\bibitem[{{Joseph} {et~al.}(2016){Joseph}, {Courbin}, \&
+  {Starck}}]{2016A&A...589A...2J}
+{Joseph}, R., {Courbin}, F., \& {Starck}, J.-L. 2016, \aap, 589, A2
+
+\bibitem[{{Kaiser} {et~al.}(1995){Kaiser}, {Squires}, \&
+  {Broadhurst}}]{1995ApJ...449..460K}
+{Kaiser}, N., {Squires}, G., \& {Broadhurst}, T. 1995, \apj, 449, 460
+
+\bibitem[{{Kitching} {et~al.}(2008){Kitching}, {Miller}, {Heymans}, {van
+  Waerbeke}, \& {Heavens}}]{2008MNRAS.390..149K}
+{Kitching}, T.~D., {Miller}, L., {Heymans}, C.~E., {van Waerbeke}, L., \&
+  {Heavens}, A.~F. 2008, \mnras, 390, 149
+
+\bibitem[{{Koekemoer} {et~al.}(2011){Koekemoer}, {Faber}, {Ferguson}, {Grogin},
+  {Kocevski}, {Koo}, {Lai}, {Lotz}, {Lucas}, {McGrath}, {Ogaz}, {Rajan},
+  {Riess}, {Rodney}, {Strolger}, {Casertano}, {Castellano}, {Dahlen},
+  {Dickinson}, {Dolch}, {Fontana}, {Giavalisco}, {Grazian}, {Guo}, {Hathi},
+  {Huang}, {van der Wel}, {Yan}, {Acquaviva}, {Alexander}, {Almaini}, {Ashby},
+  {Barden}, {Bell}, {Bournaud}, {Brown}, {Caputi}, {Cassata}, {Challis},
+  {Chary}, {Cheung}, {Cirasuolo}, {Conselice}, {Roshan Cooray}, {Croton},
+  {Daddi}, {Dav{\'e}}, {de Mello}, {de Ravel}, {Dekel}, {Donley}, {Dunlop},
+  {Dutton}, {Elbaz}, {Fazio}, {Filippenko}, {Finkelstein}, {Frazer}, {Gardner},
+  {Garnavich}, {Gawiser}, {Gruetzbauch}, {Hartley}, {H{\"a}ussler},
+  {Herrington}, {Hopkins}, {Huang}, {Jha}, {Johnson}, {Kartaltepe},
+  {Khostovan}, {Kirshner}, {Lani}, {Lee}, {Li}, {Madau}, {McCarthy},
+  {McIntosh}, {McLure}, {McPartland}, {Mobasher}, {Moreira}, {Mortlock},
+  {Moustakas}, {Mozena}, {Nandra}, {Newman}, {Nielsen}, {Niemi}, {Noeske},
+  {Papovich}, {Pentericci}, {Pope}, {Primack}, {Ravindranath}, {Reddy},
+  {Renzini}, {Rix}, {Robaina}, {Rosario}, {Rosati}, {Salimbeni}, {Scarlata},
+  {Siana}, {Simard}, {Smidt}, {Snyder}, {Somerville}, {Spinrad}, {Straughn},
+  {Telford}, {Teplitz}, {Trump}, {Vargas}, {Villforth}, {Wagner}, {Wandro},
+  {Wechsler}, {Weiner}, {Wiklind}, {Wild}, {Wilson}, {Wuyts}, \&
+  {Yun}}]{koekemoer11}
+{Koekemoer}, A.~M., {Faber}, S.~M., {Ferguson}, H.~C., {et~al.} 2011, \apjs,
+  197, 36
+
+\bibitem[{{Koekemoer} {et~al.}(2003){Koekemoer}, {Fruchter}, {Hook}, \&
+  {Hack}}]{koekemoer2003}
+{Koekemoer}, A.~M., {Fruchter}, A.~S., {Hook}, R.~N., \& {Hack}, W. 2003, in
+  HST Calibration Workshop : Hubble after the Installation of the ACS and the
+  NICMOS Cooling System, ed. S.~{Arribas}, A.~{Koekemoer}, \& B.~{Whitmore},
+  337
+
+\bibitem[{{Krist} {et~al.}(2011){Krist}, {Hook}, \&
+  {Stoehr}}]{2011SPIE.8127E..0JK}
+{Krist}, J.~E., {Hook}, R.~N., \& {Stoehr}, F. 2011, in Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 8127,
+  Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series,
+  0
+
+\bibitem[{{Laureijs} {et~al.}(2011){Laureijs}, {Amiaux}, {Arduini},
+  {Augu{\`e}res}, {Brinchmann}, {Cole}, {Cropper}, {Dabin}, {Duvet}, {Ealet},
+  \& et~al.}]{2011arXiv1110.3193L}
+{Laureijs}, R., {Amiaux}, J., {Arduini}, S., {et~al.} 2011, ArXiv: 1110.3193
+
+\bibitem[{{Massey} {et~al.}(2013){Massey}, {Hoekstra}, {Kitching}, {Rhodes},
+  {Cropper}, {Amiaux}, {Harvey}, {Mellier}, {Meneghetti}, {Miller},
+  {Paulin-Henriksson}, {Pires}, {Scaramella}, \&
+  {Schrabback}}]{2013MNRAS.429..661M}
+{Massey}, R., {Hoekstra}, H., {Kitching}, T., {et~al.} 2013, \mnras, 429, 661
+
+\bibitem[{{Massey} {et~al.}(2014){Massey}, {Schrabback}, {Cordes}, {Marggraf},
+  {Israel}, {Miller}, {Hall}, {Cropper}, {Prod'homme}, \& {Matias
+  Niemi}}]{massey2014}
+{Massey}, R., {Schrabback}, T., {Cordes}, O., {et~al.} 2014, \mnras, 439, 887
+
+\bibitem[{{Melchior} {et~al.}(2011){Melchior}, {Viola}, {Sch{\"a}fer}, \&
+  {Bartelmann}}]{2011MNRAS.412.1552M}
+{Melchior}, P., {Viola}, M., {Sch{\"a}fer}, B.~M., \& {Bartelmann}, M. 2011,
+  \mnras, 412, 1552
+
+\bibitem[{{Meyers} \& {Burchat}(2015)}]{2015ApJ...807..182M}
+{Meyers}, J.~E. \& {Burchat}, P.~R. 2015, \apj, 807, 182
+
+\bibitem[{{Miller} {et~al.}(2013){Miller}, {Heymans}, {Kitching}, {van
+  Waerbeke}, {Erben}, {Hildebrandt}, {Hoekstra}, {Mellier}, {Rowe}, {Coupon},
+  {Dietrich}, {Fu}, {Harnois-D{\'e}raps}, {Hudson}, {Kilbinger}, {Kuijken},
+  {Schrabback}, {Semboloni}, {Vafaei}, \& {Velander}}]{2013MNRAS.429.2858M}
+{Miller}, L., {Heymans}, C., {Kitching}, T.~D., {et~al.} 2013, \mnras, 429,
+  2858
+
+\bibitem[{{Miller} {et~al.}(2007){Miller}, {Kitching}, {Heymans}, {Heavens}, \&
+  {van Waerbeke}}]{2007MNRAS.382..315M}
+{Miller}, L., {Kitching}, T.~D., {Heymans}, C., {Heavens}, A.~F., \& {van
+  Waerbeke}, L. 2007, \mnras, 382, 315
+
+\bibitem[{{Nakajima} \& {Bernstein}(2007)}]{2007AJ....133.1763N}
+{Nakajima}, R. \& {Bernstein}, G. 2007, \aj, 133, 1763
+
+\bibitem[{{Pence}(1999)}]{1999ASPC..172..487P}
+{Pence}, W. 1999, in Astronomical Society of the Pacific Conference Series,
+  Vol. 172, Astronomical Data Analysis Software and Systems VIII, ed. D.~M.
+  {Mehringer}, R.~L. {Plante}, \& D.~A. {Roberts}, 487
+
+\bibitem[{{Peng} {et~al.}(2010){Peng}, {Ho}, {Impey}, \&
+  {Rix}}]{2010AJ....139.2097P}
+{Peng}, C.~Y., {Ho}, L.~C., {Impey}, C.~D., \& {Rix}, H.-W. 2010, \aj, 139,
+  2097
+
+\bibitem[{{Rowe} {et~al.}(2015){Rowe}, {Jarvis}, {Mandelbaum}, {Bernstein},
+  {Bosch}, {Simet}, {Meyers}, {Kacprzak}, {Nakajima}, {Zuntz}, {Miyatake},
+  {Dietrich}, {Armstrong}, {Melchior}, \& {Gill}}]{2015A&amp;C....10..121R}
+{Rowe}, B.~T.~P., {Jarvis}, M., {Mandelbaum}, R., {et~al.} 2015, Astronomy and
+  Computing, 10, 121
+
+\bibitem[{{Schrabback} {et~al.}(2010){Schrabback}, {Hartlap}, {Joachimi},
+  {Kilbinger}, {Simon}, {Benabed}, {Brada{\v c}}, {Eifler}, {Erben},
+  {Fassnacht}, {High}, {Hilbert}, {Hildebrandt}, {Hoekstra}, {Kuijken},
+  {Marshall}, {Mellier}, {Morganson}, {Schneider}, {Semboloni}, {van Waerbeke},
+  \& {Velander}}]{schrabback2010}
+{Schrabback}, T., {Hartlap}, J., {Joachimi}, B., {et~al.} 2010, \aap, 516, A63
+
+\bibitem[{{Semboloni} {et~al.}(2013){Semboloni}, {Hoekstra}, {Huang},
+  {Cardone}, {Cropper}, {Joachimi}, {Kitching}, {Kuijken}, {Lombardi}, {Maoli},
+  {Mellier}, {Miller}, {Rhodes}, {Scaramella}, {Schrabback}, \&
+  {Velander}}]{2013MNRAS.432.2385S}
+{Semboloni}, E., {Hoekstra}, H., {Huang}, Z., {et~al.} 2013, \mnras, 432, 2385
+
+\bibitem[{{Skelton} {et~al.}(2014){Skelton}, {Whitaker}, {Momcheva}, {Brammer},
+  {van Dokkum}, {Labb{\'e}}, {Franx}, {van der Wel}, {Bezanson}, {Da Cunha},
+  {Fumagalli}, {F{\"o}rster Schreiber}, {Kriek}, {Leja}, {Lundgren}, {Magee},
+  {Marchesini}, {Maseda}, {Nelson}, {Oesch}, {Pacifici}, {Patel}, {Price},
+  {Rix}, {Tal}, {Wake}, \& {Wuyts}}]{skelton14}
+{Skelton}, R.~E., {Whitaker}, K.~E., {Momcheva}, I.~G., {et~al.} 2014, \apjs,
+  214, 24
+
+\bibitem[{{Voigt} {et~al.}(2012){Voigt}, {Bridle}, {Amara}, {Cropper},
+  {Kitching}, {Massey}, {Rhodes}, \& {Schrabback}}]{2012MNRAS.421.1385V}
+{Voigt}, L.~M., {Bridle}, S.~L., {Amara}, A., {et~al.} 2012, \mnras, 421, 1385
+
+\end{thebibliography}
