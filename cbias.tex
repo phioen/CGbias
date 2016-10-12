@@ -343,11 +343,13 @@ other PSF models.
     Airy  &Airy model with obscuration $1/3$ (Eq.\ref{eq:psfairy})\\
     \hline
   \end{tabular}
-  \caption{\label{table:psfmodel}The PSF models shown in Fig.\,\ref{fig:psfmodel}. 
-  The Gaussian model, which is the same PSF model in ES13 is used for the simulated images. 
-  The GaussianT model is a Gaussian core plus a top hat function (ES13), 
-  which is shown as a comparison with Airy model. 
-  The Airy model is used for the bias calibration and HST data analysis in the following section.}
+  \caption{\label{table:psfmodel}The PSF models shown in
+    Fig.\,\ref{fig:psfmodel}.  The Gaussian model, which is the same
+    PSF model in ES13 is used for the simulated images.  The GaussianT
+    model is a Gaussian core plus a top hat function (ES13), which is
+    shown as a comparison with Airy model.  The Airy model is used for
+    the bias calibration and HST data analysis in the following
+    section.}
 \end{table}
 %
 \begin{figure}
@@ -416,11 +418,11 @@ that the variation of lensing magnitude can cause different CG bias
 flexion effect will increase the CG bias. Such effects do not appear
 if we solely shear the images. However in general case, the cosmic
 shear has a value about a few percents. We can see that from the
-bottom boundary of the yellow shadow, the bias are almost the same as that
-only considering the shear effect. Only in case of the galaxy cluster lensing, 
-galaxy-galaxy lensing, especially in the strong lensing region,  when the shear and
-flexion become significant, one needs to take into account of such kind
-of effect.
+bottom boundary of the yellow shadow, the bias are almost the same as
+that only considering the shear effect. Only in case of the galaxy
+cluster lensing, galaxy-galaxy lensing, especially in the strong
+lensing region, when the shear and flexion become significant, one
+needs to take into account of such kind of effect.
 
 
 %
@@ -495,21 +497,21 @@ simulated noise-free image. For the noisy image, the deconvolution
 will be difficult and causes serious numerical problems.
 
 In order to see the effect of noise in the galaxy image, we add
-Gaussian noise into the simulated HST images. An ideal level (SNR=50) and
-a moderate level (SNR=15) are
-used to see the effect of the CG bias. The RMS of the Gaussian image noise
-is determined by the total flux ($F_{tot}$) within a certain radius $1.5\,r_h$
+Gaussian noise into the simulated HST images. An ideal level (SNR=50)
+and a moderate level (SNR=15) are used to see the effect of the CG
+bias. The RMS of the Gaussian image noise is determined by the total
+flux ($F_{tot}$) within a certain radius $1.5\,r_h$
 %
 \be
 \sigma = {F_{tot} \over {\rm SNR} \sqrt{N_{tot}} },
 \ee
 %
-where $N_{tot}$ is the total pixel number within $1.5\,r_h$. 
-In Fig.\ref{fig:ests2n}, we compare the input SNR with that estimated by SExtractor
-\citep{1996A&AS..117..393B}. We can see that the estimations are
-slightly higher than the input values, but for the case of $SNR=15$,
-the estimations are within a reasonable value for real weak lensing
-survey.
+where $N_{tot}$ is the total pixel number within $1.5\,r_h$.  In
+Fig.\ref{fig:ests2n}, we compare the input SNR with that estimated by
+SExtractor \citep{1996A&AS..117..393B}. We can see that the
+estimations are slightly higher than the input values, but for the
+case of $SNR=15$, the estimations are within a reasonable value for
+real weak lensing survey.
 %
 \begin{figure}
 \centerline{\includegraphics[height=5cm,width=5.0cm]{zs2ncB.eps}
@@ -520,32 +522,33 @@ survey.
 \end{figure}
 %
 
-Direct devonvolution of a noisy image will end with a strange galaxy image
-and large numerical noise, thus we apply Galfit
+Direct devonvolution of a noisy image will end with a strange galaxy
+image and large numerical noise, thus we apply Galfit
 \citep{2010AJ....139.2097P} to fit the noisy image, and use the fitted
 image as our noise reduced observed image, i.e. the residual noise is
-not taken into account for CG analysis. For the necessary fitting profile and number
-of components, we use two Sersic components as bulge and disk for both
-image bands. For each image, we apply further constraints to
-the galaxy parameters: Sersic index, effective radius, and axis ratio
-(Table \ref{fitpar}). We compare fitting parameters with the input
-value for noisy images of different SNR. In general, the effective
-radius can be achieve at a small variations (within $20\%$), while the
-Sersic index usually has a large difference from the input values as
-well as scatter.
+not taken into account for CG analysis. For the necessary fitting
+profile and number of components, we use two Sersic components as
+bulge and disk for both image bands. For each image, we apply further
+constraints to the galaxy parameters: Sersic index, effective radius,
+and axis ratio (Table \ref{fitpar}). We compare fitting parameters
+with the input value for noisy images of different SNR. In general,
+the effective radius can be achieve at a small variations (within
+$20\%$), while the Sersic index usually has a large difference from
+the input values as well as scatter.
 
-In order to provide a initial parameters for Galfit, we use the stacked image of
-two bands to estimate the center and some initial values of the galaxy
-parameters from SExtractor. The fitting images slightly depend on the 
-initial values, and can effect the estimate for the CG bias estimation.
-The dependence will become significant with the decreasing of image SNR.
-In the following estimation for the CG bias, we will perform the image
-fitting using two kinds of initial parameters: in the first one we will
-leave all the fitting parameters free; while in the other one we will
-freeze the Sersic index as the simulated value, and leave the others free,
-since we will see that the Sersic index will only weakly affect the CG bias. 
-As we will present, with sufficient large sample of noisy images, the
-estimation for the CG bias can converge despite of the initial parameters.
+In order to provide a initial parameters for Galfit, we use the
+stacked image of two bands to estimate the center and some initial
+values of the galaxy parameters from SExtractor. The fitting images
+slightly depend on the initial values, and can effect the estimate for
+the CG bias estimation.  The dependence will become significant with
+the decreasing of image SNR.  In the following estimation for the CG
+bias, we will perform the image fitting using two kinds of initial
+parameters: in the first one we will leave all the fitting parameters
+free; while in the other one we will freeze the Sersic index as the
+simulated value, and leave the others free, since we will see that the
+Sersic index will only weakly affect the CG bias.  As we will present,
+with sufficient large sample of noisy images, the estimation for the
+CG bias can converge despite of the initial parameters.
 
 %
 \begin{center}
@@ -564,7 +567,7 @@ $q$      &0.6-1  &0.6-1  &0.6-1 &0.6-1 \\ \hline
 The first two columns are for two images of the S-galaxy, the other two are
 the image of B-galaxy.
 $n_1$ is the Sersic index for bulge, and $n_2$ is the Sersic index for disk.
-The effect radius is given in unit of pixel ($0.03$ arcsec).}
+The effect radius is given in unit of pixel ($0.05$ arcsec).}
 \end{table}
 \end{center}
 %
@@ -576,33 +579,33 @@ The effect radius is given in unit of pixel ($0.03$ arcsec).}
 
 Applying the calibration method to the fitted images, we can obtain
 the estimation of the CG bias for the simulated images. In
-Figs.\ref{fig:biasofz50} and \ref{fig:biasofz15}, we show the shear CG bias with redshift. The
-black solid lines are the "true" CG bias directly using simulated
-image, i.e. from the true SED of galaxy rather than estimated from the two
-band images. The dashed lines are the estimation using two HST images
-without noise, and the colour lines use noisy images. For the red lines,
-we free all the parameters in image fitting, for blue lines we fix the 
-Sersic index. For the orange lines we also free all the parameters, but
-we perform another convolution with the effective PSF (see appendix for more detail).
-In Fig.\ref{fig:flowchart} one can see that the convolution is canceled with
-the last deconvolution for the CG images. The reason for that is the deconvolution
-may cause some numerical errors, especially for the noisy images. Therefore, 
-in the following result for noise images,
-we will perform the convolution to the NCG image instead of deconvolution to the
-CG one. (In reality we perform additional tests using images with SNR=15, and find
-the deconvolution does cause some numerical problems)
+Figs.\ref{fig:biasofz50} and \ref{fig:biasofz15}, we show the shear CG
+bias with redshift. The black solid lines are the "true" CG bias
+directly using simulated image, i.e. from the true SED of galaxy
+rather than estimated from the two band images. The dashed lines are
+the estimation using two HST images without noise, and the colour
+lines use noisy images. For the red lines, we free all the parameters
+in image fitting, for blue lines we fix the Sersic index. For the
+orange lines we also free all the parameters, but we perform another
+convolution with the effective PSF (see appendix for more detail).  In
+Fig.\ref{fig:flowchart} one can see that the convolution is canceled
+with the last deconvolution for the CG images. The reason for that is
+the deconvolution may cause some numerical errors, especially for the
+noisy images. Therefore, in the following result for noise images, we
+will perform the convolution to the NCG image instead of deconvolution
+to the CG one. (In reality we perform additional tests using images
+with SNR=15, and find the deconvolution does cause some numerical
+problems)
 %
-Moreover, although we use the circular source image in the
-simulation, the fitted noisy images will become slightly
-elliptical. In order to get rid of the error due to the ``intrinsic
-shape'', we rotate the source image $6$ times, and use the average
-value as our estimate for the galaxy ellipticity
-\citep{2007AJ....133.1763N}. At each redshift, we use one noise free image
-and $40 (200)$ noisy images for $SNR=50 (SNR=15)$.
-In the bottom panel of each figure, we
-also show the residues with respect to the true CG bias, and the error
-bars, which are given by the standard deviation from $e_{cg}$ and
-$e_{ncg}$
+Moreover, although we use the circular source image in the simulation,
+the fitted noisy images will become slightly elliptical. In order to
+get rid of the error due to the ``intrinsic shape'', we rotate the
+source image $6$ times, and use the average value as our estimate for
+the galaxy ellipticity \citep{2007AJ....133.1763N}. At each redshift,
+we use one noise free image and $40 (200)$ noisy images for $SNR=50
+(SNR=15)$.  In the bottom panel of each figure, we also show the
+residues with respect to the true CG bias, and the error bars, which
+are given by the standard deviation from $e_{cg}$ and $e_{ncg}$
 %
 \be
 \sigma_m= |m| \sqrt{\rund{\sigma_{cg} \over \langle e_{cg}\rangle }^2
@@ -632,7 +635,6 @@ Fig.\ref{fig:sedz}, we compare the SED of the galaxy in redshift
 $z=0,0.5$. One can see that at $z=0.5$, besides the strong emission
 lines, the linear approximation will cause significant error in the
 estimation as well.
-
 %In Fig.\ref{fig:err2snr}, we show the average residual bias
 %$\bar{|m|}$ over the redshift as a function of SNR of the images. For
 %each SNR, we average the residual in redshift range from $0$ to $1.2$,
@@ -645,8 +647,6 @@ estimation as well.
 %simulation, the image SNR of two bands need to be determined by the
 %colour of the galaxy.
 
-
-
 %%%%%
 \begin{figure}
   \includegraphics[width=8.0cm]{zs2n_b_snrtt50.eps}
@@ -654,19 +654,19 @@ estimation as well.
 \caption{The CG bias in shear measurement as a function of redshift
   using simulated images. The black solid lines are the true CG bias;
   the dashed lines are the estimation using two band HST images
-  without noise; the colour lines are the estimation using noisy images
-  of input $SNR=50$, the value are the average over $40$
-  realizations each redshift. In the bottom, $\Delta m$ is the residual with respect
-  to the true CG bias, and the error bars show the standard variations
-  (Eq.\ref{eq:sigmam}). $Up(Down)$-figure are the results for
-  B-(S-)galaxy.}
+  without noise; the colour lines are the estimation using noisy
+  images of input $SNR=50$, the value are the average over $40$
+  realizations each redshift. In the bottom, $\Delta m$ is the
+  residual with respect to the true CG bias, and the error bars show
+  the standard variations (Eq.\ref{eq:sigmam}). $Up(Down)$-figure are
+  the results for B-(S-)galaxy.}
 \label{fig:biasofz50}
 \end{figure}
 \begin{figure}
   \includegraphics[width=8.0cm]{zs2n_b_snr15.eps}
   \includegraphics[width=8.0cm]{zs2n_s_snr15.eps}
-\caption{Same as Fig.\ref{fig:biasofz50} but for images of SNR=15, and $???$ realizations 
-at each redshift.}
+\caption{Same as Fig.\ref{fig:biasofz50} but for images of SNR=15, and
+  $???$ realizations at each redshift.}
 \label{fig:biasofz15}
 \end{figure}
 
@@ -1157,12 +1157,14 @@ XE and VFC are funded by Italian Space Agency (ASI) through contract Euclid -IC 
 
 \appendix
 \section{Ratio of Moment vs. PSF convolution}
-In general, the PSF correction will cause extra bias in the shear estimation. 
-In order to isolate the CG bias, we measure the brightness moments without 
-applying any PSF correction methods in this work, i.e. the CG bias will appear in any method.
-Moreover, the definition of our CG bias uses the ratio of ellipticity from images, 
-thus the estimate for the CG bias will not be changed by the convolution of a small PSF. 
-Let us denote the quantity with prime for those convolved with PSF, i.e.,
+In general, the PSF correction will cause extra bias in the shear
+estimation.  In order to isolate the CG bias, we measure the
+brightness moments without applying any PSF correction methods in this
+work, i.e. the CG bias will appear in any method.  Moreover, the
+definition of our CG bias uses the ratio of ellipticity from images,
+thus the estimate for the CG bias will not be changed by the
+convolution of a small PSF.  Let us denote the quantity with prime for
+those convolved with PSF, i.e.,
 %
 \be
 I'(\theta) = \int \d^2 \psi I(\theta) P(\theta-\psi).
@@ -1175,7 +1177,10 @@ Q_{ij} &=& \int \d^2 \theta W(\theta)\, f_{ij}(\theta) I(\theta ),\\
 Q_{ij}' &=& \int \d^2 \theta W(\theta)\, f_{ij}(\theta)\int \d^2\psi I(\psi) P(\theta-\psi),
 \eea
 %
-where $f_{ij}(\theta)$ is the function to characterize the brightness moments, e.g. $f_{ij}(\theta)=\theta_i\theta_j$ for the second order moment. We can replace the variable $\psi$ by $r=\theta-\psi$, and Taylor expand with respect to $\psi$. Then the moment becomes
+where $f_{ij}(\theta)$ is the function to characterize the brightness
+moments, e.g. $f_{ij}(\theta)=\theta_i\theta_j$ for the second order
+moment. We can replace the variable $\psi$ by $r=\theta-\psi$, and
+Taylor expand with respect to $\psi$. Then the moment becomes
 %
 \bea
 Q_{ij}' &=& \int \d^2 \theta W(\theta)\, f_{ij}(\theta) \int \d^2r I(\theta-r) P(r)\\
@@ -1183,14 +1188,19 @@ Q_{ij}' &=& \int \d^2 \theta W(\theta)\, f_{ij}(\theta) \int \d^2r I(\theta-r) P
 &=&Q_{ij} \int \d^2r\,P(r) - \int \d^2\theta\, W(\theta) f_{ij} \int \d^2r\, P(r) {\partial I\over \partial r}r.\nonumber
 \eea
 %
-The integral of $P(r)$ in the first term independent of the image of the galaxy, and equals to unity for normalised PSF. In case of circular symmetric PSF or the asymmetry is small, the second term can be negelect. $Q_{ij}'\approx p Q_{ij}$, where $p$ is only determined by the size of PSF. Thus, for small PSF we have the approximation
+The integral of $P(r)$ in the first term independent of the image of
+the galaxy, and equals to unity for normalised PSF. In case of
+circular symmetric PSF or the asymmetry is small, the second term can
+be negelect. $Q_{ij}'\approx p Q_{ij}$, where $p$ is only determined
+by the size of PSF. Thus, for small PSF we have the approximation
 %
 \be
 {Q^{cg'}_{ij} \over Q^{ncg'}_{ij}} \approx
 {Q^{cg}_{ij} \over Q^{ncg}_{ij}}, \;
 \ee
 %
-which means that the small circular PSF will not change the CG bias in our definition. 
+which means that the small circular PSF will not change the CG bias in
+our definition.
 %In Fig.\,\ref{fig:psftest}, we compare the CG bias before and after the deconvolution 
 %with the effective PSF. One can see that the two lines are almost overlapped.
 %
@@ -1201,8 +1211,6 @@ which means that the small circular PSF will not change the CG bias in our defin
 %\label{fig:psftest}
 %\end{figure}
 %
-
-
 
 \bibliographystyle{aa}
 \bibliography{../../bib/refbooks,../../bib/lens,../../bib/flexion,../../bib/shear,../../bib/stronglens,../../bib/galaxy,../../bib/survey,../../bib/stats}
