@@ -226,9 +226,9 @@ P_{\rm eff}(\theta) = \int \d \lambda\, P(\theta,\lambda) F(\lambda),
 which is the PSF integrated over the filer band.
 The NCG images are the uniform image over the wavelength. One
 can see Fig.\ref{fig:flowchart} for the steps of generating the CG and
-NCG images. We need to emphasize here that the images we generated 
-to estimate the CG bias are independent of the measurement method. 
-The bias we will present later are based on the moment method. As we 
+NCG images. We need to emphasize here that the images we generated
+to estimate the CG bias are independent of the measurement method.
+The bias we will present later are based on the moment method. As we
 will shown in the appendix, in the moment method, if we convolve the
 two images with the same PSF, the ratio of the ellipticity from two
 images does not change.
@@ -617,24 +617,26 @@ It is not surprising that our estimate can reproduce the properties of
 CG bias in ellipticity measurement using both ideal or noisy images,
 since the spectra of the source galaxies are relatively smooth. In the
 error panel, the grey shadow stands for the error budget of CG bias in
-Euclid cosmic shear analysis 
+Euclid cosmic shear analysis
 \citep[$\pm 0.00025$][]{2013MNRAS.431.3103C,2013MNRAS.429..661M}.
 The scatters in the estimation are proportional to the magnitude of the bias,
 i.e. we have large uncertainty for S-galaxy at low redshift.
 %%%%%%%%%%%%%%%%%%%%%%% PSF corrections
-In preliminary tests using other measurement methods for PSF
+In additional tests using other measurement methods for PSF
 correction, such as the image fitting methods
 \citep[e.g.][]{2007MNRAS.382..315M,2008MNRAS.390..149K,2013MNRAS.429.2858M},
-and KSB+ \citep[e.g.][]{1998ApJ...504..636H,2006MNRAS.368.1323H}, the
-bias has similar dependence on the SED of the galaxies.
+and KSB+ \citep[e.g.][]{1998ApJ...504..636H,2006MNRAS.368.1323H}, we
+find that the bias has similar dependence on the SED of the galaxies, 
+although the magnitudes are different.
 
 In the figures, we can see that at $z=0.5$ and $0.9$, the estimate is
 significantly smaller than the true value for both galaxy models. This is
 due to the uneven SED of the source galaxy in the two HST filter. In
 Fig.\ref{fig:sedz}, we compare the SED of the galaxy in redshift
 $z=0,0.5$. One can see that at $z=0.5$, besides the strong emission
-lines, the linear approximation will cause significant error in the
-estimation as well.
+lines, the linear approximation cannot reflect the properties of the
+source galaxies. Thus it is not surprise to see the underestimate of the
+CG bias.
 %In Fig.\ref{fig:err2snr}, we show the average residual bias
 %$\bar{|m|}$ over the redshift as a function of SNR of the images. For
 %each SNR, we average the residual in redshift range from $0$ to $1.2$,
@@ -683,18 +685,17 @@ estimation as well.
 \end{figure}
 
 
-\subsection{PSF variations}
+\subsection{PSF variations in calibration data from HST}
 
 In the previous test, we used an ideal circular symmetric Airy PSF
 model. It may however cause inaccuracy in our estimation of the CG
 bias. Thus, we perform additional tests due to the variations of the
 PSF. The noise free images are used in order to isolate the effects of
 the PSF. The different PSF models are applied only in the step of
-deconvolution for the identical simulated images, since this is the
-step we need the observed PSF in analysis of real data.
+deconvolution for the simulated HST images.
 
-We generate three pairs of PSFs by increasing the wavelength by $10\%$ in the
-Airy model, which increases the size of PSF slightly. The
+First we generate three pairs of PSF model by slightly increasing the 
+size of PSF. The
 effect on the CG bias is shown in Fig.\ref{fig:psfacc1}. From solid,
 dashed to dotted lines, we increased the PSF size of the F606 bands; while
 from red, green to blue lines, we increase the PSF size of the F814
@@ -716,8 +717,8 @@ galaxy noisy images, the PSF may cause slightly stronger effects. In
 additional tests, we calculate circular averages of the three PSF
 models, and find slightly different CG bias when using the second
 model PSF, since it has slightly larger size. Thus, the limited
-accuracy of the PSF model is not an important source of error in our
-study.
+accuracy of the PSF model in HST data
+will not be an important source of error in our study.
 
 %
 \begin{figure}
@@ -729,11 +730,12 @@ study.
   increase the size of PSF for the F606W.  }
 \label{fig:psfacc1}
 \end{figure}
+%
 \begin{figure}
-\includegraphics[width=8.0cm]{z_b_psfcomt.eps}
-%\includegraphics[width=8.0cm]{z_b_psfcom.eps}
-\includegraphics[width=8.0cm]{z_s_psfcomt.eps}
-%\includegraphics[width=8.0cm]{z_s_psfcom.eps}
+%\includegraphics[width=8.0cm]{z_b_psfcomt.eps}
+\includegraphics[width=8.0cm]{z_b_psfcom05.eps}
+%\includegraphics[width=8.0cm]{z_s_psfcomt.eps}
+\includegraphics[width=8.0cm]{z_s_psfcom05.eps}
 \caption{Same as Fig.\ref{fig:psfacc1} but using three different
   TinyTim PSF model. Top (Bottom) is for the B-galaxy (S-galaxy).}
 \label{fig:psfacc2}
@@ -1201,7 +1203,7 @@ by the size of PSF. Thus, for small PSF we have the approximation
 %
 which means that the small circular PSF will not change the CG bias in
 our definition.
-%In Fig.\,\ref{fig:psftest}, we compare the CG bias before and after the deconvolution 
+%In Fig.\,\ref{fig:psftest}, we compare the CG bias before and after the deconvolution
 %with the effective PSF. One can see that the two lines are almost overlapped.
 %
 %\begin{figure}
