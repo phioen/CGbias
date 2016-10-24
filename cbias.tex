@@ -591,18 +591,17 @@ convolution with the effective PSF (see appendix for more detail).  In
 Fig.\ref{fig:flowchart} one can see that the convolution is canceled
 with the last deconvolution for the CG images. The reason for that is
 the deconvolution may cause some numerical errors, especially for the
-noisy images. Therefore, in the following result for noise images, we
-will perform the convolution to the NCG image instead of deconvolution
-to the CG one. (In reality we perform additional tests using images
-with SNR=15, and find the deconvolution does cause some numerical
-problems)
+noisy images. The extra PSF convolution will not change the CG bias as
+we will show in the appendix. Therefore, in the following result for
+noise images, we will perform the convolution to the NCG image instead
+of deconvolution to the CG one.
 %
 Moreover, although we use the circular source image in the simulation,
 the fitted noisy images will become slightly elliptical. In order to
 get rid of the error due to the ``intrinsic shape'', we rotate the
 source image $6$ times, and use the average value as our estimate for
 the galaxy ellipticity \citep{2007AJ....133.1763N}. At each redshift,
-we use one noise free image and $40 (200)$ noisy images for $SNR=50
+we use one noise free image and $40 (200+)$ noisy images for $SNR=50
 (SNR=15)$.  In the bottom panel of each figure, we also show the
 residues with respect to the true CG bias, and the error bars, which
 are given by the standard deviation from $e_{cg}$ and $e_{ncg}$
@@ -613,14 +612,19 @@ are given by the standard deviation from $e_{cg}$ and $e_{ncg}$
 \elabel{sigmam}
 \ee
 %
-It is not surprising that our estimate can reproduce the properties of
-CG bias in ellipticity measurement using both ideal or noisy images,
-since the spectra of the source galaxies are relatively smooth. In the
-error panel, the grey shadow stands for the error budget of CG bias in
-Euclid cosmic shear analysis
-\citep[$\pm 0.00025$][]{2013MNRAS.431.3103C,2013MNRAS.429..661M}.
-The scatters in the estimation are proportional to the magnitude of the bias,
-i.e. we have large uncertainty for S-galaxy at low redshift.
+One can see that our estimate can reproduce the properties of CG bias
+in ellipticity measurement using both ideal or noisy images, since the
+spectra of the source galaxies are relatively smooth. In the error
+panel, the grey shadow stands for the error budget of CG bias in
+Euclid cosmic shear analysis \citep[$\pm
+  0.00025$][]{2013MNRAS.431.3103C,2013MNRAS.429..661M}. In the high
+SNR cases (Fig.\ref{fig:biasofz50}), all the estimates with different
+initial parameters basically agree with each other, and reproduce the
+properties of the CG bias. In the other one (Fig.\ref{fig:biasofz15}),
+the fitting using all free parameters show better estimates for the CG
+bias, and the errors are within the requirement for most cases. The
+scatters in the estimation are proportional to the magnitude of the
+bias, i.e. we have large uncertainty for S-galaxy at low redshift.
 %%%%%%%%%%%%%%%%%%%%%%% PSF corrections
 In additional tests using other measurement methods for PSF
 correction, such as the image fitting methods
@@ -629,7 +633,7 @@ and KSB+ \citep[e.g.][]{1998ApJ...504..636H,2006MNRAS.368.1323H}, we
 find that the bias has similar dependence on the SED of the galaxies, 
 although the magnitudes are different.
 
-In the figures, we can see that at $z=0.5$ and $0.9$, the estimate is
+In both two estimates, we find that at $z=0.5$ and $0.9$, the estimates are
 significantly smaller than the true value for both galaxy models. This is
 due to the uneven SED of the source galaxy in the two HST filter. In
 Fig.\ref{fig:sedz}, we compare the SED of the galaxy in redshift
@@ -665,10 +669,12 @@ CG bias.
 \label{fig:biasofz50}
 \end{figure}
 \begin{figure}
-  \includegraphics[width=8.0cm]{zs2n_b_snr15.eps}
-  \includegraphics[width=8.0cm]{zs2n_s_snr15.eps}
-\caption{Same as Fig.\ref{fig:biasofz50} but for images of SNR=15, and
-  $???$ realizations at each redshift.}
+  \includegraphics[width=8.0cm]{zs2n_b_snrtt15.eps}
+  \includegraphics[width=8.0cm]{zs2n_s_snrtt15.eps}
+\caption{Same as Fig.\ref{fig:biasofz50} but for images of SNR=15:
+  $200$ realizations are used for the red lines at each redshift and
+  $220$($320$) realizations are used for blues lines for the
+  B-(S-)galaxy. }
 \label{fig:biasofz15}
 \end{figure}
 
@@ -807,12 +813,9 @@ There is no significant difference found in the distribution of galaxy
 parameters, such as effective radius, axis ratio, photometric redshift
 and colour (we use $m_{F606}-m_{F814}$ as colour in this work, and
 will write as $m_{V-I}$ for short later). The SNR of most images in VIS sample
-are larger than $15$, while in the N3 sample there are significant number
-of galaxies with SNR$\sim10$. From the result of our simulations
-(Fig.\ref{fig:err2snr}), the images in the VIS sample can give relatively
-stable estimate for CG bias, while the low SNR images may suffer from
-large uncertainty of bias estimation. Thus we only show the result in
-the VIS sample.
+are larger than $15$, thus they will be able to provide relatively 
+stable estimate for CG bias.
+%while the low SNR images may suffer from large uncertainty of bias estimation. Thus we only show the result in the VIS sample.
 
 We also compare the galaxies from 3 catalogues (AEIGS, COSMOS, UDS).  In
 the distribution of galaxy parameters (Fig.\ref{fig:datapro1}), we
@@ -876,13 +879,11 @@ We estimate the CG bias following the same procedure for the simulated galaxy:
 \end{itemize}
 %
 In Fig.\ref{fig:cgbhis}, we show the histogram of the CG bias. The CG
-bias in most of the galaxies is smaller than $0.01$.
-We did not perform averaging as we did
-for the simulated noisy images, which can further reduce the scatter
-of the bias. Thus the actual bias, especially the scatter in the
-sample, is smaller. In the bottom panel, we estimate the CG bias using
-a larger weight function ($2r_h$). As one expected, the bias decreases by
-about one order of magnitude.
+bias in most of the galaxies is smaller than $0.01$.  We did not
+perform averaging as we did for the simulated noisy images, which can
+further reduce the scatter of the bias. Thus the actual bias,
+especially the scatter in the sample, is smaller.
+%In the bottom panel, we estimate the CG bias using a larger weight function ($2r_h$). As one expected, the bias decreases by about one order of magnitude.
 
 Three PSF models from TinyTim, which are the same as in the previous section,
 are used in the deconvolution (Fig.\ref{fig:candelspsf}). Slight
@@ -903,10 +904,10 @@ actually found when using the other two PSF models.
 %
 \begin{figure}
   \includegraphics[width=7.0cm]{zhiscgb.eps}
-  \includegraphics[width=7.0cm]{zhiscgbno.eps}
+  %\includegraphics[width=7.0cm]{zhiscgbno.eps}
 \caption{CG bias histogram from CANDELS: different colours show the
-  result from three catalogures. In the bottom panel we show the CG
-  bias using different weight function ($r_w = 2r_h$).}
+  result from three catalogures. %In the bottom panel we show the CG bias using different weight function ($r_w = 2r_h$).
+}
 \label{fig:cgbhis}
 \end{figure}
 %
@@ -914,7 +915,6 @@ actually found when using the other two PSF models.
   \includegraphics[width=7.0cm]{zcgbhis_psf.eps}
   \caption{CG bias histogram of CANDELS using three different PSF
     models from TinyTim.}
-  %The red line is the bias using lensing rather than shearing.}
   \label{fig:candelspsf}
 \end{figure}
 %
