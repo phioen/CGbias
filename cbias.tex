@@ -1041,17 +1041,22 @@ selection samples (N1, N2), we have found similar behaviours of the CG bias
 with the colour and effective radius of the galaxies.
 
 
-We calculate the average bias over the redshift bins for both red and
+We calculate the average bias and the dispersions over the redshift bins for both red and
 blue galaxies (Table\,\ref{table:calibration}). The red galaxies
 are mainly located between redshift $(0.4,1.2)$, while the blue galaxies
-are less in redshift $(0.8,1.2)$. The bias from red galaxies are
+are low density in redshift $(0.8,1.2)$. The bias from red galaxies are
 significantly smaller than that of blue galaxies, as one expected, the
 colour gradient in the elliptical galaxies are smaller. The
-dispersions of the bias in each bin are slightly large, since the size
-of the galaxy can also affect the bias. Therefore, in order to
-calibrate the bias with high precision, one need more galaxy samples,
-especially the blue ones. In particular, the number density of blue
-galaxy between redshift $[0.8,1.2]$ is low.
+dispersions of the bias in each bin are large, which probably indicate 
+that in each bin there are several kinds and sizes of galaxies. 
+Therefore, in order to calibrate the bias with high precision, 
+one need bigger galaxy samples. From our simulation, we need about 
+$200$ galaxies for one type of galaxy in every redshift bin. If we
+make rough bins, for instance, 2 types of colour: red and blue; 
+5 different sizes from about $0.1$ arcsec to $1.0$ arcsec (Fig.\ref{fig:cg2re}),
+and 5 redshift bins, at least $10 000$ galaxies are required. 
+For more realistic SED classifications and redshift bins, several 
+times larger sample are also necessary.
 
 
 \begin{center}
@@ -1094,7 +1099,7 @@ a galaxy using both simulated images and real data taken from the HST ACS
 CANDELS survey.  In the simulated galaxy images, we confirm the bias
 behaviour from previous results (ES13). We further apply the calibration
 method to the noisy images in the simulations, and find that with
-reasonable signal-to-noise ratio (SNR$=15$) and numbers of galaxies ($50$
+reasonable signal-to-noise ratio (SNR$=15$) and numbers of galaxies ($300$
 images for one type of galaxy in one redshift bin), we can estimate
 the CG bias to a high precision. However, the underestimate cannot
 be avoided due to strong emission lines, or the uneven SED of source
@@ -1112,7 +1117,7 @@ hand, the uneven spectrum of the galaxy causes a large CG bias.
 
 In our sample of galaxies, the CG bias shows a correlation with the
 colour of galaxies. Since the bias depends on the size of the galaxies
-as well, we propose a fitting formula for the bias from the colour and
+as well, we can have an approximate fitting formula for the bias from the colour and
 effective radius of the galaxy. The fitting is limited to the galaxies
 in our sample, which need further investigation for different type of
 galaxies.  The photometry from several bands, which will be used to
@@ -1150,18 +1155,16 @@ general properties of the CG bias. Before the real analysis of Euclid
 data, one needs to study the bias with specific methods and simulated
 images with real properties in the Euclid weak lensing survey.
 
-
 %
-Moreover, as we point out that higher order image distortions, such as
-flexion may increase the CG bias. It can be seen from our analysis
-using both simulated and CANDELS data. Although the higher order
-effect can be neglected most times, it can still significantly
-increase the CG bias when the source images are located close to the
-strong lensing region. Therefore, such a kind of effect may cause
-significant bias in the strong lensing analysis using wide band
-images. In galaxy-galaxy lensing and cluster lensing, one needs to
-be careful about such higher order effects as well.
-
+%Moreover, as we point out that higher order image distortions, such as
+%flexion may increase the CG bias. It can be seen from our analysis
+%using both simulated and CANDELS data. Although the higher order
+%effect can be neglected most times, it can still significantly
+%increase the CG bias when the source images are located close to the
+%strong lensing region. Therefore, such a kind of effect may cause
+%significant bias in the strong lensing analysis using wide band
+%images. In galaxy-galaxy lensing and cluster lensing, one needs to
+%be careful about such higher order effects as well.
 
 \section*{Acknowledgments}
 
