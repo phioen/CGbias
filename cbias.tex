@@ -956,7 +956,8 @@ actually found when using the other two PSF models.
 \end{figure}
 %
 \begin{figure}
-\includegraphics[width=7.0cm]{zcgb-ret17.eps}
+\includegraphics[width=7.0cm]{z2s-ne17.eps}
+\includegraphics[width=7.0cm]{z2s-re17.eps}
 \caption{CG bias with effective radius from the stacked images. The
   unit of radius is a pixel ($=0.05$ arcsec). The blue line is the
   average over the radii bin, and the yellow shadow is the coverage
@@ -974,28 +975,28 @@ index does not strongly affect the estimate of the CG bias. Similar in
 our sample of galaxies, we do not find any obvious relation between CG
 bias and Sersic index. On the other side, similar as in the
 simulation, the effective radius can be fitted more precisely, and we
-see that there is an approximately linear relation between the ratio of effective
-radii and CG bias.  Moreover, one expect that when
-$r_{e606}=r_{e814}$ and $n_{606}=n_{814}$, the CG bias in principle will be vanish, since
-the identical images from two bands will not have a colour gradient. In
-Fig.\ref{fig:cg2fitpar}, the blue lines are the binned average CG
-bias. In the bottom panel, one can see that the average bias meets
-zero at $r_{e814}/r_{e606}=1$, as expected. However, in the Euclid VIS
-image survey, we will have only one band images, we thus need other
-methods for the bias estimation.
+see that there is an approximately linear relation between the ratio
+of effective radii and CG bias.  Moreover, one expect that when
+$r_{e606}=r_{e814}$ and $n_{606}=n_{814}$, the CG bias in principle
+will be vanish, since the identical images from two bands will not
+have a colour gradient. In Fig.\ref{fig:cg2fitpar}, the blue lines are
+the binned average CG bias. In the bottom panel, one can see that the
+average bias meets zero at $r_{e814}/r_{e606}=1$, as
+expected. However, in the Euclid VIS image survey, we will have only
+one band images, we thus need other methods for the bias estimation.
 
 
 In Fig.\ref{fig:cgbhis}, the galaxies in AEGIS field have more
 positive CG bias than the galaxies in the other two. The colour
 distribution in AEGIS is different from the other two as well, which
 suggests the correlation between the CG bias and the colour of the
-galaxy. In Fig.\ref{fig:cg2color}, we show the relation between the
-CG bias and the colour of the galaxies (here the colour is the magnitude different
-between $V$ and $I$ band). The bias is inversely
+galaxy. In Fig.\ref{fig:cg2color}, we show the relation between the CG
+bias and the colour of the galaxies (here the colour is the magnitude
+different between $V$ and $I$ band). The bias is inversely
 proportional to the colour of the galaxies. The galaxy sample is split
 into two groups according to their colour: the red galaxies
-($m_{V-I}>0.5$) and the blue ones ($m_{V-I}<0.5$). They are shown
-in the bottom panel of Fig.\ref{fig:cg2color} as a function of
+($m_{V-I}>0.5$) and the blue ones ($m_{V-I}<0.5$). They are shown in
+the bottom panel of Fig.\ref{fig:cg2color} as a function of
 redshift. Most of the red galaxies are located at moderate redshifts,
 mainly between redshift $[0.5,1.0]$, while the blue galaxies are
 either at the lower redshift ($z<0.5$) or higher redshift
@@ -1009,54 +1010,65 @@ the filter transmission are different of two telescope, the correlation
 between $m_{VIS}$ and CG bias will not be an accuracy method for CG bias.
 
 
-Moreover, we stack the images from two bands as our mock VIS band images.
-Fig.\ref{fig:cg2re} shows the CG bias with the effective radius fitted
-from the VIS images. The blue line is the bin average. As one
-expects, the small size galaxies have larger bias than the big
-ones. A quick fitting formula for the bias can be found based on the
-effective radius and colour
+Moreover, we stack the images from two bands as our mock VIS band
+images.  Fig.\ref{fig:cg2re} shows the CG bias with the Sersic index
+and the effective radius fitted from the VIS images. In the top panel,
+we divide the sample into two groups by the fitted effective radius, either
+larger or smaller than $0.35$ arcsec. The large galaxies also cover a
+large range of Sersic index, but have small CG bias, which are shown
+by orange points. The red line is the bin average and lower than
+$m=0$. The bias of small galaxies are shown by blue points. Most of
+them have small Sersice index ($<3$). The CG bias of small galaxies
+are positive and approximately propertional to the Sersic index.
+%
+In the bottom panel, the galaxies are also divide into two groups by
+the fitted Sersic index $n$. Those have large $n$($>2.5$) are
+classified as elliptical galaxies (red points), and those have small
+$n$ are disk galaxies (blue points). The solid lines show the bin
+average. The dashed lines are the fitting formular by
+Eq.\ref{eq:fitcgb}.
 %
 \be
-\tilde{m} = a\, m_{V-I}\,{\rm exp}({-r_e^2 \over 625}) +{b \over r_e^2},
+\tilde{m} = a\,r_e+{b\over r_e}+c,
 \elabel{fitcgb}
 \ee
 %
-where $r_e$ is the effective radius of wide band image, and
-$a=-1.5\times 10^{-3}$, $b=0.04$. The yellow shadow in
-Fig.\ref{fig:cg2re} presents the coverage of Eq.\ref{eq:fitcgb} for
-$m_{V-I}\in [-0.2,2]$ and $r_e\in [2,50]$, which covers most of the
-bias.
-
-The VIS images alone can only provide an rough estimation for CG bias, 
-e.g. the bias of small galaxy approximately proportional to $1/r_e^2$. 
-The multi-band magnitudes, i.e. colour, are correlated with the bias
-(Fig.\ref{fig:cg2color}). Thus, one wide band image with multi-band
-photometries are necessary in order to reduce the CG bias. Moreover, the
+where $r_e$ is the effective radius of the mock VIS image. For disk
+galaxy we have $a=3.8\times10^{-12}$, $b=0.022$, $c=-0.0066$, and for
+elliptical galaxy $a=0.00012$, $b=0.017$ and $c=-0.0069$. The disk
+galaxies have relatively smaller size and smaller CG bias, while the
+elliptical galaxies cover a large range of size and CG bias. Moreover,
+the elliptical galaxies have a stronger dependence on the effective
+radius.
+%
+We can see that the VIS image alone can also provide an rough
+estimation for CG bias, but a subdivision of the galaxies is
+necessary. The multi-band magnitudes, i.e. colour, which is correlated
+with the bias as well, is highly in favor. Nevertheless, the
 multi-band information is required for the photometric redshift
 study. One can obtain that for free to calibrate the CG bias. Although
 the dependence on the multi-band is different between photometric
 redshift and CG bias, the experience from photometric redshift can be
-used for CG bias, such as some machine learning algorithms. In the other two
-selection samples (N1, N2), we have found similar behaviours of the CG bias
-with the colour and effective radius of the galaxies.
+used for CG bias, such as some machine learning algorithms.
 
 
-We calculate the average bias and the dispersions over the redshift bins for both red and
-blue galaxies (Table\,\ref{table:calibration}). The red galaxies
-are mainly located between redshift $(0.4,1.2)$, while the blue galaxies
-are low density in redshift $(0.8,1.2)$. The bias from red galaxies are
-significantly smaller than that of blue galaxies, as one expected, the
-colour gradient in the elliptical galaxies are smaller. The
-dispersions of the bias in each bin are large, which probably indicate 
-that in each bin there are several kinds and sizes of galaxies. 
-Therefore, in order to calibrate the bias with high precision, 
-one need bigger galaxy samples. From our simulation, we need about 
-$200$ galaxies for one type of galaxy in every redshift bin. If we
-make rough bins, for instance, 2 types of colour: red and blue; 
-5 different sizes from about $0.1$ arcsec to $1.0$ arcsec (Fig.\ref{fig:cg2re}),
-and 5 redshift bins, at least $10 000$ galaxies are required. 
-For more realistic SED classifications and redshift bins, several 
-times larger sample are also necessary.
+We calculate the average bias and the dispersions over the redshift
+bins for both red and blue galaxies
+(Table\,\ref{table:calibration}). The red galaxies are mainly located
+between redshift $(0.4,1.2)$, while the blue galaxies are low density
+in redshift $(0.8,1.2)$. The bias from red galaxies are significantly
+smaller than that of blue galaxies, as one expected, the colour
+gradient in the elliptical galaxies are smaller. The dispersions of
+the bias in each bin are large, which probably indicate that in each
+bin there are several kinds and sizes of galaxies.  Therefore, in
+order to calibrate the bias with high precision, one need bigger
+galaxy samples. From our simulation, we need about $200$ galaxies for
+one type of galaxy in every redshift bin. If we make rough bins, for
+instance, 2 types of colour: red and blue; 5 different sizes from
+about $0.1$ arcsec to $1.0$ arcsec (Fig.\ref{fig:cg2re}), and 5
+redshift bins, at least $10 000$ galaxies are required.  For more
+realistic SED classifications and redshift bins, several times larger
+sample are also necessary.
 
 
 \begin{center}
@@ -1065,15 +1077,15 @@ times larger sample are also necessary.
     \hline
     photo-z    &$Number$  &$\bar{m}$  &$\sigma_m$ \\
     \hline
-    $0-0.4$   &187  &$-8.2\times10^{-4}$  &$0.023$\\
-    $0.4-0.8$  &1415 &$-1.8\times10^{-4}$  &$0.020$\\
-    $0.8-1.2$  &1116 &$5.7\times10^{-4}$  &0.027\\
-    $>1.2$  &245  &$2.8\times10^{-3}$  &0.037\\
+    $0-0.4$   &187  &$-7.4\times10^{-4}$  &$0.012$\\
+    $0.4-0.8$  &1415 &$-3.2\times10^{-4}$  &$0.011$\\
+    $0.8-1.2$  &1116 &$-3.8\times10^{-4}$  &0.018\\
+    $>1.2$  &245  &$-1.2\times10^{-3}$  &0.018\\
     \\
-    $0-0.4$  &667  &$9.1\times10^{-4}$  &0.0054\\
-    $0.4-0.8$ &513  &$1.5\times10^{-3}$  &0.011\\
-    $0.8-1.2$ &187  &$1.4\times10^{-3}$  &0.012\\
-    $>1.2$  &935  &$1.9\times10^{-3}$  &0.016\\
+    $0-0.4$  &667  &$1.1\times10^{-3}$  &0.0034\\
+    $0.4-0.8$ &513  &$7.9\times10^{-4}$  &0.0043\\
+    $0.8-1.2$ &187  &$2.3\times10^{-3}$  &0.0058\\
+    $>1.2$  &935  &$1.7\times10^{-3}$  &0.00068\\
     \hline
   \end{tabular}
   \caption{\label{table:calibration}The number, average CG bias and dispersion in redshift bins for blue (bottom half) and red (top half) galaxies. }
@@ -1105,7 +1117,7 @@ the CG bias to a high precision. However, the underestimate cannot
 be avoided due to strong emission lines, or the uneven SED of source
 galaxies. Moreover, the SNR of the simulated images in two
 bands are assumed to be the same. In reality, the signal-to-noise in
-different bands are correlated to the colour of the galaxies.
+different bands are correlated to the SED of the galaxies.
 %
 We also apply the calibration method to the galaxy images taken by HST
 in two filters (F606W, F814W). In the estimation using CANDELS data,
@@ -1116,19 +1128,24 @@ CG bias in reality may be smaller than that shown here. On the other
 hand, the uneven spectrum of the galaxy causes a large CG bias.
 
 In our sample of galaxies, the CG bias shows a correlation with the
-colour of galaxies. Since the bias depends on the size of the galaxies
-as well, we can have an approximate fitting formula for the bias from the colour and
-effective radius of the galaxy. The fitting is limited to the galaxies
-in our sample, which need further investigation for different type of
-galaxies.  The photometry from several bands, which will be used to
-estimate the redshift, can be also use for the CG bias
-analysis. Although the redshift dependence is not significant in our
-sample of galaxies, this may not be the case for a larger
-survey. In order to fully calibrate the bias for different redshift, a
-larger sample is essentially necessary. Moreover, in the weak lensing
-study, the colour of galaxies can be also used for the intrinsic
-alignment analysis. There is a potential correlation between the CG
-bias and the intrinsic alignment noise.
+colour of galaxies, and a linear relation with the ratio of two band
+images.  In case there is only one wide band image, one can also
+classify the galaxy by their Sersic index. The galaxies with small
+Sersic index, i.e. disk-like, have smaller CG bias. On the other hand,
+those with large Sersic index have large bias and also bias variation.
+Since the bias depends on the size of the galaxies as well, we can
+have an approximate fitting formula for the bias for different galaxy
+morphology. The fitting is limited to the galaxies in our sample,
+further investigation for different type of galaxies is necessary. The
+photometry from several bands, which will be used to estimate the
+redshift, can be also use for the CG bias analysis. Although the
+redshift dependence is not significant in our sample of galaxies, this
+may not be the case for a larger survey. In order to fully calibrate
+the bias for different redshift, a larger sample is essentially
+necessary. Moreover, in the weak lensing study, the colour of galaxies
+can be also used for the intrinsic alignment analysis. There is a
+potential correlation between the CG bias and the intrinsic alignment
+noise.
 %It maybe interesting to explore more about galaxy morphology.
 %Moreover, only two galaxy models are used in the simulation for the
 %source galaxy images.
