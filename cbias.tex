@@ -896,26 +896,19 @@ We estimate the CG bias following the same procedure for the simulated galaxy:
 \end{itemize}
 %
 In Fig.\ref{fig:cgbhis}, we show the histogram of the CG bias. The CG
-bias in most of the galaxies is smaller than $0.01$.  We did not
-perform averaging as we did for the simulated noisy images, which can
-further reduce the scatter of the bias. Thus the actual bias,
-especially the scatter in the sample, is smaller.
-In the bottom panel, we estimate the CG bias using a larger weight function
-($2r_h$). As one expected, the bias decreases by about one order of magnitude.
+bias in most of the galaxies is smaller than $0.01$ ($94\%$).  We did
+not perform averaging as we did for the simulated noisy images, which
+can further reduce the scatter of the bias. Thus the actual bias,
+especially the scatter in the sample, is smaller. In the bottom
+panel, we estimate the CG bias using a larger weight function
+($2r_h$). As one expected, the bias decreases by about one order of
+magnitude.
 
-<<<<<<< HEAD
 Three PSF models from TinyTim, which are the same as in the previous
 section, are used in the deconvolution of CANDELS data. There is small
 difference among the three since the three PSF models have similar
 size. The following results are shown using the first PSF model from
 TinyTim. 
-=======
-Three PSF models from TinyTim, which are the same as in the previous section,
-are used in the deconvolution of CANDELS data (Fig.\ref{fig:candelspsf}).
-There is tiny difference among the three, thus the following results
-are shown using the first PSF model from TinyTim. Similar results are
-actually found when using the other two PSF models.
->>>>>>> origin/master
 %
 %The red line show the CG bias if we perform lensing instead of shearing
 %the images. We can see that the bias becomes larger, and the effect is
@@ -970,26 +963,24 @@ actually found when using the other two PSF models.
 %
 \begin{figure}
 \includegraphics[width=7.0cm]{z2s-ne17.eps}
-\includegraphics[width=7.0cm]{z2s-re17.eps}
-\caption{CG bias with effective radius from the stacked images. The
-  unit of radius is a pixel ($=0.05$ arcsec). The blue line is the
-  average over the radii bin, and the yellow shadow is the coverage
-  by Eq.\ref{eq:fitcgb}.}
+\includegraphics[width=7.0cm]{z2nscl-re17.eps}
+\caption{CG bias with Sersic index (top) and effective radius (bottom)
+  from the mock VIS images. The unit of radius is a pixel ($=0.05$
+  arcsec). In the top panel, the blue (red) is the average of small
+  (big) galaxies. In the bottom panel, the red line is average bias of
+  red galaxy ($m_{V-I}>1$); the green line is that of elliptical
+  galaxy ($n_{Sersic}>2.75$); the blue line is for the disk galaxy.}
 \label{fig:cg2re}
 \end{figure}
 %
 In order to find a quick estimation for the CG bias, we try to find
 the relation between CG bias with galaxy parameters. In
 Fig.\ref{fig:cg2fitpar}, one can see the CG bias with the fitting
-parameters from two band images. As we mentioned, the Sersic index is
-a difficult parameter to fit. In our simulation using
-noisy images, we find that the large scatter of the fitted Sersic
-index does not strongly affect the estimate of the CG bias. In our 
-CANDELS data, we do not find any obvious relation between CG
-bias and ratio of Sersic index from two bands. On the other side, similar as in the
-simulation, the effective radius can be fitted more precisely, and we
-see that there is an approximately linear relation between the ratio
-of effective radii and CG bias.  Moreover, one expect that when
+parameters from two band images. On one side, we
+do not find any obvious relation between CG bias and ratio of Sersic
+index from two bands. On the other side, we see that
+there is an approximately linear relation between the ratio of
+effective radii and CG bias.  Moreover, one expect that when
 $r_{e606}=r_{e814}$ and $n_{606}=n_{814}$, the CG bias in principle
 will be vanish, since the identical images from two bands will not
 have a colour gradient. In Fig.\ref{fig:cg2fitpar}, the blue lines are
@@ -1035,25 +1026,27 @@ $m=0$. The bias of small galaxies are shown by blue points. Most of
 them have small Sersic index ($<3$). The CG bias of small galaxies
 are positive and approximately proportional to the Sersic index.
 %
-In the bottom panel, the galaxies are also divide into two groups by
-the fitted Sersic index $n$. Those have large $n$($>2.5$) are
-classified as elliptical galaxies (red points), and those have small
-$n$ are disk galaxies (blue points). The solid lines show the bin
-average. The dashed lines are the fitting formula by
-Eq.\ref{eq:fitcgb}.
+In the bottom panel, the galaxies are divide into three groups: the
+first is red galaxy whose color is large ($m_{V-I}>1.0$); the second
+and third group are the rest galaxies either with large Sersic index
+($n>2.75$, elliptical galaxy) or small Sersic index (disk galaxy). The
+solid lines show the bin average. One can see that the red galaxies
+have large negative bias, while the disk galaxies have relative small
+bias.
+
 %
-\be
-\tilde{m} = a\,r_e+{b\over r_e}+c,
-\elabel{fitcgb}
-\ee
+%\be
+%\tilde{m} = a\,r_e+{b\over r_e}+c,
+%\elabel{fitcgb}
+%\ee
 %
-where $r_e$ is the effective radius of the mock VIS image. For disk
-galaxy we have $a=3.8\times10^{-12}$, $b=0.022$, $c=-0.0066$, and for
-elliptical galaxy $a=0.00012$, $b=0.017$ and $c=-0.0069$. The disk
-galaxies have relatively smaller size and smaller CG bias, while the
-elliptical galaxies cover a large range of size and CG bias. Moreover,
-the elliptical galaxies have a stronger dependence on the effective
-radius.
+%where $r_e$ is the effective radius of the mock VIS image. For disk
+%galaxy we have $a=3.8\times10^{-12}$, $b=0.022$, $c=-0.0066$, and for
+%elliptical galaxy $a=0.00012$, $b=0.017$ and $c=-0.0069$. The disk
+%galaxies have relatively smaller size and smaller CG bias, while the
+%elliptical galaxies cover a large range of size and CG bias. Moreover,
+%the elliptical galaxies have a stronger dependence on the effective
+%radius.
 %
 We can see that the VIS image alone can also provide an rough
 estimation for CG bias, but classification of the galaxies is
