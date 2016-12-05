@@ -1018,22 +1018,21 @@ between $m_{VIS}$ and CG bias will not be an accuracy method for CG bias.
 Moreover, we stack the images from two bands as our mock VIS band
 images.  Fig.\ref{fig:cg2re} shows the CG bias with the Sersic index
 and the effective radius fitted from the VIS images. In the top panel,
-we divide the sample into two groups by the fitted effective radius, either
-larger or smaller than $0.35$ arcsec. The large galaxies also cover a
-large range of Sersic index, but have small CG bias, which are shown
-by orange points. The red line is the bin average and lower than
-$m=0$. The bias of small galaxies are shown by blue points. Most of
-them have small Sersic index ($<3$). The CG bias of small galaxies
-are positive and approximately proportional to the Sersic index.
+we divide the sample into two groups by the fitted effective radius,
+either larger or smaller than $0.35$ arcsec. The small (large)
+galaxies are shown by the blue (orange) points, and the blue (red)
+line is the bin average.  The large galaxies cover a large range of
+Sersic index, have negative average CG bias. Most of small galaxies
+have small Sersic index ($<2.5$). The bias of small galaxies are
+positive and approximately proportional to the Sersic index. The
+scatters of the bias for both large and small galaxies increase with
+the Sersic index.
 %
 In the bottom panel, the galaxies are divide into three groups: the
 first is red galaxy whose color is large ($m_{V-I}>1.0$); the second
 and third group are the rest galaxies either with large Sersic index
-($n>2.75$, elliptical galaxy) or small Sersic index (disk galaxy). The
-solid lines show the bin average. One can see that the red galaxies
-have large negative bias, while the disk galaxies have relative small
-bias.
-
+($n>2.25$, elliptical galaxy) or small Sersic index (disk galaxy). The
+solid lines show the bin average over effective radius. 
 %
 %\be
 %\tilde{m} = a\,r_e+{b\over r_e}+c,
@@ -1050,19 +1049,25 @@ bias.
 %
 We can see that the VIS image alone can also provide an rough
 estimation for CG bias, but classification of the galaxies is
-necessary. As shown in the figure, the disk galaxies have smaller bias
-than the elliptical galaxies.
-The multi-band magnitudes, i.e. colour, which is correlated
-with the bias as well, is highly in favor. Nevertheless, the
-multi-band information is required for the photometric redshift
-study. One can obtain that for free to calibrate the CG bias. Although
-the dependence on the multi-band is different between photometric
-redshift and CG bias, the experience from photometric redshift can be
-used for CG bias, such as some machine learning algorithms.
+necessary. As shown in the figure, the disk galaxies have small bias,
+small radius ($<1$ arcsec), and also small bias scatters. The
+elliptical galaxies cover large radius range, and the bias is larger
+than the disk ones. The bias in red galaxies are significant, and
+mainly negative. The scatters of red galaxies are larger than the
+other two kinds of galaxies.
+%
+The multi-band photometry can definitely provide information on the CG
+bias, since the colour and colour gradient are correlated
+intrinsically during the evolution of galaxy. Moreover, the multi-band
+information is required for the photometric redshift study. One can
+obtain that for free to calibrate the CG bias. Although the dependence
+on the multi-band is different between photometric redshift and CG
+bias, the experience from photometric redshift can be used for CG
+bias, such as some machine learning algorithms.
 
 
 We calculate the average bias and the dispersions over the redshift
-bins for both red and blue galaxies
+bins for both red ($m_{V-I}>0.5$) and blue galaxies
 (Table\,\ref{table:calibration}). The red galaxies are mainly located
 between redshift $(0.4,1.2)$, while the blue galaxies are low density
 in redshift $(0.8,1.2)$. The bias from red galaxies are significantly
