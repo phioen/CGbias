@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{35}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -206,6 +206,11 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Rix}, {Tal}, {Wake}, \& {Wuyts}}]{skelton14}
 {Skelton}, R.~E., {Whitaker}, K.~E., {Momcheva}, I.~G., {et~al.} 2014, \apjs,
   214, 24
+
+\bibitem[{{Tortora} {et~al.}(2010){Tortora}, {Napolitano}, {Cardone},
+  {Capaccioli}, {Jetzer}, \& {Molinaro}}]{2010MNRAS.407..144T}
+{Tortora}, C., {Napolitano}, N.~R., {Cardone}, V.~F., {et~al.} 2010, \mnras,
+  407, 144
 
 \bibitem[{{Voigt} {et~al.}(2012){Voigt}, {Bridle}, {Amara}, {Cropper},
   {Kitching}, {Massey}, {Rhodes}, \& {Schrabback}}]{2012MNRAS.421.1385V}
