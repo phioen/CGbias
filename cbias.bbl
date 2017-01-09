@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{40}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -38,12 +38,24 @@
 {Davis}, M., {Guhathakurta}, P., {Konidaris}, N.~P., {et~al.} 2007, \apjl, 660,
   L1
 
+\bibitem[{{den Brok} {et~al.}(2011){den Brok}, {Peletier}, {Valentijn},
+  {Balcells}, {Carter}, {Erwin}, {Ferguson}, {Goudfrooij}, {Graham}, {Hammer},
+  {Lucey}, {Trentham}, {Guzm{\'a}n}, {Hoyos}, {Verdoes Kleijn}, {Jogee},
+  {Karick}, {Marinova}, {Mouhcine}, \& {Weinzirl}}]{2011MNRAS.414.3052D}
+{den Brok}, M., {Peletier}, R.~F., {Valentijn}, E.~A., {et~al.} 2011, \mnras,
+  414, 3052
+
 \bibitem[{Frigo \& Johnson(2005)}]{fftw05}
 Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   issue on ``Program Generation, Optimization, and Platform Adaptation''
 
 \bibitem[{{Goldberg} \& {Natarajan}(2002)}]{2002ApJ...564...65G}
 {Goldberg}, D.~M. \& {Natarajan}, P. 2002, \apj, 564, 65
+
+\bibitem[{{Gonzalez-Perez} {et~al.}(2011){Gonzalez-Perez}, {Castander}, \&
+  {Kauffmann}}]{2011MNRAS.411.1151G}
+{Gonzalez-Perez}, V., {Castander}, F.~J., \& {Kauffmann}, G. 2011, \mnras, 411,
+  1151
 
 \bibitem[{{Grogin} {et~al.}(2011){Grogin}, {Kocevski}, {Faber}, {Ferguson},
   {Koekemoer}, {Riess}, {Acquaviva}, {Alexander}, {Almaini}, {Ashby}, {Barden},
@@ -89,6 +101,11 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Broadhurst}}]{1995ApJ...449..460K}
 {Kaiser}, N., {Squires}, G., \& {Broadhurst}, T. 1995, \apj, 449, 460
 
+\bibitem[{{Kennedy} {et~al.}(2016){Kennedy}, {Bamford}, {H{\"a}u{\ss}ler},
+  {Brough}, {Holwerda}, {Hopkins}, {Vika}, \& {Vulcani}}]{2016A&A...593A..84K}
+{Kennedy}, R., {Bamford}, S.~P., {H{\"a}u{\ss}ler}, B., {et~al.} 2016, \aap,
+  593, A84
+
 \bibitem[{{Kitching} {et~al.}(2008){Kitching}, {Miller}, {Heymans}, {van
   Waerbeke}, \& {Heavens}}]{2008MNRAS.390..149K}
 {Kitching}, T.~D., {Miller}, L., {Heymans}, C.~E., {van Waerbeke}, L., \&
@@ -130,6 +147,16 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 8127,
   Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series,
   0
+
+\bibitem[{{La Barbera} {et~al.}(2010){La Barbera}, {De Carvalho}, {De La Rosa},
+  {Gal}, {Swindle}, \& {Lopes}}]{2010AJ....140.1528L}
+{La Barbera}, F., {De Carvalho}, R.~R., {De La Rosa}, I.~G., {et~al.} 2010,
+  \aj, 140, 1528
+
+\bibitem[{{La Barbera} {et~al.}(2005){La Barbera}, {de Carvalho}, {Gal},
+  {Busarello}, {Merluzzi}, {Capaccioli}, \& {Djorgovski}}]{2005ApJ...626L..19L}
+{La Barbera}, F., {de Carvalho}, R.~R., {Gal}, R.~R., {et~al.} 2005, \apjl,
+  626, L19
 
 \bibitem[{{Laureijs} {et~al.}(2011){Laureijs}, {Amiaux}, {Arduini},
   {Augu{\`e}res}, {Brinchmann}, {Cole}, {Cropper}, {Dabin}, {Duvet}, {Ealet},

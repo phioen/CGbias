@@ -37,7 +37,7 @@
 {
 X. Er$^1$ \thanks{er.xinzhong@oa-roma.inaf.it},
 H. Hoekstra$^2$, T. Schrabback$^3$, V. F. Cardone$^1$, R. Scaramella$^1$, R. Maoli$^4$,
-\newauthor{M. Vicinanza$^{1,4,5}$, Bryan Gillis$^{6}$ L. Miller$^{7}$, J. Rhodes$^{8,9}$}
+\newauthor{M. Vicinanza$^{1,4,5}$, B. Gillis$^{6}$ L. Miller$^{7}$, J. Rhodes$^{8,9}$}
 \\
 $^1$ I.N.A.F. - Osservatorio Astronomico di Roma, via Frascati 33, 00040 - Monte Porzio Catone, Roma, Italy\\
 $^2$Leiden Observatory, Leiden University, PO Box 9513, NL-230 RA, Leiden, the Netherlands \\
@@ -130,29 +130,37 @@ In \citep{2012MNRAS.421.1385V, 2013MNRAS.432.2385S}, the simulated
 images with Euclid features are used to study the CG bias. A potential
 bias of level $10^{-3}$ is found for typical size galaxies even with a
 smooth SED, i.e. without strong emission or absorption lines.
-Moreover, it has been shown that using two high resolution narrow band
-images, one can calibrate the CG bias with high precision for a
-specific subset of galaxies, e.g. the galaxies without strong
-emission/absorption lines. In this work, we will demonstrate the
-result and the method in \citet{2013MNRAS.432.2385S}(ES13 in the rest
-of this paper), and apply the calibration method to the simulated
-noisy images. The method requires that the match of the bandwidth and
-the smooth spectrum of the source galaxy. For the first point, the
-bandwidth of weak lensing survey on Euclid can be cover by two filters
-on the Hubble Space Telescope (HST), i.e., F606W and F814W. In the
-image simulation with smooth spectra, the calibration can reproduce
-the CG bias with high precision.
+Moreover, it has been shown that using two high resolution narrow
+band, noise free images, one can calibrate the CG bias with high
+precision for a specific subset of galaxies, e.g. the galaxies without
+strong emission/absorption lines. In this work, we will demonstrate
+the result and the method in \citet{2013MNRAS.432.2385S}(ES13 in the
+rest of this paper), and apply the calibration method to the simulated
+noisy images. The method requires that the match of the bandwidth.
+Fortunately, the bandwidth of weak lensing survey on Euclid can be
+cover by two filters on the Hubble Space Telescope (HST), i.e., F606W
+and F814W.
 
-We also apply the method to a real set of galaxy images from HST
-CANDELS data (Schrabback et al. in prep.). A preliminary CG bias is
-presented. It is expected from star formation studies that colour and
-colour gradient of the galaxy are correlated
-\citep{2010MNRAS.407..144T} and (Welikala et al. in prep.), thus it is
-not a surprise to see that the CG bias has a correlation with the
-colour of source galaxy. In Section 3, we follow the result in
-ES13. We use simulated images to study the CG bias. In Section 4 we
-apply the calibration method using two band images from CANDELS data,
-and give our discussion and conclusion in the end.
+The colour gradients in the galaxy have been widely studied. It has
+been found that the negative colour gradients (redder in the centre
+and bluer in the outskirts) exist in the elliptical galaxies, and
+steeper colour gradients are more commonly found in bluer or more
+luminous early type galaxy \citep[e.g.][]{2011MNRAS.414.3052D,
+  2011MNRAS.411.1151G}. \citet[][]{2010AJ....140.1528L,
+  2016A&A...593A..84K} also suggest correlations between colour
+gradients and the overall colour and luminosity of the galaxies. The
+formation of galaxy, e.g. inside-out growth through gas accretion or
+major mergers, will cause distinct morphologies as well as colour
+gradients \citep[e.g.][]{2010MNRAS.407..144T}. Therefore, one expect
+that the CG bias has dependence on such factors.
+
+
+In Section 2, we will introduce the basic concept of gravitational
+lensing and CG bias. The simulated images are presented to study the
+bias, following the similar method in ES13. In Section 4 we will apply
+the calibration method to a galaxy sample selected from HST CANDELS
+data (Schrabback et al. in prep.) and give our discussion and
+conclusion in the end.
 
 
 %%%%%
@@ -1136,10 +1144,10 @@ different bands are correlated to the SED of the galaxies.
 
 We also apply the calibration method to the galaxy images taken by HST
 in two filters (F606W, F814W). In the estimation using CANDELS data,
-we find that most of the CG bias ($|m|$) is smaller than $0.01$. 
-As we find from simulated
-images, the estimation using noisy image has a large scatter, thus the
-CG bias in reality may be smaller than that shown here. 
+we find that most of the CG bias ($|m|$) is smaller than $0.01$.  As
+we find from simulated images, the estimation using noisy image has a
+large scatter, thus the CG bias in reality may be smaller than that
+shown here.
 %
 In our sample of galaxies, the CG bias shows a correlation with the
 colour of galaxies, and a linear relation with the ratio of two band
@@ -1164,11 +1172,14 @@ noise.
 %Moreover, only two galaxy models are used in the simulation for the
 %source galaxy images.
 
-In our analysis of the CANDELS data, the environmental effect is not
-taken into account. Close galaxy pairs or nearby bright star(s) will
-also cause brightness/colour gradient, which will affect our estimate
-for CG bias. The significance of the environmental effect is still
-unknown, and may need further study. Moreover, in the calibration we
+It has been shown that colour gradients depend on the environment
+where galaxies reside, with steeper colour gradients in poor rather
+than rich clusters \citep[e.g.][]{2005ApJ...626L..19L}, which is
+possible due to the different processes during galaxy formation. Close
+galaxy pairs or nearby bright star(s) will also cause
+brightness/colour gradient, which can affect our estimate for CG bias
+as well. The significance of the environment to CG bias is not clear
+and requires further study as well. Moreover, in the calibration we
 linearly interpolate the SED on pixels from two bands. Some advanced
 method to estimate the SED \citep[e.g.][]{2016A&A...589A...2J} may
 help to improve the calibration of the bias.
@@ -1261,6 +1272,6 @@ our definition.
 %
 
 \bibliographystyle{aa}
-\bibliography{../../bib/refbooks,../../bib/lens,../../bib/flexion,../../bib/shear,../../bib/stronglens,../../bib/galaxy,../../bib/survey,../../bib/stats}
+\bibliography{../bib/refbooks,../bib/lens,../bib/flexion,../bib/shear,../bib/stronglens,../bib/galaxy,../bib/survey,../bib/stats}
 
 \end{document}
