@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{49}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -6,11 +6,20 @@
 {Bacon}, D.~J., {Goldberg}, D.~M., {Rowe}, B.~T.~P., \& {Taylor}, A.~N. 2006,
   \mnras, 365, 414
 
+\bibitem[{{Bacon} {et~al.}(2000){Bacon}, {Refregier}, \&
+  {Ellis}}]{2000MNRAS.318..625B}
+{Bacon}, D.~J., {Refregier}, A.~R., \& {Ellis}, R.~S. 2000, \mnras, 318, 625
+
 \bibitem[{{Bartelmann} \& {Schneider}(2001)}]{2001PhR...340..291B}
 {Bartelmann}, M. \& {Schneider}, P. 2001, \physrep, 340, 291
 
 \bibitem[{{Bertin} \& {Arnouts}(1996)}]{1996A&AS..117..393B}
 {Bertin}, E. \& {Arnouts}, S. 1996, \aaps, 117, 393
+
+\bibitem[{{Clowe} {et~al.}(2006){Clowe}, {Brada{\v c}}, {Gonzalez},
+  {Markevitch}, {Randall}, {Jones}, \& {Zaritsky}}]{2006ApJ...648L.109C}
+{Clowe}, D., {Brada{\v c}}, M., {Gonzalez}, A.~H., {et~al.} 2006, \apjl, 648,
+  L109
 
 \bibitem[{{Coleman} {et~al.}(1980){Coleman}, {Wu}, \&
   {Weedman}}]{1980ApJS...43..393C}
@@ -38,12 +47,30 @@
 {Davis}, M., {Guhathakurta}, P., {Konidaris}, N.~P., {et~al.} 2007, \apjl, 660,
   L1
 
+\bibitem[{{den Brok} {et~al.}(2011){den Brok}, {Peletier}, {Valentijn},
+  {Balcells}, {Carter}, {Erwin}, {Ferguson}, {Goudfrooij}, {Graham}, {Hammer},
+  {Lucey}, {Trentham}, {Guzm{\'a}n}, {Hoyos}, {Verdoes Kleijn}, {Jogee},
+  {Karick}, {Marinova}, {Mouhcine}, \& {Weinzirl}}]{2011MNRAS.414.3052D}
+{den Brok}, M., {Peletier}, R.~F., {Valentijn}, E.~A., {et~al.} 2011, \mnras,
+  414, 3052
+
 \bibitem[{Frigo \& Johnson(2005)}]{fftw05}
 Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   issue on ``Program Generation, Optimization, and Platform Adaptation''
 
+\bibitem[{{Fu} {et~al.}(2008){Fu}, {Semboloni}, {Hoekstra}, {Kilbinger}, {van
+  Waerbeke}, {Tereno}, {Mellier}, {Heymans}, {Coupon}, {Benabed}, {Benjamin},
+  {Bertin}, {Dor{\'e}}, {Hudson}, {Ilbert}, {Maoli}, {Marmo}, {McCracken}, \&
+  {M{\'e}nard}}]{2008A&A...479....9F}
+{Fu}, L., {Semboloni}, E., {Hoekstra}, H., {et~al.} 2008, \aap, 479, 9
+
 \bibitem[{{Goldberg} \& {Natarajan}(2002)}]{2002ApJ...564...65G}
 {Goldberg}, D.~M. \& {Natarajan}, P. 2002, \apj, 564, 65
+
+\bibitem[{{Gonzalez-Perez} {et~al.}(2011){Gonzalez-Perez}, {Castander}, \&
+  {Kauffmann}}]{2011MNRAS.411.1151G}
+{Gonzalez-Perez}, V., {Castander}, F.~J., \& {Kauffmann}, G. 2011, \mnras, 411,
+  1151
 
 \bibitem[{{Grogin} {et~al.}(2011){Grogin}, {Kocevski}, {Faber}, {Ferguson},
   {Koekemoer}, {Riess}, {Acquaviva}, {Alexander}, {Almaini}, {Ashby}, {Barden},
@@ -89,6 +116,26 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Broadhurst}}]{1995ApJ...449..460K}
 {Kaiser}, N., {Squires}, G., \& {Broadhurst}, T. 1995, \apj, 449, 460
 
+\bibitem[{{Kennedy} {et~al.}(2016){Kennedy}, {Bamford}, {H{\"a}u{\ss}ler},
+  {Brough}, {Holwerda}, {Hopkins}, {Vika}, \& {Vulcani}}]{2016A&A...593A..84K}
+{Kennedy}, R., {Bamford}, S.~P., {H{\"a}u{\ss}ler}, B., {et~al.} 2016, \aap,
+  593, A84
+
+\bibitem[{{Kilbinger} {et~al.}(2012){Kilbinger}, {Fu}, {Heymans}, {Simpson},
+  {Benjamin}, {Erben}, {Harnois-Deraps}, {Hoekstra}, {Hildebrandt}, {Kitching},
+  {Mellier}, {Miller}, {Van Waerbeke}, {Benabed}, {Bonnett}, {Coupon},
+  {Hudson}, {Kuijken}, {Rowe}, {Schrabback}, {Semboloni}, {Vafaei}, \&
+  {Velander}}]{cfhtls2013kilbinger}
+{Kilbinger}, M., {Fu}, L., {Heymans}, C., {et~al.} 2012, ArXiv 1212.3338
+
+\bibitem[{{Kitching} {et~al.}(2012){Kitching}, {Balan}, {Bridle}, {Cantale},
+  {Courbin}, {Eifler}, {Gentile}, {Gill}, {Harmeling}, {Heymans}, {Hirsch},
+  {Honscheid}, {Kacprzak}, {Kirkby}, {Margala}, {Massey}, {Melchior},
+  {Nurbaeva}, {Patton}, {Rhodes}, {Rowe}, {Taylor}, {Tewes}, {Viola},
+  {Witherick}, {Voigt}, {Young}, \& {Zuntz}}]{2012MNRAS.423.3163K}
+{Kitching}, T.~D., {Balan}, S.~T., {Bridle}, S., {et~al.} 2012, \mnras, 423,
+  3163
+
 \bibitem[{{Kitching} {et~al.}(2008){Kitching}, {Miller}, {Heymans}, {van
   Waerbeke}, \& {Heavens}}]{2008MNRAS.390..149K}
 {Kitching}, T.~D., {Miller}, L., {Heymans}, C.~E., {van Waerbeke}, L., \&
@@ -131,6 +178,16 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series,
   0
 
+\bibitem[{{La Barbera} {et~al.}(2010){La Barbera}, {De Carvalho}, {De La Rosa},
+  {Gal}, {Swindle}, \& {Lopes}}]{2010AJ....140.1528L}
+{La Barbera}, F., {De Carvalho}, R.~R., {De La Rosa}, I.~G., {et~al.} 2010,
+  \aj, 140, 1528
+
+\bibitem[{{La Barbera} {et~al.}(2005){La Barbera}, {de Carvalho}, {Gal},
+  {Busarello}, {Merluzzi}, {Capaccioli}, \& {Djorgovski}}]{2005ApJ...626L..19L}
+{La Barbera}, F., {de Carvalho}, R.~R., {Gal}, R.~R., {et~al.} 2005, \apjl,
+  626, L19
+
 \bibitem[{{Laureijs} {et~al.}(2011){Laureijs}, {Amiaux}, {Arduini},
   {Augu{\`e}res}, {Brinchmann}, {Cole}, {Cropper}, {Dabin}, {Duvet}, {Ealet},
   \& et~al.}]{2011arXiv1110.3193L}
@@ -151,6 +208,15 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Bartelmann}}]{2011MNRAS.412.1552M}
 {Melchior}, P., {Viola}, M., {Sch{\"a}fer}, B.~M., \& {Bartelmann}, M. 2011,
   \mnras, 412, 1552
+
+\bibitem[{{Merten} {et~al.}(2015){Merten}, {Meneghetti}, {Postman}, {Umetsu},
+  {Zitrin}, {Medezinski}, {Nonino}, {Koekemoer}, {Melchior}, {Gruen},
+  {Moustakas}, {Bartelmann}, {Host}, {Donahue}, {Coe}, {Molino}, {Jouvel},
+  {Monna}, {Seitz}, {Czakon}, {Lemze}, {Sayers}, {Balestra}, {Rosati},
+  {Ben{\'{\i}}tez}, {Biviano}, {Bouwens}, {Bradley}, {Broadhurst}, {Carrasco},
+  {Ford}, {Grillo}, {Infante}, {Kelson}, {Lahav}, {Massey}, {Moustakas},
+  {Rasia}, {Rhodes}, {Vega}, \& {Zheng}}]{2015ApJ...806....4M}
+{Merten}, J., {Meneghetti}, M., {Postman}, M., {et~al.} 2015, \apj, 806, 4
 
 \bibitem[{{Meyers} \& {Burchat}(2015)}]{2015ApJ...807..182M}
 {Meyers}, J.~E. \& {Burchat}, P.~R. 2015, \apj, 807, 182
@@ -186,12 +252,21 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Rowe}, B.~T.~P., {Jarvis}, M., {Mandelbaum}, R., {et~al.} 2015, Astronomy and
   Computing, 10, 121
 
-\bibitem[{{Schrabback} {et~al.}(2010){Schrabback}, {Hartlap}, {Joachimi},
-  {Kilbinger}, {Simon}, {Benabed}, {Brada{\v c}}, {Eifler}, {Erben},
-  {Fassnacht}, {High}, {Hilbert}, {Hildebrandt}, {Hoekstra}, {Kuijken},
-  {Marshall}, {Mellier}, {Morganson}, {Schneider}, {Semboloni}, {van Waerbeke},
-  \& {Velander}}]{schrabback2010}
-{Schrabback}, T., {Hartlap}, J., {Joachimi}, B., {et~al.} 2010, \aap, 516, A63
+\bibitem[{{Schrabback} {et~al.}(2010{\natexlab{a}}){Schrabback}, {Hartlap},
+  {Joachimi}, {Kilbinger}, {Simon}, {Benabed}, {Brada{\v c}}, {Eifler},
+  {Erben}, {Fassnacht}, {High}, {Hilbert}, {Hildebrandt}, {Hoekstra},
+  {Kuijken}, {Marshall}, {Mellier}, {Morganson}, {Schneider}, {Semboloni}, {van
+  Waerbeke}, \& {Velander}}]{2010A&A...516A..63S}
+{Schrabback}, T., {Hartlap}, J., {Joachimi}, B., {et~al.} 2010{\natexlab{a}},
+  \aap, 516, A63
+
+\bibitem[{{Schrabback} {et~al.}(2010{\natexlab{b}}){Schrabback}, {Hartlap},
+  {Joachimi}, {Kilbinger}, {Simon}, {Benabed}, {Brada{\v c}}, {Eifler},
+  {Erben}, {Fassnacht}, {High}, {Hilbert}, {Hildebrandt}, {Hoekstra},
+  {Kuijken}, {Marshall}, {Mellier}, {Morganson}, {Schneider}, {Semboloni}, {van
+  Waerbeke}, \& {Velander}}]{schrabback2010}
+{Schrabback}, T., {Hartlap}, J., {Joachimi}, B., {et~al.} 2010{\natexlab{b}},
+  \aap, 516, A63
 
 \bibitem[{{Semboloni} {et~al.}(2013){Semboloni}, {Hoekstra}, {Huang},
   {Cardone}, {Cropper}, {Joachimi}, {Kitching}, {Kuijken}, {Lombardi}, {Maoli},
@@ -207,8 +282,28 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Skelton}, R.~E., {Whitaker}, K.~E., {Momcheva}, I.~G., {et~al.} 2014, \apjs,
   214, 24
 
+\bibitem[{{Tortora} {et~al.}(2010){Tortora}, {Napolitano}, {Cardone},
+  {Capaccioli}, {Jetzer}, \& {Molinaro}}]{2010MNRAS.407..144T}
+{Tortora}, C., {Napolitano}, N.~R., {Cardone}, V.~F., {et~al.} 2010, \mnras,
+  407, 144
+
+\bibitem[{{Umetsu} {et~al.}(2012){Umetsu}, {Medezinski}, {Nonino}, {Merten},
+  {Zitrin}, {Molino}, {Grillo}, {Carrasco}, {Donahue}, {Mahdavi}, {Coe},
+  {Postman}, {Koekemoer}, {Czakon}, {Sayers}, {Mroczkowski}, {Golwala}, {Koch},
+  {Lin}, {Molnar}, {Rosati}, {Balestra}, {Mercurio}, {Scodeggio}, {Biviano},
+  {Anguita}, {Infante}, {Seidel}, {Sendra}, {Jouvel}, {Host}, {Lemze},
+  {Broadhurst}, {Meneghetti}, {Moustakas}, {Bartelmann}, {Ben{\'{\i}}tez},
+  {Bouwens}, {Bradley}, {Ford}, {Jim{\'e}nez-Teja}, {Kelson}, {Lahav},
+  {Melchior}, {Moustakas}, {Ogaz}, {Seitz}, \& {Zheng}}]{2012ApJ...755...56U}
+{Umetsu}, K., {Medezinski}, E., {Nonino}, M., {et~al.} 2012, \apj, 755, 56
+
 \bibitem[{{Voigt} {et~al.}(2012){Voigt}, {Bridle}, {Amara}, {Cropper},
   {Kitching}, {Massey}, {Rhodes}, \& {Schrabback}}]{2012MNRAS.421.1385V}
 {Voigt}, L.~M., {Bridle}, S.~L., {Amara}, A., {et~al.} 2012, \mnras, 421, 1385
+
+\bibitem[{{Wittman} {et~al.}(2000){Wittman}, {Tyson}, {Kirkman},
+  {Dell'Antonio}, \& {Bernstein}}]{2000Natur.405..143W}
+{Wittman}, D.~M., {Tyson}, J.~A., {Kirkman}, D., {Dell'Antonio}, I., \&
+  {Bernstein}, G. 2000, \nat, 405, 143
 
 \end{thebibliography}
