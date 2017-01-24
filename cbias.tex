@@ -753,10 +753,17 @@ bands will cause either on increase or decrease in the CG bias
 calibration. Once again, we can see that the small galaxies are more
 sensitive to the variation of PSF.
 
-Moreover, we compare the measurements when using PSFs generated from
-stacks of isolated stars in F606W and F814W images to the measurements
-when using stacks of model PSFs generated using the TinyTim
-\citep{2011SPIE.8127E..0JK} tool for these same stars.
+To test the impact of imperfect PSF modelling, we make two
+comparisons: Comparing a control set of ``actual'' PSFs to a mock set
+of stars using these PSFs, including some unresolved binaries; and
+comparing the stars in actual images to the best-fit models. In the
+former case, we generate mock star fields using PSFs generated with
+the TinyTim tool \citep{2011SPIE.8127E..0JK} and allow 30 per cent of
+stars to be unresolved binaries, with another star laid on top of them
+within a radius of one pixel. In the latter case, we use actual star
+fields observed with HST and try two methods of fitting the model to
+the stars. In both cases. we perform this for both the F606W and F814W
+filters.
 
 The model PSFs are generated using the default parameters for TinyTim
 where possible, and the appropriate camera, detector, and filter
@@ -770,11 +777,14 @@ spectrum for stars was found to have a negligible impact on the
 models.)
   \item \textbf{PSF Diameter:} 2.0 arcsec
   \item \textbf{Focus-Secondary Mirror Despace:} Fit per image. As HST
-``breathes'' due to its varying angle relative to the Sun, the position
-of the focus relative to the secondary mirror changes over time and
-cannot be perfectly predicted for any given observation. We thus have to
-fit the best focus position by simulating multiple sets of PSFs for each
-image.
+    ``breathes'' due to its varying angle relative to the Sun, the
+    position of the focus relative to the secondary mirror changes
+    over time and cannot be perfectly predicted for any given
+    observation. We thus have to fit the best focus position by
+    simulating multiple sets of PSFs for each image.
+  \item \textbf{Zernike Polynomials:} In the first test, ``focus
+    only'', set to default values. In the second test, ``all
+    parameters'', these are fit in addition to the focus despace.
   \item \textbf{Subsampling Factor:} $8\times$
 \end{itemize}
 
