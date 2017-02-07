@@ -667,15 +667,19 @@ large uncertainty for S-galaxy at low redshift. We also perform tests
 using images with lower SNR, and calculate the average residue with
 respect to true bias. When the SNR of images drop to $12$, the average
 residue increases by about $70\%$($60\%$) for small(big) galaxy than
-that of SNR$=15$.
+that of SNR$=15$. This test may not reflect the real dependence on the
+SNR of images, since in general the lower SNR, the smaller the image
+size. Therefore, image simulation with specific configuration of the
+survey is necessary, e.g. the limit magnitude, the population of the
+galaxies and the relation between the size and SNR etc.
 %(from $0.00015$ to $0.00027$, 9.9e-5 to 0.00016).
-%%%%%%%%%%%%%%%%%%%%%%% PSF corrections
+%%%%%%%%%%%%%%%%%%%%%%% method dependence
 In additional tests using other measurement methods for PSF
 correction, such as the image fitting methods
 \citep[e.g.][]{2007MNRAS.382..315M,2008MNRAS.390..149K,2013MNRAS.429.2858M},
 and KSB+ \citep[e.g.][]{1998ApJ...504..636H,2006MNRAS.368.1323H}, we
 find that the bias has similar dependence on the SED of the galaxies,
-although the magnitudes are different.
+but with different amplitude.
 
 In both two figures, we notice that at $z=0.5$ and $0.9$, the estimates are
 significantly smaller than the true bias for both galaxy models. This is
@@ -1200,22 +1204,22 @@ that with reasonable signal-to-noise ratio (SNR$=15$) and sufficient
 numbers of galaxies ($300$ images for one type of galaxy in one
 redshift bin), we can estimate the CG bias to a high precision.
 However, the underestimate cannot be avoided due to strong emission
-lines, or the uneven SED of source galaxies. Moreover, the SNR of the
-simulated images in two bands are assumed to be the same. In reality,
-the signal-to-noise in different bands are correlated to the SED of
-the galaxies.
+lines, or the uneven SED of source galaxies. Moreover, the simulations
+are performed with only two galaxy models, and the SNR of the
+simulated images in two bands are assigned with equal value. In
+reality, the relation between the SNR with the size and SED of the
+galaxies has to be taken into account.
 %
 We also perform comparison of TinyTim and star PSF models. The
-inaccuracy will cause errors in estimating the CG bias, especially for
-the small size galaxy.
+inaccuracy, especially that due to the binary stars, will cause errors
+in estimating the CG bias.
 
 
-We also apply the calibration method to the galaxy images taken by HST
-in two filters (F606W, F814W). In the estimation using CANDELS data,
-we find that most of the CG bias ($|m|$) is smaller than $0.01$.  As
-we find from simulated images, the estimation using noisy image has a
-large scatter, thus the CG bias in reality may be smaller than that
-shown here.
+In the estimation using CANDELS data, we select the images from two
+filters (F606W, F814W). For most of the galaxy, the bias ($|m|$) is
+smaller than $0.01$.  As we find from simulated images, the estimation
+using noisy image has a large scatter, thus the CG bias in reality may
+be even smaller than that shown here.
 %
 In our sample of galaxies, the CG bias shows a correlation with the
 colour of galaxies, and a linear relation with the ratio of two band
@@ -1237,28 +1241,34 @@ The multi-band photometry from several bands, which can be used to
 estimate the redshift, can be also use for the CG bias analysis.
 Although the redshift dependence is not significant in our sample of
 galaxies, this may not be the case for a larger survey, or if we look
-at the bias according to the type of galaxy. Moreover, the colour also
-indicates the evolution of galaxy and large scale tide force. It can
-be used for the study of intrinsic alignment analysis in weak
-lensing. Therefore, a potential correlation between the CG bias and
-the intrinsic alignment bias also exists, which requires further
-detail study as well.
+at the bias according to the type of galaxy. Moreover, the colour of
+galaxy also indicates the evolution history, or the large scale tide
+force.  It can be also used for the study of intrinsic alignment
+analysis in weak lensing \citep[e.g.][]{2015SSRv..193....1J}.
+Therefore, the dependence of the CG bias on the colour of the galaxies
+will further increase the sysmatics of the intrinsic alignment. The
+detail behaviour will require large cosmological simulations, which is
+beyond the scope of this paper, but definitely needs further studies for
+the project such as Euclid.
 
-
-It has been shown that colour gradients depend on the environment
-where galaxies reside, with steeper colour gradients in poor rather
-than rich clusters \citep[e.g.][]{2005ApJ...626L..19L}, which is
-possible due to the different processes during galaxy formation. Close
-galaxy pairs or nearby bright star(s) will also cause weak
-brightness/colour gradient, which may affect our estimate for CG bias
-as well. Moreover, in the calibration we linearly interpolate the SED
-on pixels from two bands. Some advanced method to estimate the SED
+The role of environment on the colour gradients is not clear. On the
+one hand, it has been shown that colour gradients depend on the
+environment where galaxies reside, with steeper colour gradients in
+poor rather than rich clusters \citep[e.g.][]{2005ApJ...626L..19L},
+which is possible due to the different processes during galaxy
+formation. On the other hand, in recent study using integral field
+spectra from SDSS-IV, the metallicity gradients show weak or no
+correlation with density environment \citep{2017MNRAS.465.4572Z}. In
+any cases, close galaxy pairs or nearby bright star(s) may also cause
+weak brightness/colour gradient, which will affect our estimate for CG
+bias as well. Moreover, in the calibration we linearly interpolate the
+SED on pixels from two bands. Some advanced method to estimate the SED
 \citep[e.g.][]{2016A&A...589A...2J} may help to improve the
 calibration of the bias.
 
 In this work, we use the brightness moments to estimate the
 ellipticity of the galaxy. The PSF correction is not taken into
-account. The bias thus will appear in any method of measurement.
+account. The bias thus will appear in every method of measurement.
 However, the bias using the measurement method for real data
 will be different, since every method has its own property and weight
 function. The CG bias will have method-dependent properties as well,
@@ -1283,7 +1293,7 @@ images with real properties in the Euclid weak lensing survey.
 \section*{Acknowledgments}
 
 We would like to thank Emiliano Merlin, Marco Castellano for helping
-on SExctractor and Galfit, Gary Berstein, Adam Rogers, Junqiang Ge and
+on SExctractor and Galfit, Gary Berstein, Adam Rogers and
 also in general, the members of the Euclid Consortium for useful
 discussions.  XE and VFC are funded by Italian Space Agency (ASI)
 through contract Euclid -IC (I/031/10/0) and acknowledge financial
