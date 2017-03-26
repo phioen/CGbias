@@ -205,149 +205,116 @@ The steps presented in Fig.~\ref{fig:flowchart} yield a more symmetric result, h
 that the CG bias is the consequence of the fact that the shearing of the image does not commute with the convolution with the PSF. However, we verify in Sect.~\ref{sec:simulations} that we recover
 the results of ES13 (see Fig.~\ref{fig:biasofweight}).
 
-
 \section{Colour gradient bias in simulated data}
 \label{sec:simulations}
 
-The CG bias is a higher order systematic bias, the numerical noise in
-simulated images may cause extra error in our analysis. Thus, we first
-adopt two independent codes to generate the simulated images: one is C/C++
-and the other is python-based GalSim package
-\citep{2015A&amp;C....10..121R}. In the C code, we directly calculate
+The CG bias is a higher order systematic bias, and thus the changes in the measured
+ellipticities are small. It is therefore important to verify that numerical errors in the calculations
+are subdominant compared to the small effects we aim to measure. To do so, we compare
+results from two independent codes that are used to generate the simulated images: one is
+written in C/C++ and the other uses the python-based {\tt GalSim} package
+\citep{2015A&amp;C....10..121R}, which is widely used to created simulated images
+\citep[e.g.][]{FenechConti17, Hoekstra16}.
+
+{\it {\bf Not clear what this means:} In the C code, we directly calculate
 the brightness density at the centre of each pixel, and sample the
 image using the approximate brightness in each pixel (brightness at
 the centre multiply the area of pixel). In GalSim the image are sampled
-by FFT rendering.
-%
-The simulated images are checked for numerical errors, no significant
-problems are found in neither C or GalSim. Since the deconvolution is
+by FFT rendering. 
+{\bf Also this paragraph needs more explanation:} The simulated images are checked for numerical errors, no significant problems are found in neither C or GalSim.Since the deconvolution is
 particularly difficult in the numerical calculation, we also perform
 that for the elliptical images. A small relative error $\sim10^{-6}$
 appears in ellipticity using both C and GalSim, which is two orders of
 magnitude smaller than the possible CG bias, and can be neglect in
-this study.
+this study.}
 
-We apply the two same galaxy models as in ES13. It will allow us to
-further check the numerical error, since in ES13 the images are
-simulated by different code. The images are consist of two components:
-bulge and disk, both are modeled by a Sersic profile with index $n$
-%
+As a further test we compare directly to the results obtained by ES13 for two reference galaxy models. 
+The reference galaxies are modeled as the sum of a bulge and disk component. To describe the wavelength dependence of the images we use the galaxy SED templates from \citet{1980ApJS...43..393C}: we use the SED for an elliptical galaxy for the bulge and take the SED of an irregular galaxy for the disk. This choice ensures that the resulting colour gradients are large. The two components are 
+described by a circular S{\'e}rsic profile:
 \be
-I_{\rm Sersic}(\theta) = I_0 {\rm e}^{-\kappa\; \theta^{1/n}},
+I_{\rm S}(\theta) = I_0 {\rm e}^{-\kappa\; \left(\frac{\theta}{a}\right)^{1/n}},
 \ee
 %
-where $I_0$ is the central intensity, and $\kappa=1.9992\,n -
-0.3271$.  For the SED of the bulge and the disk we use the galaxy
-templates from \citet{1980ApJS...43..393C}. The SED of the bulge is
-modeled by an elliptical galaxy, and SED of irregular galaxy for the
-disk. We choose an extremely blue SED for disk to generate large
-colour gradient in the galaxy images. For each wavelength, we
-construct the galaxy image $I(\theta,\lambda)$ by adding up the
-profiles of bulge and disk normalised by fixing the ratio
-$S_{bulge}/S_{disk}$ at $\lambda=550$nm. The integrated profile is
-applied to the Euclid filter in a wavelength range $[550:\,920]$nm
-with a step of $1$nm. The images are constructed in an isolated stamp
-with size $256\times256$ pixels, and resolution $0.05$ arcsec/pixel
-(Table \ref{table:galaxy model}).
+where $I_0$ is the central intensity, and $\kappa=1.9992\,n -0.3271$. For the bulge component we adopt $n=1.5$ and for the disk we use $n=1$. The profiles are normalised such that the bulge contains 25\% of the flux at a wavelength of 550\,nm. The galaxies are circular and the sizes for the bulge and disk for galaxy `B'   are $0\farcs17$ and $1\farcs2$, respectively. The second galaxy `S' is smaller with sizes of $0\farcs09$ and $0\farcs6$  for the bulge and disk, respectively (also see Table~3 in ES13).
+We create images with a size of  $256\times256$ pixels, and resolution $0.05$ arcsec/pixel at 
+wavelengths 1\,nm apart and sum these in the range $[550:\,920]$\,nm to mimic the {\it Euclid} pass-band.
 
-We use different reference PSF models. The first one is a Gaussian profile,
-with wavelength dependent width:
+To create the PSF-convolved images we consider several PSF profiles. For a direct comparison with ES13 use their reference PSF (PSF1), which is a Gaussian with a wavelength dependent dispersion
 %
 \be
-\sigma_{psf}(\lambda) = w_{0,800}\rund{\lambda \over 800{\rm nm}},
+\sigma_{\rm PSF}(\lambda) = 0\farcs102\rund{\lambda \over 800{\rm nm}},
 \elabel{psf}
 \ee
 %
-where $w_{0,800}$ is the width of the PSF at $800$nm. In this section
-we use $w_{0,800}=0.102$ arcsec, which is the same as in ES13. The
-other reference model is an Airy function, which is close to the
-Design profile \citep{2011arXiv1110.3193L}
+As discussed in ES13 this PSF has a similar size as the nominal {\it Euclid} PSF, but a steeper wavelength-dependence. To approximate the {\it Euclid} PSF they consider a model that 
+consists of a compact Gaussian core and an appropriately scaled top-hat (PSF3 in ES13).
+Instead we use here a more realistic obscured Airy profile, which is actually close to the {\it Euclid}
+design profile \citep{2011arXiv1110.3193L}:
 %
 \be
 P(\theta) = {I_0 \over (1-\epsilon^2)^2} \rund{{2J_1(x)\over x} - {2\epsilon J_1(\epsilon x) \over x}}^2,
 \elabel{psfairy}
 \ee
 %
-where $I_0$ is the maximum intensity at the center, $\epsilon$ is the
-aperture obscuration ratio, and $J_1(x)$ is the first kind of Bessel
-function of order one. $x$ is defined as $x=\pi \theta/l$, where
-$l=\lambda/D$ is wavelength over diameter ($\epsilon=1/3,\; D=1.2$ for
-Euclid). In Fig.\,\ref{fig:psfmodel}, we compare the Airy model with
-other PSF models.
+where $I_0$ is the maximum intensity at the center, $\epsilon$ is the aperture obscuration ratio, and $J_1(x)$ is the first kind of Bessel function of order one; $x$ is defined as $x=\pi \theta/\lambda\, D $.
+In the case of {\it Euclid} $D=1.2$m and $\epsilon=1/3$. We compare this model to the Gaussian
+case and PSF3 from ES13 in Fig.~\ref{fig:psfmodel} at the 550\,nm and 920\,nm.
 
-%
-\begin{table}
-  \begin{tabular}{|l|l|}
-    \hline\hline
-    PSF  &Description\\
-    \hline
-    Gaussian &Gaussian PSF described by Eq.\,\ref{eq:psf} with $w_{0,800}=0.102$\\
-    \hline
-    GaussianT &Gaussian core described by Eq.\,\ref{eq:psf} with $w_{0,800}=0.054$\\
-    &plusing top-hat with 20 percent of the total flux\\
-    &the cut-off size $\propto\lambda^{0.74} (ES13)$\\
-    \hline
-    Airy  &Airy model with obscuration $1/3$ (Eq.\ref{eq:psfairy})\\
-    \hline
-  \end{tabular}
-  \caption{\label{table:psfmodel}The PSF models shown in
-    Fig.\,\ref{fig:psfmodel}.  The Gaussian model, which is the same
-    PSF model in ES13 is used for the simulated images.  The GaussianT
-    model is a Gaussian core plus a top hat function (ES13), which is
-    shown as a comparison with Airy model.  The Airy model is used for
-    the bias calibration and HST data analysis in the following
-    section.}
-\end{table}
-%
 \begin{figure}
-\centerline{\includegraphics[width=6.0cm]{zairy.eps}}
-\caption{Comparison of the PSF models at $550$nm (blue) and $920$nm
-  (red): the solid, dashed and dotted lines are the Airy, Gaussian and
-  GaussianT PSF models respectively (Table \ref{table:psfmodel}).}
+\centerline{\includegraphics[width=\hsize]{zairy.eps}}
+\caption{Comparison of the obscured Airy profile (solid), which is a good approximation
+to the {\it Euclid} PSF, to PSF1 (Gaussian; dashed) and PSF3 (compact Gaussian and 
+top-hat; dotted) from ES13. The profiles for 550\,nm are indicated by the blue lines and
+the results for 920\,nm are shown in red.}
 \label{fig:psfmodel}
 \end{figure}
 %
 
 
+% HH: I think the table is not really necessary here as we are not comparing biases for the 
+% different PSFs as was done in ES13
 %
-\begin{center}
-\begin{table}
-\begin{tabular}{|c|c|c|c|c|}
-\hline\hline
-Name  &SED  &axis(arcsec) &flux ratio (550nm)  &Sersic index $n$ \\
-B-galaxy  &E/Irr &0.17/1.2  &1:3  &1.5/1.0 \\
-S-galaxy  &E/Irr &0.09/0.6  &1:3  &1.5/1.0 \\
-\hline
-\end{tabular}
-\caption{\label{table:galaxy model} Parameters of simulated galaxies:
-  when two values are quoted in a column, the first refers to the
-  bulge, the second to the disc.}
-\end{table}
-\end{center}
+%\begin{table}
+ % \begin{tabular}{|l|l|}
+%    \hline\hline
+%    PSF  &Description\\
+%    \hline
+%    Gaussian &Gaussian PSF described by Eq.\,\ref{eq:psf} with $w_{0,800}=0.102$\\
+%    \hline
+%    GaussianT &Gaussian core described by Eq.\,\ref{eq:psf} with $w_{0,800}=0.054$\\
+%    &plusing top-hat with 20 percent of the total flux\\
+%    &the cut-off size $\propto\lambda^{0.74} (ES13)$\\
+%    \hline
+%    Airy  &Airy model with obscuration $1/3$ (Eq.\ref{eq:psfairy})\\
+%    \hline
+%  \end{tabular}
+%  \caption{\label{table:psfmodel}The PSF models shown in
+%    Fig.\,\ref{fig:psfmodel}.  The Gaussian model, which is the same
+%    PSF model in ES13 is used for the simulated images.  The GaussianT
+%    model is a Gaussian core plus a top hat function (ES13), which is
+%    shown as a comparison with Airy model.  The Airy model is used for
+%    the bias calibration and HST data analysis in the following
+%    section.}
+%\end{table}
 %
 
-We measure the CG bias as a function of weight size
-(Fig.\ref{fig:biasofweight}). The solid lines are the results from
-ES13, and the dashed (dotted) lines are the results using C (GalSim)
-code. The blue and green lines are the CG bias of small size galaxy
-(S-galaxy), while the red and purple lines are that of big size galaxy
-(B-galaxy). One can see that the CG bias from all three different
-simulated galaxies are consistent, i.e. the numerical error does not
-introduce significant bias in this study. Thus, in the following of
-this section, we will only use the GalSim to generate the mock
-galaxies.
-%
-The CG bias decreases with the increasing weight size.  As the optimal
-choice to maximize the signal-to-noise ratio is to match the weight
-function to the size of the source galaxy, we will use the half light
-radius for the weight function in the following of this paper. For the
-two mock galaxies, the CG bias with such a weight function is
-$0.8\times10^{-3}, 2\times10^{-3}$ for B- and S-galaxy respectively.
-The smaller size galaxies have a larger CG bias, which suggests that
-the calibration of the CG bias need to take into account of the size
-as well as the real colour gradient of the galaxy.
+As a test of our implementation of the pipeline to determine the CG bias we compare our results to those from ES13. We reproduced all their results, but here we only show the comparison when 
+$\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments, is varied. As discussed in Sect.~\ref{sec:concepts} the amplitude of the noise bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. 
+
+The results of this test are presented in Fig.~\ref{fig:biasofweight}. The solid lines indicate the results from ES13 for the two reference galaxies B (red) and S (blue). We compare these to the outcome of the C code (dashed lines) and the {\tt GalSim} code (dotted lines). {\bf use consistent colours in the figure.}
+The agreement is excellent for the large galaxy (B) for the full range in $\theta_{\rm w}$. Our two codes agree also well for the small galaxy (S), but the difference with ES13 is noticeable. However, given the consistent results between the C and {\tt GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\tt GalSim}.
+
+{\bf Do we understand why there is a difference for the blue lines? I see there is a comment in the 
+tex file that the parameters for the galaxies were slightly different? Can this be fixed?}
 %(the reason for the small divergence of blue lines is that the
 %parameters used for simulating galaxy are slightly different).
+
+Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the width of the weight function is increased. This allows for an interesting trade-off between CG bias and noise bias. The latter increases with increasing $\theta_{\rm w}$ but relatively slowly (see Fig.~4 in ES13). As a proxy for the optimal weight function (which maximizes the signal-to-noise ratio) we adopt the value of the 
+half-light radius in the remainder of this paper. This yield $m=0.8\times10^{-3}$ for galaxy B and
+$m=2\times10^{-3}$ for galaxy S, demonstrating that the CG bias is a strong function of galaxy size.
+
+
+\subsection{Impact for large distortions}
 
 Besides shear, there are higher order image distortions in weak lensing,
 such as flexion \citep[e.g.][]{2002ApJ...564...65G,bacon2006}. In
@@ -382,22 +349,13 @@ kind of effect.
   simulated from C (GalSim) code. The blue (red) lines are the result
   for small (big) size simulated galaxies. The yellow shadow is the
   variation introduced by higher order image distortions. $w_h$ is
-  half light radius of the galaxy image.}
+  half light radius of the galaxy image.{\bf We need to include a panel
+  showing the differences with ES13.}}
 \label{fig:biasofweight}
 \end{figure}
-%\begin{figure}
-%\centerline{\includegraphics[width=12.0cm]{cgalsimz.eps}}
-%\caption{The bias due to colour gradient as a function of redshift.}
-%\end{figure}
-%\begin{figure}
-%\centerline{\includegraphics[width=10.0cm]{cfig6.eps}}
-%\caption{Reproducing Fig.6 in ES13}
-%\end{figure}
-%\begin{figure}
-%\centerline{\includegraphics[width=8.0cm]{c2bandB.eps}
-%\includegraphics[width=8.0cm]{c2bandS.eps}}
-%\caption{Estimaiton of CG bias using two band HST images. }
-%\end{figure}
+
+
+
 
 \subsection{Calibration of CG bias using simulated HST images}
 \label{sec:noisy}
