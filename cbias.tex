@@ -214,19 +214,10 @@ are subdominant compared to the small effects we aim to measure. To do so, we co
 results from two independent codes that are used to generate the simulated images: one is
 written in C/C++ and the other uses the python-based {\tt GalSim} package
 \citep{2015A&amp;C....10..121R}, which is widely used to created simulated images
-\citep[e.g.][]{FenechConti17, Hoekstra16}.
-
-{\it {\bf Not clear what this means:} In the C code, we directly calculate
-the brightness density at the centre of each pixel, and sample the
-image using the approximate brightness in each pixel (brightness at
-the centre multiply the area of pixel). In GalSim the image are sampled
-by FFT rendering. 
-{\bf Also this paragraph needs more explanation:} The simulated images are checked for numerical errors, no significant problems are found in neither C or GalSim.Since the deconvolution is
-particularly difficult in the numerical calculation, we also perform
-that for the elliptical images. A small relative error $\sim10^{-6}$
-appears in ellipticity using both C and GalSim, which is two orders of
-magnitude smaller than the possible CG bias, and can be neglect in
-this study.}
+\citep[e.g.][]{FenechConti17, Hoekstra16}. {\bf Er: please check if this is correct.} In the C code we compute the image by multiplying the  surface brightness at the centre of each pixel using a sheared S{\'e}rsic profile with the pixel area. In the case of {\tt GalSim} we use the {\tt Shear()} function
+(which convolves the image by the pixel). Since we are interested in small differences in the shapes of deconvolved images, we checked for numerical errors. We convolved and subsequently deconvolved elliptical images. Comparison of the recovered ellipticities revealed small differences
+between the codes that ranged from  $10^{-7}$ to $10^{-6}$, two orders of magnitude smaller
+than the CG biases we are concerned with. Hence can safely neglect this numerical artefacts here.
 
 As a further test we compare directly to the results obtained by ES13 for two reference galaxy models. 
 The reference galaxies are modeled as the sum of a bulge and disk component. To describe the wavelength dependence of the images we use the galaxy SED templates from \citet{1980ApJS...43..393C}: we use the SED for an elliptical galaxy for the bulge and take the SED of an irregular galaxy for the disk. This choice ensures that the resulting colour gradients are large. The two components are 
@@ -301,8 +292,7 @@ the results for 920\,nm are shown in red.}
 As a test of our implementation of the pipeline to determine the CG bias we compare our results to those from ES13. We reproduced all their results, but here we only show the comparison when 
 $\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments, is varied. As discussed in Sect.~\ref{sec:concepts} the amplitude of the noise bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. 
 
-The results of this test are presented in Fig.~\ref{fig:biasofweight}. The solid lines indicate the results from ES13 for the two reference galaxies B (red) and S (blue). We compare these to the outcome of the C code (dashed lines) and the {\tt GalSim} code (dotted lines). {\bf use consistent colours in the figure.}
-The agreement is excellent for the large galaxy (B) for the full range in $\theta_{\rm w}$. Our two codes agree also well for the small galaxy (S), but the difference with ES13 is noticeable. However, given the consistent results between the C and {\tt GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\tt GalSim}.
+The results of this test are presented in Fig.~\ref{fig:biasofweight}. The solid lines indicate the results from ES13 for the two reference galaxies B (red) and S (blue). We compare these to the outcome of the C code (dashed lines) and the {\tt GalSim} code (dotted lines). The agreement is excellent for the large galaxy (B) for the full range in $\theta_{\rm w}$. Our two codes agree also well for the small galaxy (S), but the difference with ES13 is noticeable. However, given the consistent results between the C and {\tt GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\tt GalSim}.
 
 {\bf Do we understand why there is a difference for the blue lines? I see there is a comment in the 
 tex file that the parameters for the galaxies were slightly different? Can this be fixed?}
@@ -316,7 +306,8 @@ $m=2\times10^{-3}$ for galaxy S, demonstrating that the CG bias is a strong func
 
 \subsection{Impact for large distortions}
 
-Besides shear, there are higher order image distortions in weak lensing,
+{\bf Er: please add text to explain what you did and add the figure with the flexion
+results.} Besides shear, there are higher order image distortions in weak lensing,
 such as flexion \citep[e.g.][]{2002ApJ...564...65G,bacon2006}. In
 previous analysis, we only consider the shear effect in the lensing
 process, while the higher order image distortions also suffer from CG
@@ -342,23 +333,23 @@ kind of effect.
 
 %
 \begin{figure}
-\centerline{\includegraphics[width=8.0cm]{cvsgalsim.eps}}
-\caption{The CG bias in shear versus weight function.  The
-  solid lines are the results from paper ES13. The dashed
-  (dash-dotted) lines are the results of this work using images
-  simulated from C (GalSim) code. The blue (red) lines are the result
-  for small (big) size simulated galaxies. The yellow shadow is the
-  variation introduced by higher order image distortions. $w_h$ is
-  half light radius of the galaxy image.{\bf We need to include a panel
+\centerline{\includegraphics[width=\hsize]{cvsgalsim.eps}}
+\caption{The CG bias in shear versus width of the weight function
+(in units of the half-light radius $w_{\rm h}$) used to compute the
+quadrupole moments.  The solid lines correspond to the results 
+from ES13 for the large (`B'; red) and small (`S'; blue) reference galaxy .
+The dashed (dash-dotted) lines are our results for images
+simulated using the C (GalSim) code.  {\bf We need to include a panel
   showing the differences with ES13.}}
 \label{fig:biasofweight}
 \end{figure}
 
 
-
-
 \subsection{Calibration of CG bias using simulated HST images}
 \label{sec:noisy}
+
+The {\it Euclid} observations lack high-resolution multi-band images to measure
+the CG bias directly. However, ES13 showed that 
 
 We outline the method that calibrate the CG bias using two bands
 images, while the details can be found in ES13. We will use two narrow
