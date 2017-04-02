@@ -213,7 +213,7 @@ ellipticities are small. It is therefore important to verify that numerical erro
 are subdominant compared to the small effects we aim to measure. To do so, we compare
 results from two independent codes that are used to generate the simulated images: one is
 written in C/C++ and the other uses the python-based {\tt GalSim} package
-\citep{2015A&amp;C....10..121R}, which is widely used to created simulated images
+\citep{Rowe15}, which is widely used to created simulated images
 \citep[e.g.][]{FenechConti17, Hoekstra16}. {\bf Er: please check if this is correct.} In the C code we compute the image by multiplying the  surface brightness at the centre of each pixel using a sheared S{\'e}rsic profile with the pixel area. In the case of {\tt GalSim} we use the {\tt Shear()} function
 (which convolves the image by the pixel). Since we are interested in small differences in the shapes of deconvolved images, we checked for numerical errors. We convolved and subsequently deconvolved elliptical images. Comparison of the recovered ellipticities revealed small differences
 between the codes that ranged from  $10^{-7}$ to $10^{-6}$, two orders of magnitude smaller
@@ -348,25 +348,27 @@ simulated using the C (GalSim) code.  {\bf We need to include a panel
 \subsection{Calibration of CG bias using simulated HST images}
 \label{sec:noisy}
 
-The {\it Euclid} observations lack high-resolution multi-band images to measure
-the CG bias directly. However, \citetalias{Semboloni13} showed that 
+The {\it Euclid} observations lack high-resolution multi-band images to measure the CG bias directly for each source galaxy. However, the cosmological lensing signal is typically inferred from the ellipticity correlation function (REF), which involves  averaging the shapes of large ensembles of galaxies. Provided the average bias that is caused by colour gradients is known for a selection of sources, it is possible in principle to obtain unbiased estimates of the ellipticity correlation function. Here it is particularly important that the correction for the average CG bias accounts for the variation in redshift
+and colour. The former is relevant for tomographic cosmic shear studies, whereas the latter avoids
+significant spatial variation in the bias because of the correlation between galaxy colour, or morphology, and density.
 
-We outline the method that calibrate the CG bias using two bands
-images, while the details can be found in \citetalias{Semboloni13}. We will use two narrow
-band images to reconstruct the image at each wavelength. For each of
-the narrow filter the image can be approximated by:
+\citetalias{Semboloni13} showed that HST observations  in both the F606W and F814W filters can be used to determine the CG bias to meet {\it Euclid} requirements. However, \citetalias{Semboloni13} did not consider the complicating factor that the HST images themselves are noisy. Although the HST data are typically deeper than the nominal {\it Euclid} data, and the HST is considerably smaller, it is nonetheless necessary to investigate the impact of noise in more detail. We therefore address this particular question here, before determine the CG bias from actual HST data in 
+Sect.~\ref{sec:candels}.
+
+The method to calibrate the CG bias using observations in two bands is described in detail
+in \citetalias{Semboloni13}, but here we outline the main steps for completeness. To model the
+wavelength dependence of the image we use two narrow-band\footnote{To distinguish these filters from the broad VIS pass-band we refer to the F606W and F814W as narrow bands, but acknowledge that these are commonly referred to broad-band filters and that genuine narrow-band filters are significantly narrower.} images, each of which is given by:
 %
 \be
 I_i(\theta) = \int_{\Delta \lambda_i} T_i(\lambda)\, I(\theta,\lambda) \;\d \lambda,
 \elabel{linearitp}
 \ee
 %
-where $T(\lambda)$ is the transmission, and $i=1,2$ stand for the two bands.
-We assume that for each pixel the image can be interpolated linearly:
+where $T_i(\lambda)$ is the transmission of the $i$th narrow filter. We assume that for each pixel the wavelength dependence of the image can be interpolated linearly:
 %
 \be
 I(\theta,\lambda) \approx
-I_{\rm inter}(\theta,\lambda)=a(\theta)\lambda + b(\theta).
+\tilde{I}(\theta,\lambda)=a(\theta)\lambda + b(\theta).
 \elabel{interpolate}
 \ee
 %
@@ -383,7 +385,8 @@ where $T_{ai,\,bi}$ is the integrated transmission function at two
 filters. With $(a,b)$ and Eq.\ref{eq:interpolate}, one can obtain
 approximated galaxy images of each wavelength
 $I(\theta,\lambda)$. Then we will follow the same procedure as in
-previous section to estimate the CG bias.
+previous section to estimate the CG bias. {\bf need to rephrase and 
+think about the notation.}
 
 The same two galaxy models from previous section are used in the
 simulation, and we simulate the images in two HST filters: F606W,

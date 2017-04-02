@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bartelmann} \& {Schneider}(2001)}]{Bartelmann01}
@@ -12,6 +12,11 @@
 \bibitem[{{Cypriano} {et~al.}(2010){Cypriano}, {Amara}, {Voigt}, {Bridle},
   {Abdalla}, {R{\'e}fr{\'e}gier}, {Seiffert}, \& {Rhodes}}]{Cypriano10}
 {Cypriano}, E.~S., {Amara}, A., {Voigt}, L.~M., {et~al.} 2010, \mnras, 405, 494
+
+\bibitem[{{Fenech Conti} {et~al.}(2016){Fenech Conti}, {Herbonnet}, {Hoekstra},
+  {Merten}, {Miller}, \& {Viola}}]{FenechConti17}
+{Fenech Conti}, I., {Herbonnet}, R., {Hoekstra}, H., {et~al.} 2016, ArXiv
+  e-prints
 
 \bibitem[{{Heymans} {et~al.}(2013){Heymans}, {Grocutt}, {Heavens}, {Kilbinger},
   {Kitching}, {Simpson}, {Benjamin}, {Erben}, {Hildebrandt}, {Hoekstra},
@@ -60,10 +65,31 @@
   {Paulin-Henriksson}, {Pires}, {Scaramella}, \& {Schrabback}}]{Massey13}
 {Massey}, R., {Hoekstra}, H., {Kitching}, T., {et~al.} 2013, \mnras, 429, 661
 
+\bibitem[{{Melchior} {et~al.}(2011){Melchior}, {Viola}, {Sch{\"a}fer}, \&
+  {Bartelmann}}]{Melchior11}
+{Melchior}, P., {Viola}, M., {Sch{\"a}fer}, B.~M., \& {Bartelmann}, M. 2011,
+  \mnras, 412, 1552
+
+\bibitem[{{Miller} {et~al.}(2013){Miller}, {Heymans}, {Kitching}, {van
+  Waerbeke}, {Erben}, {Hildebrandt}, {Hoekstra}, {Mellier}, {Rowe}, {Coupon},
+  {Dietrich}, {Fu}, {Harnois-D{\'e}raps}, {Hudson}, {Kilbinger}, {Kuijken},
+  {Schrabback}, {Semboloni}, {Vafaei}, \& {Velander}}]{Miller13}
+{Miller}, L., {Heymans}, C., {Kitching}, T.~D., {et~al.} 2013, \mnras, 429,
+  2858
+
+\bibitem[{{Nakajima} \& {Bernstein}(2007)}]{Nakajima07}
+{Nakajima}, R. \& {Bernstein}, G. 2007, \aj, 133, 1763
+
 \bibitem[{{Paulin-Henriksson} {et~al.}(2008){Paulin-Henriksson}, {Amara},
   {Voigt}, {Refregier}, \& {Bridle}}]{Paulin-Henriksson08}
 {Paulin-Henriksson}, S., {Amara}, A., {Voigt}, L., {Refregier}, A., \&
   {Bridle}, S.~L. 2008, \aap, 484, 67
+
+\bibitem[{{Rowe} {et~al.}(2015){Rowe}, {Jarvis}, {Mandelbaum}, {Bernstein},
+  {Bosch}, {Simet}, {Meyers}, {Kacprzak}, {Nakajima}, {Zuntz}, {Miyatake},
+  {Dietrich}, {Armstrong}, {Melchior}, \& {Gill}}]{Rowe15}
+{Rowe}, B.~T.~P., {Jarvis}, M., {Mandelbaum}, R., {et~al.} 2015, Astronomy and
+  Computing, 10, 121
 
 \bibitem[{{Semboloni} {et~al.}(2013){Semboloni}, {Hoekstra}, {Huang},
   {Cardone}, {Cropper}, {Joachimi}, {Kitching}, {Kuijken}, {Lombardi}, {Maoli},
