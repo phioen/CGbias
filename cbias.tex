@@ -208,16 +208,25 @@ the results of \citetalias{Semboloni13} (see Fig.~\ref{fig:biasofweight}).
 \section{Colour gradient bias in simulated data}
 \label{sec:simulations}
 
-The CG bias is a higher order systematic bias, and thus the changes in the measured
-ellipticities are small. It is therefore important to verify that numerical errors in the calculations
-are subdominant compared to the small effects we aim to measure. To do so, we compare
-results from two independent codes that are used to generate the simulated images: one is
-written in C/C++ and the other uses the python-based {\tt GalSim} package
-\citep{Rowe15}, which is widely used to created simulated images
-\citep[e.g.][]{FenechConti17, Hoekstra16}. {\bf Er: please check if this is correct.} In the C code we compute the image by multiplying the  surface brightness at the centre of each pixel using a sheared S{\'e}rsic profile with the pixel area. In the case of {\tt GalSim} we use the {\tt Shear()} function
-(which convolves the image by the pixel). Since we are interested in small differences in the shapes of deconvolved images, we checked for numerical errors. We convolved and subsequently deconvolved elliptical images. Comparison of the recovered ellipticities revealed small differences
-between the codes that ranged from  $10^{-7}$ to $10^{-6}$, two orders of magnitude smaller
-than the CG biases we are concerned with. Hence can safely neglect this numerical artefacts here.
+The CG bias is a higher order systematic bias, and thus the changes in
+the measured ellipticities are small. It is therefore important to
+verify that numerical errors in the calculations are subdominant
+compared to the small effects we aim to measure. To do so, we compare
+results from two independent codes that are used to generate the
+simulated images: one is written in C/C++ and the other uses the
+python-based {\tt GalSim} package \citep{Rowe15}, which is widely used
+to created simulated images \citep[e.g.][]{FenechConti17,
+  Hoekstra16}. In the C code we compute the image by multiplying the
+surface brightness at the centre of each pixel using a sheared
+S{\'e}rsic profile with the pixel area. In the case of {\tt GalSim} we
+use the {\tt Shear()} function (which convolves the image by the
+pixel). Since we are interested in small differences in the shapes of
+deconvolved images, we checked for numerical errors. We convolved and
+subsequently deconvolved elliptical images. Comparison of the
+recovered ellipticities revealed small differences between the codes
+that ranged from $10^{-7}$ to $10^{-6}$, two orders of magnitude
+smaller than the CG biases we are concerned with. Hence can safely
+neglect this numerical artefacts here.
 
 As a further test we compare directly to the results obtained by \citetalias{Semboloni13} for two reference galaxy models. 
 The reference galaxies are modeled as the sum of a bulge and disk component. To describe the wavelength dependence of the images we use the galaxy SED templates from \citet{1980ApJS...43..393C}: we use the SED for an elliptical galaxy for the bulge and take the SED of an irregular galaxy for the disk. This choice ensures that the resulting colour gradients are large. The two components are 
@@ -303,11 +312,24 @@ Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the 
 half-light radius in the remainder of this paper. This yield $m=0.8\times10^{-3}$ for galaxy B and
 $m=2\times10^{-3}$ for galaxy S, demonstrating that the CG bias is a strong function of galaxy size.
 
-
+%
+\begin{figure}
+  \centerline{\includegraphics[width=\hsize]{cvsgalsim.eps}}
+  \centerline{\includegraphics[width=\hsize]{zweight_airy.eps}}
+\caption{The CG bias in shear versus width of the weight function (in
+  units of the half-light radius $w_{\rm h}$) used to compute the
+  quadrupole moments.  The solid lines correspond to the results from
+  \citetalias{Semboloni13} for the large (`B'; red) and small (`S';
+  blue) reference galaxy .  The dashed (dash-dotted) lines are our
+  results for images simulated using the C (GalSim) code. In the top
+  panel, we use the same PSF as in \citetalias{Semboloni13}, and in
+  the bottom panel, we use the Airy profile as PSF. }
+\label{fig:biasofweight}
+\end{figure}
+%
 \subsection{Impact for large distortions}
 
-{\bf Er: please add text to explain what you did and add the figure with the flexion
-results.} Besides shear, there are higher order image distortions in weak lensing,
+Besides shear, there are higher order image distortions in weak lensing,
 such as flexion \citep[e.g.][]{2002ApJ...564...65G,bacon2006}. In
 previous analysis, we only consider the shear effect in the lensing
 process, while the higher order image distortions also suffer from CG
@@ -315,35 +337,23 @@ bias as well. In additional tests, we perform the complete lens
 ray-tracing instead of solely shearing the images. (We only use our C
 code in this part, since the current version of GalSim only provides
 shear effect.) We adopt an Singular Isothermal Sphere halo model as
-the lens model, and vary the configuration within some reasonable
-range, such as the Einstein radius, and the separation between the
-lens and the source image (the corresponding shear value varies
-between about $[0.02, 0.1]$). We find that the variation of lensing
-magnitude can cause different CG bias (yellow shadow in
-Fig.\ref{fig:biasofweight}), and in most time the flexion effect will
-increase the CG bias. Such effects do not appear if we solely shear
-the images. However in general case, the cosmic shear has a value
-about a few percents. We can see that from the bottom boundary of the
-yellow shadow, the bias are almost the same as that only considering
-the shear effect. Only in case of the galaxy cluster lensing,
-galaxy-galaxy lensing, especially in the strong lensing region, when
-the flexion becomes significant, one has to take into account of such
-kind of effect.
-
-
+the lens model, and vary the separation between the lens and the source image.
+The results are presented in Fig.~\ref{fig:biasofgamma}. The solid (dotted) lines
+indicate the results from complete lens process (sole shear process).
+The solid lines approach to the dotted lines with the decreasing of the
+shear. When the shear becomes greater than $0.1$, one needs to take account
+of the complete lens process. However, the typical shear value is about a few
+per cents. The complete lens process are necessary only in the strong lensing
+region or in some galaxy cluster lensing. 
 %
 \begin{figure}
-\centerline{\includegraphics[width=\hsize]{cvsgalsim.eps}}
-\caption{The CG bias in shear versus width of the weight function
-(in units of the half-light radius $w_{\rm h}$) used to compute the
-quadrupole moments.  The solid lines correspond to the results 
-from \citetalias{Semboloni13} for the large (`B'; red) and small (`S'; blue) reference galaxy .
-The dashed (dash-dotted) lines are our results for images
-simulated using the C (GalSim) code.  {\bf We need to include a panel
-  showing the differences with \citetalias{Semboloni13}.}}
-\label{fig:biasofweight}
+  \centerline{\includegraphics[width=\hsize]{zcg_sis.eps}}
+  \caption{The CG bias versus tangential shear in complete lensing
+    process (solid lines). The dotted lines correspond to the results
+    from only shear process. }
+  \label{fig:biasofgamma}
 \end{figure}
-
+%
 
 \subsection{Calibration of CG bias using simulated HST images}
 \label{sec:noisy}
@@ -601,6 +611,14 @@ image may not be sufficient to calibrate the CG bias.
   $220$($320$) realizations are used for blues lines for the
   B-(S-)galaxy. }
 \label{fig:biasofz15}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=8.0cm]{zs2n50his.eps}
+  \includegraphics[width=8.0cm]{zs2n15his.eps}
+  \caption{The bias histogram from all the simulated images. The top
+    (bottom) panel shows that from images of SNR=50 (SNR=15).  }
+  \label{fig:biasofzhis}
 \end{figure}
 %
 \begin{figure}
