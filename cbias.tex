@@ -515,41 +515,25 @@ The effect radius is given in unit of pixel ($0.05$ arcsec).}
 
 We use the best fit models to compute the CG bias, following the same
 algorithm as was used to compute the signal in the noiseless case. 
-We show the results in Fig.~\ref{fig:biasofz50}
+We show the results in Fig.~\ref{fig:biasofz50} for SNR=50. We find that
+fixing the Sersic index (blue line) or leaving all parameters free (red line)
+results in a similar CG bias as a function of redshift. Moreover, the results
+closely resemble the noiseless case (dashed lines).  The residuals
+presented in the bottom panel of Fig.~\ref{fig:biasofz50} shows that 
+for the SNR=50 case, the average CG bias can be determined with an
+accuracy that meets the adopted {\it Euclid} tolerance, indicated by the grey band.
 
-As we will present,
-with sufficient large samples, the estimation using noisy images for the
-CG bias can converge, and is independent of the initial parameters.
 
-
-Applying the calibration method to the fitted images, we can obtain
-the estimation of the CG bias for thesimulated images. In
-Figs.\ref{fig:biasofz50} and \ref{fig:biasofz15}, we show the shear CG
-bias with redshift. In each panel, we show different estimates for the
-bias:
-\begin{itemize}
-\item
-The black solid lines are the ``True'' CG bias: we use the true
-SED of the galaxy and images of each wavelength to estimate the bias
-without approximation.
-\item
-The dashed lines are the estimation using two
-HST images without noise.
-\item
-The colour lines are those using noisy images. The difference between
-red and blue lines are in the image fitting: for the red lines, we
-free all the parameters in image fitting, for blue lines we fix the
-Sersic index as the input value. For the orange lines we also free all
+{\bf  This needs to be clarified: For the orange lines we also free all
 the parameters, but we perform another convolution with the effective
 PSF (see appendix for more detail). In Fig.\ref{fig:flowchart} one can
 see that the convolution is canceled with the last deconvolution for
 the CG images.  The reason for that is the deconvolution may cause
-some numerical errors, especially for the small size noisy images. The
-extra PSF convolution will not significantly change the CG bias as we
-will show in the appendix. Therefore, in the following result for
-noise images, we will perform the convolution to the NCG image instead
-of deconvolution to the CG one.
-\end{itemize}
+some numerical errors, especially for the small size noisy images.  Therefore, 
+in the following result for noise images, we will perform the convolution to the NCG 
+image insteadof deconvolution to the CG one.}
+
+
 Moreover, although we use the circular source image in the simulation,
 the fitted noisy images will become slightly elliptical. In order to
 get rid of the error due to the ``intrinsic shape'', we rotate the
@@ -566,9 +550,7 @@ are given by the standard deviation from $e_{cg}$ and $e_{ncg}$
 \elabel{sigmam}
 \ee
 %
-In the error panel, the grey shadow stands for the error budget of CG
-bias in Euclid cosmic shear analysis \citep[$\pm
-  0.00025$][]{2013MNRAS.431.3103C,2013MNRAS.429..661M}.
+
 
 One can see that in general our estimate can reproduce the properties
 of CG bias in ellipticity measurement using both ideal or noisy
@@ -632,6 +614,8 @@ image may not be sufficient to calibrate the CG bias.
 \label{fig:biasofz15}
 \end{figure}
 %
+
+
 \begin{figure}
   \includegraphics[width=8.0cm]{zs2n50his.eps}
   \includegraphics[width=8.0cm]{zs2n15his.eps}
@@ -640,6 +624,9 @@ image may not be sufficient to calibrate the CG bias.
   \label{fig:biasofzhis}
 \end{figure}
 %
+
+
+
 \begin{figure}
 \centerline{\includegraphics[width=4.0cm]{z0bandsed.eps}
 \includegraphics[width=4.0cm]{z5bandsed.eps}}
@@ -653,23 +640,34 @@ image may not be sufficient to calibrate the CG bias.
 
 \subsection{PSF variations in calibration data from HST}
 
-In the previous test, we used an ideal circular symmetric Airy PSF
-model. It may however cause inaccuracy in our estimation of the CG
-bias. Thus, we perform additional tests due to the variations of the
-PSF. The noise free images are used in order to isolate the effects of
-the PSF. The different PSF models are applied only in the step of
-deconvolution for the simulated HST images.
+So far we implicitly assumed that the simple axisymmetric PSF used to mimic the HST data
+is perfectly known. In reality, however, the HST PSF is more complex and varies spatially
+and as a function of time. The small field-of-view of ACS implies that typically a small number
+of stars can be used to model the PSF.  We therefore examine how well the HST PSF properties need 
+to be determined so that they do not affect the CG bias measurement significantly. 
 
-First we generate three pairs of PSF model by slightly increasing the
-size of PSF. The effect on the CG bias is shown in
-Fig.\ref{fig:psfacc1}. From solid, dashed to dotted lines, we
-increased the PSF size of the F606 bands; while from red, green to
-blue lines, we increase the PSF size of the F814 bands. Although the
-effect due to the two PSF variations depends on the SED of the source
-galaxy, one can see that increasing the size of the PSF in different
-bands will cause either on increase or decrease in the CG bias
-calibration. Once again, we can see that the small galaxies are more
-sensitive to the variation of PSF.
+\begin{figure}
+\includegraphics[width=8.0cm]{varpsfB.eps}
+\includegraphics[width=8.0cm]{varpsfS.eps}
+\caption{The PSF in the deconvolution are varied to see the effect on
+  the CG bias.  From red, green to blue lines, we increase the size of
+  PSF for the F814W; from the solid, dashed to dotted lines we
+  increase the size of PSF for the F606W.  {\bf here we only need to show
+  the residuals. Hence the top plots can be removed.}}
+\label{fig:psfacc1}
+\end{figure}
+
+To do so, we generate models where we slightly increase the PSF size in the two bands. {\bf (by how much?)} 
+These models are used only in the step where we deconvolve the simulated HST images in the absence
+of noise. The change in CG bias, $\Delta m$ as a function of redshift is shown in Fig.~\ref{fig:psfacc1}
+for the `B' galaxy (top panel) and `S' galaxy (bottom panel).  The results for an increase in the PSF size in 
+the F606W band are indicated by the solid, dashed and dotted lines, respectively; the red, green and blue 
+lines indicate the impact of increasing the size of the PSF in the F814W band. The sensitivity to the PSF
+errors is typically larger for low redshift galaxies, but the change in CG bias is much smaller than the bias
+itself.  As expected, small galaxies are more sensitive to errors in the estimate of the PSF size.
+
+
+
 
 To test the impact of imperfect PSF modelling, we make two
 comparisons: Comparing a control set of ``actual'' PSFs to a mock set
@@ -714,15 +712,9 @@ weighting. The corresponding model PSFs are stacked using the same
 weights.
 
 %
-\begin{figure}
-\includegraphics[width=8.0cm]{varpsfB.eps}
-\includegraphics[width=8.0cm]{varpsfS.eps}
-\caption{The PSF in the deconvolution are varied to see the effect on
-  the CG bias.  From red, green to blue lines, we increase the size of
-  PSF for the F814W; from the solid, dashed to dotted lines we
-  increase the size of PSF for the F606W.  }
-\label{fig:psfacc1}
-\end{figure}
+
+
+
 %
 \begin{figure}
 \includegraphics[width=8.0cm]{ztinytim_b.eps}
@@ -747,11 +739,33 @@ big and small galaxies, we have a significant error.
 \section{CANDELS data}
 \label{sec:candels}
 
-\subsection{Calibration sample}
-In this section, we use the real galaxy images to estimate the CG bias
-which will appear in the Euclid weak lensing survey. For the reference
-PSF of Euclid, we use the Airy model (Eq.\,\ref{eq:psfairy}), and we use
-the PSF model from TinyTim for the HST data.
+In the previous section we demonstrated that it should be possible to 
+determine the CG bias from HST observations in the F606W and F814W
+filters, and that the effects of noise in the data do not bias the results.
+In this section we use actual HST observations to determine the expected CG bias 
+in {\it Euclid} weak lensing measurements. 
+
+\begin{center}
+\begin{table}
+  \begin{tabular}{lllll}
+    \hline
+    Field   &Area (arcmin$^2$) &$N_1$ &$N_2$ &$N_3$\\
+    \hline
+    AEGIS   &180   &2094  &2112  &3460\\
+    COSMOS  &139   &1593  &1656  &2449\\
+    UDS     &146   &1455  &1497  &2341\\
+    Total   &465   &5142  &5265  &8250\\
+    \hline
+  \end{tabular}
+  \caption{\label{table:mag} Size of the HST CANDELS data sample in F606W
+    and F814W bands.  The number of galaxies are shown in three selection
+    methods to match the Euclid survey, $N_1$: $m_V<25$ and $m_I<24.5$,
+    $N_2$: $m_{VIS}<24.5$, $N_3$: $m_V<25.5$ and $m_I<25$. }
+\end{table}
+\end{center}
+%
+
+\subsection{CANDELS data}
 
 To investigate the impact of colour gradients using realistic galaxies
 populations, we employ HST/ACS data taken in the F606W and F814W
@@ -759,13 +773,13 @@ filters in the three CANDELS fields (AEGIS, COSMOS, and UDS), which have
 a roughly homogeneous coverage in both bands
 \citep[see][]{davis2007,grogin2011,koekemoer11}. We base our analysis
 on a tile-wise reduction of the ACS data, incorporating pointings
-which have at least four exposures to facilitate good cosmic ray
+that have at least four exposures to facilitate good cosmic ray
 removal, yielding combined exposure times of 1.3-2.3ks in F606W and
 2.1-3.0ks in F814W.  We employ the updated correction for
 charge-transfer inefficiency from \cite{massey2014},
 \texttt{MultiDrizzle} \citep{koekemoer2003} for the cosmic ray removal
 and stacking, as well as careful shift refinement, optimised
-weighting, and masking for stars and image artifacts as detailed in
+weighting, and masking for stars and image artefacts as detailed in
 \cite{schrabback2010}.  Schrabback et al. (in prep.) describe the
 generation of weak lensing catalogues for these images.  We base our
 analysis on the galaxies passing their source selection and apply
@@ -775,14 +789,13 @@ redshift, we match this galaxy catalogue to the photometric redshift
 catalogue from \cite{skelton14}.  We list the total non-masked areas
 in which these catalogues overlap in Table \ref{table:mag}.
 
-
-We match the galaxy from V(F606W) and I(F814W) bands by selecting that
+We match the galaxy from F606W and F814W bands by selecting that
 the difference of galaxy coordinates in two bands is smaller than 1
-pixel ($0.05$ arcsec). Moreover, in order to resemble the Euclid image
-survey, we apply selection based on the magnitude of two bands. In the
+pixel ($0.05$ arcsec). Moreover, in order to resemble the {\it Euclid} 
+wide survey, we apply a selection based on the magnitude of two bands. In the
 first selection, the galaxy must be brighter than magnitude $25$ in
-V-band and $24.5$ in I-band. In the second selection (VIS, N2 sample),
-we apply the linear interpolation from V and I band using the
+the F606W band and $24.5$ in the F814W band. In the second selection (VIS, N2 sample),
+we apply the linear interpolation from F606W and F814W band using the
 effective wavelength to approximate the Euclid VIS magnitude, and
 select the galaxy brighter than $24.5$ in VIS. In the last one (N3
 sample), we enlarge the sample by using lower threshold in two bands:
@@ -799,8 +812,8 @@ spectra of our galaxies are relatively smooth. In the N3 sample the galaxy
 number is much higher.
 %
 The total galaxy number and number density ($\sim$12/arcmin$^2$) is
-lower than that in \citetalias{Semboloni13} for several reasons: the galaxies are selected
-which the 3D-HST photometric redshift are available, and those
+lower than that in \citetalias{Semboloni13} for several reasons: we only selected
+galaxies for  which the 3D-HST photometric redshift are available, and those
 suitable for weak lensing analysis, e.g. the very big or bright
 galaxies are not include. Moreover, in \citetalias{Semboloni13} the galaxies are selected
 by the magnitude of F814W. However we select galaxies by the estimated
@@ -823,30 +836,15 @@ which is more significant in N3 sample. We will see later that the
 colour of galaxy is also related to the CG bias in shape measurement.
 %There is slight difference in the SNR of two filters: the SNR of galaxies in AEGIS are larger than the other two in V-band, while smaller in I-band.
 %
-\begin{center}
-\begin{table}
-  \begin{tabular}{lllll}
-    \hline
-    Field   &Area (arcmin$^2$) &$N_1$ &$N_2$ &$N_3$\\
-    \hline
-    AEGIS   &180   &2094  &2112  &3460\\
-    COSMOS  &139   &1593  &1656  &2449\\
-    UDS     &146   &1455  &1497  &2341\\
-    Total   &465   &5142  &5265  &8250\\
-    \hline
-  \end{tabular}
-  \caption{\label{table:mag} Size of the HST CANDELS data sample in F606W
-    and F814W bands.  The number of galaxies are shown in three selection
-    methods to match the Euclid survey, $N_1$: $m_V<25$ and $m_I<24.5$,
-    $N_2$: $m_{VIS}<24.5$, $N_3$: $m_V<25.5$ and $m_I<25$. }
-\end{table}
-\end{center}
-%
+
+
 \begin{figure*}
-  \centerline{\includegraphics[width=5.0cm]{zhisrh.eps}
-    \includegraphics[width=5.0cm]{zhisratio.eps}
-    \includegraphics[width=5.0cm]{zhisphotoz.eps}
-    \includegraphics[width=5.0cm]{zhiscolor.eps}}
+  \hbox{
+    \includegraphics[width=8.0cm]{zhisrh.eps}
+    \includegraphics[width=8.0cm]{zhisratio.eps}}
+    \hbox{
+    \includegraphics[width=8.0cm]{zhisphotoz.eps}
+    \includegraphics[width=8.0cm]{zhiscolor.eps}}
   \caption{The histogram for basic galaxy properties in our
     sample. The lines with different colours represent galaxies from
     different catalogues (AEGIS, COSMOS, UDS). From left to right: half
@@ -857,6 +855,12 @@ colour of galaxy is also related to the CG bias in shape measurement.
 %
 
 \subsection{CG bias from CANDELS}
+
+In this section, we use the real galaxy images to estimate the CG bias
+which will appear in the Euclid weak lensing survey. For the reference
+PSF of Euclid, we use the Airy model (Eq.\,\ref{eq:psfairy}), and we use
+the PSF model from TinyTim for the HST data.
+
 We estimate the CG bias following the same procedure for the simulated galaxy:
 \begin{itemize}
   \item
