@@ -398,71 +398,95 @@ $I(\theta,\lambda)$. Then we will follow the same procedure as in
 previous section to estimate the CG bias. {\bf need to rephrase and 
 think about the notation.}
 
-The same two galaxy models from previous section are used in the
-simulation, and we simulate the images in two HST filters: F606W,
-F814W, which cover the filter of Euclid image survey. The spectra of
-the galaxy are shifted according to their redshift, but the evolution
-of the galaxy or the cosmology are not adopted in the simulation. The
-spatial resolution is $0.05$ arcsec/pixel. The PSF is modeled by the
-Airy function with diameter $D=2.5$ and obscuration $0.33$, which is
-the configuration of HST. As shown in \citetalias{Semboloni13}, one needs to correct the
-PSF effect in the observed images, or the CG bias will be
-underestimated. We will adopt the same step: deconvolution for images
-before the bias estimation and discuss that for the noisy images
-later.
+We first consider the recovery of the CG bias for noiseless observations
+of the two reference galaxies. We simulate the images in the F606W and
+F814W filters at different redshifts, ignoring evolution in the SEDs. We
+adopt the native sampling of the Advanced Camera for Surveys (ACS)
+on HST of  $0.05$ arcsec/pixel. As shown in \citetalias{Semboloni13},
+we cannot ignore the blurring of the observed images by the HST PSF,
+and to mimic this we assume an obscured Airy function for a mirror 
+with diameter $D=2.5$ and obscuration  $0.33$ as a proxy for the HST PSF.
+We deconvolve our synthetic HST images and create the images at different
+wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
 
-In order to see the effect of noise in the galaxy image, we add
-Gaussian noise into the simulated HST images. An ideal level (SNR=50)
-and a moderate level (SNR=15) are used to see the effect of the CG
-bias. The RMS of the Gaussian image noise is determined by the total
-flux ($F_{tot}$) within a certain radius $1.5\,r_h$
+Following \citetalias{Semboloni13}, we show the CG bias as a function of redshift
+for galaxy `B' (left panels) and `S' (right panels) in Fig.~\ref{fig:biasofz50} . The results for the actual
+CG bias are indicated by the solid black lines, whereas the dashed black
+lines indicate the recovered values from the noiseless synthetic HST observations
+in the F606W and F814W filters. These results show that the CG bias varies
+significantly with redshift. The bottom panels show the residuals between the
+recovered and the true bias. {\bf we should also show the residual for the noiseless case!}
+The residual bias is within the target tolerance for {\it Euclid}, indicated by the grey
+band, for all redshifts.
+
+\begin{figure*}
+  \includegraphics[width=8.0cm]{zs2n_b_snrtt50.eps}
+  \includegraphics[width=8.0cm]{zs2n_s_snrtt50.eps}
+\caption{The CG bias in shear measurement as a function of redshift
+  using simulated images. The black solid lines are the true CG bias;
+  the dashed lines are the estimation using two band HST images
+  without noise; the colour lines are the estimation using noisy
+  images of input $SNR=50$, the value are the average over $40$
+  realizations each redshift. In the bottom, $\Delta m$ is the
+  residual with respect to the true CG bias, and the error bars show
+  the standard variations (Eq.\ref{eq:sigmam}). $Up(Down)$-figure are
+  the results for B-(S-)galaxy. {\bf the legend states that this is for SNR=15?}}
+\label{fig:biasofz50}
+\end{figure*}
+
+This comparison, however, does not account for the fact that the HST images
+will contain noise. Although the {\it Eucid} data are shallower, it is important to
+quantify the impact of noise on our ability to recover the CG bias using archival
+HST data. To do so, we add Gaussian noise to the simulated HST images, where
+the r.m.s. noise level $\sigma$ is determined by the signal-to-noise ratio of the galaxy,
+SNR, the total flux within an aperture of radius $1.5\,r_{\rm h}$, $F_{\rm tot}$,
+and the number of pixels within this aperture, $N_{\rm tot}$, such that
 %
 \be
-\sigma = {F_{tot} \over {\rm SNR} \sqrt{N_{tot}} },
+\sigma = {F_{tot} \over {\rm SNR} \sqrt{N_{tot}} }.
 \ee
 %
-where $N_{tot}$ is the total pixel number within $1.5\,r_h$.  In
-Fig.\ref{fig:ests2n}, we compare the input SNR with that estimated by
-SExtractor \citep{1996A&AS..117..393B}. We can see that the
-estimations are slightly higher than the input values at $SNR=15$, but
-still within a reasonable value for real weak lensing survey.
-%
-\begin{figure}
-\centerline{\includegraphics[height=5cm,width=5.0cm]{zs2ncB.eps}
-\includegraphics[height=5cm,width=5.0cm]{zs2ncS.eps}}
-\caption{SNR estimated by SExtractor vs input SNR. Left is for the
-  B-galaxy; Right is for the S-galaxy.}
-\label{fig:ests2n}
-\end{figure}
-%
+For reference, we compared the input SNR for the two reference galaxies
+to that estimated by {\sc SExtractor} \citep{1996A&AS..117..393B}.
+We find good agreement for galaxy `B' for SNR values ranging from 5 to 50
+in both HST filters. The agreement is also good for the `S' galaxy, but 
+{\textsc SExtractor} returns lower values if the input SNR is larger than 30.
+We consider two noise levels: a SNR=50 corresponds roughly to the typical
+galaxy used in the {\it Euclid} weak lensing analysis; a SNR=15 corresponds
+to the faintest galaxies that might be used. {\bf we should see
+what magnitude SNR=50 and SNR=15 correspond to in the actual HST data.}
 
-Direct devonvolution of a noisy image will end with a strange galaxy
-image and large numerical noise, thus we apply Galfit
-\citep{2010AJ....139.2097P} to fit the noisy image, and use the fitted
-image as our noise reduced observed image, i.e. the residual noise is
-not taken into account for CG analysis. For the necessary fitting
-profile and number of components, we also use two Sersic components as
-bulge and disk for both image bands. For each image, we apply further
-constraints to the galaxy parameters: Sersic index, effective radius,
-and axis ratio (Table \ref{fitpar}).
-%the effective radius can be achieved at a small variations (within
-%$20\%$), while the Sersic index usually has a large difference from
-%the input values as well as scatter.
-
-In order to provide a initial parameters for Galfit, we use the
-stacked image of two bands to estimate the center and some initial
-values of the galaxy parameters from SExtractor. The fitting images
-slightly depend on the initial values, and can change the estimate for
-the CG bias estimation. The dependence will become significant with
-the decreasing of image SNR. In the following estimation for the CG
-bias, we will perform the image fitting using two kinds of initial
-parameters: in the first one we will leave all the fitting parameters
-free; while in the other one we will freeze the Sersic index as the
-simulated value, and leave the others free. As we will present,
-with sufficient large samples, the estimation using noisy images for the
-CG bias can converge, and is independent of the initial parameters.
+The deconvolution of noisy images is problematic, because the presence of noise
+will lead to biased estimates of the underlying galaxy. Instead we regulate the 
+problem by assuming that galaxies can be fit by a bulge and disk component,
+each described by a Sersic profile. We fit this model, convolved with the PSF, to 
+the noisy images in each band and use the best fit model to compute the CG bias. 
+To perform the fit, we use {\sc Galfit} \citep{2010AJ....139.2097P} with 
+the prior constraints on the galaxy parameters (Sersic index, effective radius,
+and axis ratio) listed in Table~\ref{fitpar}.
 
 %
+%\begin{figure}
+%\centerline{\includegraphics[height=5cm,width=5.0cm]{zs2ncB.eps}
+%\includegraphics[height=5cm,width=5.0cm]{zs2ncS.eps}}
+%\caption{SNR estimated by SExtractor vs input SNR. Left is for the
+%  B-galaxy; Right is for the S-galaxy.}
+%\label{fig:ests2n}
+%\end{figure}
+%
+
+We use combine the images in the two filters and use {\sc SExtractor}
+to estimate the center and some initial galaxy parameters that are used
+as the starting point by {\sc Galfit}. The resulting best fit images
+depend somewhat on these initial values, and thus could affect the 
+estimate for the CG bias. This will be more prominent as the SNR of
+the images decreases. To explore this we perform the fits using two
+sets of initial parameters: in the first we leave all parameters free,
+while in the other case we fix the Sersic index to its simulated value,
+but leave the other parameters free.
+
+
+ %
 \begin{center}
 \begin{table}
 \begin{tabular}{|c|c|c|c|c|}
@@ -489,8 +513,17 @@ The effect radius is given in unit of pixel ($0.05$ arcsec).}
 %\caption{The fitting parameters (Sersic index and effect radius).}
 %\end{figure}
 
+We use the best fit models to compute the CG bias, following the same
+algorithm as was used to compute the signal in the noiseless case. 
+We show the results in Fig.~\ref{fig:biasofz50}
+
+As we will present,
+with sufficient large samples, the estimation using noisy images for the
+CG bias can converge, and is independent of the initial parameters.
+
+
 Applying the calibration method to the fitted images, we can obtain
-the estimation of the CG bias for the simulated images. In
+the estimation of the CG bias for thesimulated images. In
 Figs.\ref{fig:biasofz50} and \ref{fig:biasofz15}, we show the shear CG
 bias with redshift. In each panel, we show different estimates for the
 bias:
@@ -589,20 +622,7 @@ image may not be sufficient to calibrate the CG bias.
 %simulation, the image SNR of two bands need to be determined by the
 %colour of the galaxy.
 %%%%%
-\begin{figure}
-  \includegraphics[width=8.0cm]{zs2n_b_snrtt50.eps}
-  \includegraphics[width=8.0cm]{zs2n_s_snrtt50.eps}
-\caption{The CG bias in shear measurement as a function of redshift
-  using simulated images. The black solid lines are the true CG bias;
-  the dashed lines are the estimation using two band HST images
-  without noise; the colour lines are the estimation using noisy
-  images of input $SNR=50$, the value are the average over $40$
-  realizations each redshift. In the bottom, $\Delta m$ is the
-  residual with respect to the true CG bias, and the error bars show
-  the standard variations (Eq.\ref{eq:sigmam}). $Up(Down)$-figure are
-  the results for B-(S-)galaxy.}
-\label{fig:biasofz50}
-\end{figure}
+
 \begin{figure}
   \includegraphics[width=8.0cm]{zs2n_b_snrtt15.eps}
   \includegraphics[width=8.0cm]{zs2n_s_snrtt15.eps}
