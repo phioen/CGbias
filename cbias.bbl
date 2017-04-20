@@ -1,8 +1,11 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bartelmann} \& {Schneider}(2001)}]{Bartelmann01}
 {Bartelmann}, M. \& {Schneider}, P. 2001, \physrep, 340, 291
+
+\bibitem[{{Bertin} \& {Arnouts}(1996)}]{Bertin96}
+{Bertin}, E. \& {Arnouts}, S. 1996, \aaps, 117, 393
 
 \bibitem[{{Cropper} {et~al.}(2013){Cropper}, {Hoekstra}, {Kitching}, {Massey},
   {Amiaux}, {Miller}, {Mellier}, {Rhodes}, {Rowe}, {Pires}, {Saxton}, \&
@@ -84,6 +87,10 @@
   {Voigt}, {Refregier}, \& {Bridle}}]{Paulin-Henriksson08}
 {Paulin-Henriksson}, S., {Amara}, A., {Voigt}, L., {Refregier}, A., \&
   {Bridle}, S.~L. 2008, \aap, 484, 67
+
+\bibitem[{{Peng} {et~al.}(2010){Peng}, {Ho}, {Impey}, \& {Rix}}]{Peng10}
+{Peng}, C.~Y., {Ho}, L.~C., {Impey}, C.~D., \& {Rix}, H.-W. 2010, \aj, 139,
+  2097
 
 \bibitem[{{Rowe} {et~al.}(2015){Rowe}, {Jarvis}, {Mandelbaum}, {Bernstein},
   {Bosch}, {Simet}, {Meyers}, {Kacprzak}, {Nakajima}, {Zuntz}, {Miyatake},
