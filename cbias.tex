@@ -96,7 +96,7 @@ Such a measurement is the objective of {\it Euclid} \citep{Laureijs11}, the dark
 15\,000 deg$^2$ of extragalactic sky that has both low extinction and zodiacal light. To reduce the detrimental effects of noise on the shape measurements, the images used for the lensing analysis are observed using a wide bandpass (550-920\,nm). The much smaller PSF in space-based observations 
 is a major advantage, but the diffraction-limited PSF leads to new complications. 
 
-The most prominent one is that the correction for the smearing by the chromatic PSF depends on the spectral energy distribution (SED) of the galaxy of interest \citep{Cypriano10, Eriksen17} and gnoring this would lead to significant biases in the case of {\it Euclid}. Fortunately this can be accounted for using the supporting broad-band observations that are used to derive photometric redshifts for the sources: the correction employs an effective PSF which is derived from the estimate of the observed SED of the galaxy. This correction is sufficient if the SED does not vary spatially \citep{Eriksen17}. If this is not the case, the underlying brightness distribution, which is needed for an unbiased estimate of the shear, cannot be unambiguously recovered from the observed images.
+The most prominent one is that the correction for the smearing by the chromatic PSF depends on the spectral energy distribution (SED) of the galaxy of interest \citep{Cypriano10, Eriksen17} and ignoring this would lead to significant biases in the case of {\it Euclid}. Fortunately this can be accounted for using the supporting broad-band observations that are used to derive photometric redshifts for the sources: the correction employs an effective PSF which is derived from the estimate of the observed SED of the galaxy. This correction is sufficient if the SED does not vary spatially \citep{Eriksen17}. If this is not the case, the underlying brightness distribution, which is needed for an unbiased estimate of the shear, cannot be unambiguously recovered from the observed images.
 This results in a higher order systematic bias, which we call colour-gradient (hereafter CG) bias.
 As shown by \cite{Semboloni13} (S13 in the rest of this paper) the amplitude depends on several factors: the SED of the galaxy, the relative size of the galaxy to the PSF, and the width of the bandpass, $\Delta\lambda$.  For instance, the bias scales as $\Delta\lambda^2$, and thus is particularly relevant in the case of {\it Euclid}.
 
@@ -329,22 +329,29 @@ $m=2\times10^{-3}$ for galaxy S, demonstrating that the CG bias is a strong func
 %
 \subsection{Impact for large distortions}
 
-Besides shear, there are higher order image distortions in weak lensing,
-such as flexion \citep[e.g.][]{2002ApJ...564...65G,bacon2006}. In
-previous analysis, we only consider the shear effect in the lensing
-process, while the higher order image distortions also suffer from CG
-bias as well. In additional tests, we perform the complete lens
-ray-tracing instead of solely shearing the images. (We only use our C
-code in this part, since the current version of GalSim only provides
-shear effect.) We adopt an Singular Isothermal Sphere halo model as
-the lens model, and vary the separation between the lens and the source image.
-The results are presented in Fig.~\ref{fig:biasofgamma}. The solid (dotted) lines
-indicate the results from complete lens process (sole shear process).
-The solid lines approach to the dotted lines with the decreasing of the
-shear. When the shear becomes greater than $0.1$, one needs to take account
-of the complete lens process. However, the typical shear value is about a few
-per cents. The complete lens process are necessary only in the strong lensing
-region or in some galaxy cluster lensing. 
+Besides shear, there are higher order image distortions in weak
+lensing, such as flexion
+\citep[e.g.][]{2002ApJ...564...65G,bacon2006}. In the previous
+analysis, we only perform the shear effect in the lensing process,
+while the higher order image distortions may also contribute the CG
+bias. In this subsection, we use the full lens equation to perform ray
+tracing simulations instead of solely shear the images for the lensing
+step in Fig.\,\ref{fig:flowchart} (We only use our C code in this
+part, since the current version of GalSim only provides shear
+effect). An Singular Isothermal Sphere with Einstein radius
+$\theta_E=1$ arcsec is used for the lens halo model. The image sizes
+are increased to $2048\times2048$ pixels, with the resolution $0.0125$
+arcsec/pixel. We move the lens from a large distance to the image and
+calculate the CG bias at each distance. Fig.~\ref{fig:biasofgamma}
+presents the bias with the tangential shear $\gamma_t$. The dotted
+lines are the reference for the bias of sole shear, which agree with
+the output of full lensing process (solid lines) when the shear is
+small ($\gamma_t<0.1$). The difference becomes non-negligible if the
+image is strongly lensed, and the full lensing process is necessary.
+However, the typical cosmic shear is of order a few per cents. Hence
+the large distortions will not cause significant effect in this work.
+
+
 %
 \begin{figure}
   \centerline{\includegraphics[width=\hsize]{zcg_sis.eps}}
