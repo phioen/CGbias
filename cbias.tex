@@ -135,7 +135,7 @@ where $*$ denotes a convolution.
 
 A measurement of the ellipticity of a galaxy provides an unbiased (but noisy) estimate of the 
 weak gravitational lensing signal, quantified by the complex shear $\gamma=\gamma_1+\ii\gamma_2$.
-The ellipticity $\epsilon$ in turn can be determined from the second order brightness moments $Q^0_{ij}$ of the PSF-corrected image $I^0(\theta)$ \citep{2001PhR...340..291B}:
+The ellipticity $\epsilon$ in turn can be determined from the second order brightness moments $Q^0_{ij}$ of the PSF-corrected image $I^0(\theta)$ \citep{Bartelmann01}:
 %
 \be
 \epsilon_1+\ii \epsilon_2 \approx \frac{Q^0_{11} - Q^0_{22} + 2 \ii Q^0_{12} }
@@ -518,7 +518,7 @@ to estimate the statistical uncertainty in our estimate of the multiplicative
 CG bias, which is given by
 %
 \be
-\sigma_m= |m| \sqrt{\rund{\sigma_{\rm cg} \over \langle e_{\rm cg}\rangle }^2
+\sigma_m= |m| \sqrt{\rund{\sigma_{\rm cg} \langle e_{\rm cg} \rangle \over \langle e_{\rm ncg}\rangle^2 }^2
   + \rund{\sigma_{\rm ncg} \over \langle e_{\rm ncg} \rangle}^2 },
 \elabel{sigmam}
 \ee
@@ -554,8 +554,8 @@ galaxies and the relation between the size and SNR etc.
 %%%%%%%%%%%%%%%%%%%%%%% method dependence
 In additional tests using other measurement methods for PSF
 correction, such as the image fitting methods
-\citep[e.g.][]{2007MNRAS.382..315M,2008MNRAS.390..149K,2013MNRAS.429.2858M},
-and KSB+ \citep[e.g.][]{1998ApJ...504..636H,2006MNRAS.368.1323H}, we
+\citep[e.g.][]{2007MNRAS.382..315M,2008MNRAS.390..149K},
+and KSB+ \citep[e.g.][]{1998ApJ...504..636H,Heymans13}, we
 find that the bias has similar dependence on the SED of the galaxies,
 but with different amplitude.
 
@@ -1155,10 +1155,7 @@ spectra from SDSS-IV, the metallicity gradients show weak or no
 correlation with density environment \citep{2017MNRAS.465.4572Z}. In
 any cases, close galaxy pairs or nearby bright star(s) may also cause
 weak brightness/colour gradient, which will affect our estimate for CG
-bias as well. Moreover, in the calibration we linearly interpolate the
-SED on pixels from two bands. Some advanced method to estimate the SED
-\citep[e.g.][]{2016A&A...589A...2J} may help to improve the
-calibration of the bias.
+bias as well. 
 
 In this work, we use the brightness moments to estimate the
 ellipticity of the galaxy. The PSF correction is not taken into
