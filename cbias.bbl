@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{44}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -48,6 +48,9 @@
   {Karick}, {Marinova}, {Mouhcine}, \& {Weinzirl}}]{2011MNRAS.414.3052D}
 {den Brok}, M., {Peletier}, R.~F., {Valentijn}, E.~A., {et~al.} 2011, \mnras,
   414, 3052
+
+\bibitem[{{Eriksen} \& {Hoekstra}(2017)}]{Eriksen17}
+{Eriksen}, M. \& {Hoekstra}, H. 2017, \mnras, 405, 494
 
 \bibitem[{{Fenech Conti} {et~al.}(2016){Fenech Conti}, {Herbonnet}, {Hoekstra},
   {Merten}, {Miller}, \& {Viola}}]{FenechConti17}
@@ -101,11 +104,6 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {van Uitert}, \& {Van Waerbeke}}]{Hildebrandt17}
 {Hildebrandt}, H., {Viola}, M., {Heymans}, C., {et~al.} 2017, \mnras, 465, 1454
 
-\bibitem[{{Hoekstra} {et~al.}(1998){Hoekstra}, {Franx}, {Kuijken}, \&
-  {Squires}}]{1998ApJ...504..636H}
-{Hoekstra}, H., {Franx}, M., {Kuijken}, K., \& {Squires}, G. 1998, \apj, 504,
-  636
-
 \bibitem[{{Hoekstra} {et~al.}(2016){Hoekstra}, {Viola}, \&
   {Herbonnet}}]{Hoekstra16}
 {Hoekstra}, H., {Viola}, M., \& {Herbonnet}, R. 2016, ArXiv 1609.03281
@@ -145,11 +143,6 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Kennedy}, R., {Bamford}, S.~P., {H{\"a}u{\ss}ler}, B., {et~al.} 2016, \aap,
   593, A84
 
-\bibitem[{{Kitching} {et~al.}(2008){Kitching}, {Miller}, {Heymans}, {van
-  Waerbeke}, \& {Heavens}}]{2008MNRAS.390..149K}
-{Kitching}, T.~D., {Miller}, L., {Heymans}, C.~E., {van Waerbeke}, L., \&
-  {Heavens}, A.~F. 2008, \mnras, 390, 149
-
 \bibitem[{{Koekemoer} {et~al.}(2011){Koekemoer}, {Faber}, {Ferguson}, {Grogin},
   {Kocevski}, {Koo}, {Lai}, {Lotz}, {Lucas}, {McGrath}, {Ogaz}, {Rajan},
   {Riess}, {Rodney}, {Strolger}, {Casertano}, {Castellano}, {Dahlen},
@@ -169,7 +162,7 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Siana}, {Simard}, {Smidt}, {Snyder}, {Somerville}, {Spinrad}, {Straughn},
   {Telford}, {Teplitz}, {Trump}, {Vargas}, {Villforth}, {Wagner}, {Wandro},
   {Wechsler}, {Weiner}, {Wiklind}, {Wild}, {Wilson}, {Wuyts}, \&
-  {Yun}}]{koekemoer11}
+  {Yun}}]{Koekemoer11}
 {Koekemoer}, A.~M., {Faber}, S.~M., {Ferguson}, H.~C., {et~al.} 2011, \apjs,
   197, 36
 
@@ -221,11 +214,6 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Schrabback}, {Semboloni}, {Vafaei}, \& {Velander}}]{Miller13}
 {Miller}, L., {Heymans}, C., {Kitching}, T.~D., {et~al.} 2013, \mnras, 429,
   2858
-
-\bibitem[{{Miller} {et~al.}(2007){Miller}, {Kitching}, {Heymans}, {Heavens}, \&
-  {van Waerbeke}}]{2007MNRAS.382..315M}
-{Miller}, L., {Kitching}, T.~D., {Heymans}, C., {Heavens}, A.~F., \& {van
-  Waerbeke}, L. 2007, \mnras, 382, 315
 
 \bibitem[{{Nakajima} \& {Bernstein}(2007)}]{Nakajima07}
 {Nakajima}, R. \& {Bernstein}, G. 2007, \aj, 133, 1763
