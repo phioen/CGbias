@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{46}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -104,9 +104,12 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {van Uitert}, \& {Van Waerbeke}}]{Hildebrandt17}
 {Hildebrandt}, H., {Viola}, M., {Heymans}, C., {et~al.} 2017, \mnras, 465, 1454
 
-\bibitem[{{Hoekstra} {et~al.}(2016){Hoekstra}, {Viola}, \&
-  {Herbonnet}}]{Hoekstra16}
-{Hoekstra}, H., {Viola}, M., \& {Herbonnet}, R. 2016, ArXiv 1609.03281
+\bibitem[{{Hoekstra} {et~al.}(2017){Hoekstra}, {Viola}, \&
+  {Herbonnet}}]{Hoekstra17}
+{Hoekstra}, H., {Viola}, M., \& {Herbonnet}, R. 2017, \mnras, 468, 3295
+
+\bibitem[{{Huff} \& {Mandelbaum}(2017)}]{Huff17}
+{Huff}, E. \& {Mandelbaum}, R. 2017, ArXiv e-prints
 
 \bibitem[{{Jarvis} {et~al.}(2016){Jarvis}, {Sheldon}, {Zuntz}, {Kacprzak},
   {Bridle}, {Amara}, {Armstrong}, {Becker}, {Bernstein}, {Bonnett}, {Chang},
@@ -172,6 +175,10 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   HST Calibration Workshop : Hubble after the Installation of the ACS and the
   NICMOS Cooling System, ed. S.~{Arribas}, A.~{Koekemoer}, \& B.~{Whitmore},
   337
+
+\bibitem[{{K{\"o}hlinger} {et~al.}(2015){K{\"o}hlinger}, {Hoekstra}, \&
+  {Eriksen}}]{Koehlinger15}
+{K{\"o}hlinger}, F., {Hoekstra}, H., \& {Eriksen}, M. 2015, \mnras, 453, 3107
 
 \bibitem[{{Krist} {et~al.}(2011){Krist}, {Hook}, \&
   {Stoehr}}]{2011SPIE.8127E..0JK}
