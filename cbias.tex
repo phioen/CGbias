@@ -157,7 +157,7 @@ and the aim of moment-based shape measurement algorithms is to correct for this 
 Consequently, the bias depends on the choice of the weight function, and vanishes in the case of {\it unweighted} moments. In the latter case it possible to determine the PSF-corrected moments $Q^0_{ij}$ from the observed quadrupole moments because
 %
 \be
-Q^{\rm obs}_{ij}=Q^0_{ij}+P^{\rm eff}_{ij} \,
+Q^{\rm obs}_{ij}=Q^0_{ij}+P^{\rm eff}_{ij} \,\label{eq:unweighted}
 \ee
 %
 for unweighted moments, where $P^{\rm eff}_{ij}$ are the quadrupole moments of the effective PSF,  defined as
@@ -340,25 +340,9 @@ $I(\theta,\lambda)$. Then we will follow the same procedure as in
 previous section to estimate the CG bias. {\bf need to rephrase and 
 think about the notation.}
 
-We first consider the recovery of the CG bias for noiseless observations
-of the two reference galaxies. We simulate the images in the F606W and
-F814W filters at different redshifts, ignoring evolution in the SEDs. We
-adopt the native sampling of the Advanced Camera for Surveys (ACS)
-on HST of  $0.05$ arcsec/pixel. As shown in \citetalias{Semboloni13},
-we cannot ignore the blurring of the observed images by the HST PSF,
-and to mimic this we assume an obscured Airy function for a mirror 
-with diameter $D=2.5$ and obscuration  $0.33$ as a proxy for the HST PSF.
-We deconvolve our synthetic HST images and create the images at different
-wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
+We first consider the recovery of the CG bias for noiseless observations of the two reference galaxies, as this represents the best-case scenario. We simulate the images in the F606W and F814W filters at different redshifts. We adopt the native sampling of the Advanced Camera for Surveys (ACS) on HST of  $0\farcs05$ pixel$^{-1}$. As shown in \citetalias{Semboloni13}, we cannot ignore the blurring of the observed images by the HST PSF, and to mimic this we assume an obscured Airy function for a mirror with diameter $D=2.5$ and obscuration  $0.33$ as a proxy for the HST PSF. We deconvolve our synthetic HST images and create the images at different wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
 
-Following \citetalias{Semboloni13}, we show the CG bias as a function of redshift
-for galaxy `B' (left panels) and `S' (right panels) in Fig.~\ref{fig:biasofz50} . The results for the actual
-CG bias are indicated by the solid black lines, whereas the dashed black
-lines indicate the recovered values from the noiseless synthetic HST observations
-in the F606W and F814W filters. These results show that the CG bias varies
-significantly with redshift. The bottom panels show the residuals between the
-recovered and the true bias. The residual bias is within the target tolerance for {\it Euclid}, 
-indicated by the grey band, for all redshifts.
+Following \citetalias{Semboloni13}, we show the CG bias as a function of redshift for galaxy `B' (left panels) and `S' (right panels) in Fig.~\ref{fig:biasofz50} . The results for the actual CG bias are indicated by the solid black lines, whereas the dashed black lines indicate the recovered values from the noiseless synthetic HST observations in the F606W and F814W filters. These results show that the CG bias varies significantly with redshift. The bottom panels show the residuals between the recovered and the true bias. The residual bias is within the target tolerance for {\it Euclid}, indicated by the grey band, for all redshifts.
 
 \begin{figure*}
   \includegraphics[width=8.0cm]{zs2n_b_snrtt50.eps}
@@ -378,13 +362,7 @@ indicated by the grey band, for all redshifts.
 \label{fig:biasofz50}
 \end{figure*}
 
-This comparison, however, does not account for the fact that the HST images
-will contain noise. Although the {\it Eucid} data are shallower, it is important to
-quantify the impact of noise on our ability to recover the CG bias using archival
-HST data. To do so, we add Gaussian noise to the simulated HST images, where
-the r.m.s. noise level $\sigma$ is determined by the signal-to-noise ratio of the galaxy,
-SNR, the total flux within an aperture of radius $1.5\,r_{\rm h}$, $F_{\rm tot}$,
-and the number of pixels within this aperture, $N_{\rm tot}$, such that
+We now proceed to explore the impact of noise in the HST images. To do so, we add Gaussian noise to the simulated HST images, where the r.m.s. noise level $\sigma$ is determined by the signal-to-noise ratio of the galaxy, SNR; the total flux within an aperture of radius $1.5\times r_{\rm h}$, $F_{\rm tot}$; and the number of pixels within this aperture, $N_{\rm tot}$, such that
 %
 \be
 \sigma = {F_{tot} \over {\rm SNR} \sqrt{N_{tot}} }.
@@ -400,14 +378,10 @@ VIS magnitude of $m_{\rm VIS}=23.7$, a bit brighter than the typical
 galaxy used in the {\it Euclid} weak lensing analysis; a SNR=15 approximately 
 corresponds to $m_{\rm VIS}=25.2$, the faintest galaxies that might be used.
 
-The deconvolution of noisy images is problematic, because the presence of noise
-will lead to biased estimates of the underlying galaxy. Instead we regulate the 
-problem by assuming that galaxies can be fit by a bulge and disk component,
-each described by a Sersic profile. We fit this model, convolved with the PSF, to 
-the noisy images in each band and use the best fit model to compute the CG bias. 
-To perform the fit, we use {\sc Galfit} \citep{Peng10} with 
-the prior constraints on the galaxy parameters (Sersic index, effective radius,
-and axis ratio) listed in Table~\ref{fitpar}.
+The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To first order, however, the radial surface brightness profile is the most important quantity. This can be understood if we consider a galaxy and redistribute the flux in an arbitrary annulus equally into two points on the minor and two points on the major axis. In this case the azimuthally average profile is unchanged, as are the unweighted quadrupole moments. Hence Eqn.~(\ref{eq:unweighted}) is unchanged. The higher order moments are modified, thus affecting realistic shape measurements. However, the ensemble average of such galaxies with random position angles corresponds to the original galaxy. Hence the modified higher order moments are a source of noise, but should not bias the ensemble averaged measurement. This argument is correct in the presence of a axisymmetric PSF, but we note that PSF anisotropy will lead to a coupling with the higher order moments of the galaxy surface brightness and the PSF. Hence, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
+
+We fit the bulge and disk model, convolved with the PSF, to  the noisy images in each band and use the best fit model to compute the CG bias. To perform the fit, we use {\sc Galfit} \citep{Peng10} with 
+the prior constraints on the galaxy parameters (S{\'e}rsic index, effective radius, and axis ratio) listed in Table~\ref{fitpar}.
  %
 \begin{table}
 \begin{center}
