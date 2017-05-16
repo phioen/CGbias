@@ -320,29 +320,29 @@ I_i({\bm\theta}) = \int_{\Delta \lambda_i} T_i(\lambda)\, I({\bm \theta},\lambda
 where $T_i(\lambda)$ is the transmission of the $i$th narrow filter. We assume that for each pixel the wavelength dependence of the image can be interpolated linearly:
 %
 \be
-I({\bm \theta},\lambda) \approx a({\bm \theta})\lambda + b({\bm \theta}).
+I({\bm \theta},\lambda) \approx  a_0({\bm \theta})+a_1({\bm \theta})\lambda.
 \elabel{interpolate}
 \ee
 %
 Eqs.\ref{eq:linearitp} and \ref{eq:interpolate} yield a linear set of
 equations on each pixel, which can be used to solved for the
-coefficients $(a,b)$:
+coefficients $a_i$:
 %
 \be
-T_{ai} \lambda a(\theta) \,+\,T_{bi} b(\theta) = I_i(\theta), \quad\; i=1,2,
+T_{0i} a_0(\theta) \,+\,T_{1i} a_1(\theta) = I_i(\theta), \quad\; i=1,2,
 \elabel{lineareq}
 \ee
 %
-where $T_{ai,\,bi}$ is the integrated transmission function at two
-filters. With $(a,b)$ and Eq.\ref{eq:interpolate}, one can obtain
-approximated galaxy images of each wavelength
-$I(\theta,\lambda)$. Then we will follow the same procedure as in
-previous section to estimate the CG bias. {\bf need to rephrase and 
-think about the notation.}
+where we defined 
+\be
+T_{ji}=\int_{\Delta\lambda_i} \d \lambda\,T_i(\lambda)\lambda^j. 
+\ee
+%
+We thus obtain approximate galaxy images at each wavelength, which we use to estimate the CG bias, following the same procedure as we used in the previous section.
 
-We first consider the recovery of the CG bias for noiseless observations of the two reference galaxies, as this represents the best-case scenario. We simulate the images in the F606W and F814W filters at different redshifts. We adopt the native sampling of the Advanced Camera for Surveys (ACS) on HST of  $0\farcs05$ pixel$^{-1}$. As shown in \citetalias{Semboloni13}, we cannot ignore the blurring of the observed images by the HST PSF, and to mimic this we assume an obscured Airy function for a mirror with diameter $D=2.5$ and obscuration  $0.33$ as a proxy for the HST PSF. We deconvolve our synthetic HST images and create the images at different wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
+We first consider the recovery of the CG bias for noiseless observations of the two reference galaxies, as this represents the best-case scenario. We simulate the images in the F606W and F814W filters at different redshifts. We adopt the native sampling of the Advanced Camera for Surveys (ACS) on HST of  $0\farcs05$ pixel$^{-1}$. As shown in \citetalias{Semboloni13}, we cannot ignore the blurring of the observed images by the HST PSF; to mimic this we assume an obscured Airy function for a mirror with diameter $D=2.5$ and obscuration  $0.33$ as a proxy for the HST PSF. We deconvolve our synthetic HST images and create the images at different wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
 
-Following \citetalias{Semboloni13}, we show the CG bias as a function of redshift for galaxy `B' (left panels) and `S' (right panels) in Fig.~\ref{fig:biasofz50} . The results for the actual CG bias are indicated by the solid black lines, whereas the dashed black lines indicate the recovered values from the noiseless synthetic HST observations in the F606W and F814W filters. These results show that the CG bias varies significantly with redshift. The bottom panels show the residuals between the recovered and the true bias. The residual bias is within the target tolerance for {\it Euclid}, indicated by the grey band, for all redshifts.
+Following \citetalias{Semboloni13}, we show Fig.~\ref{fig:biasofz50} the CG bias as a function of redshift for galaxy `B' (left panels) and `S' (right panels), demonstrating that the CG bias varies significantly with redshift. The results for the actual CG bias are indicated by the solid black lines, whereas the dashed black lines indicate the recovered values from the noiseless synthetic HST observations in the F606W and F814W filters.  The bottom panels show the residuals between the recovered and the true bias. The residual bias is within the target tolerance for {\it Euclid}, indicated by the grey band, for all redshifts.
 
 \begin{figure*}
   \includegraphics[width=8.0cm]{zs2n_b_snrtt50.eps}
@@ -352,10 +352,10 @@ Following \citetalias{Semboloni13}, we show the CG bias as a function of redshif
   in the left panel and those for galaxy `S' in the right panel.
   The dashed black line is the recovered bias when we mimic 
   noiseless HST observations in two filters. The solid red line
-  indicates the results when we use the best fit {\sc Galfit} model
+  indicates the results when we use the best fit {\sc GALFIT} model
   in both filters to estimate the CG bias when the simulated HST images have
   an input SNR$=50$ (averaged over 40 noise realisations at each
-  redshift). The blue line shows the results when we fix the Sersic index
+  redshift). The blue line shows the results when we fix the S{\'e}rsic index
   in the fit. The bottom panels show the residuals $\Delta m$ with respect
   to the true CG bias. The grey band indicates the 
   nominal {\it Euclid} requirement.}
@@ -380,9 +380,9 @@ corresponds to $m_{\rm VIS}=25.2$, the faintest galaxies that might be used.
 
 The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To first order, however, the radial surface brightness profile is the most important quantity. This can be understood if we consider a galaxy and redistribute the flux in an arbitrary annulus equally into two points on the minor and two points on the major axis. In this case the azimuthally average profile is unchanged, as are the unweighted quadrupole moments. Hence Eqn.~(\ref{eq:unweighted}) is unchanged. The higher order moments are modified, thus affecting realistic shape measurements. However, the ensemble average of such galaxies with random position angles corresponds to the original galaxy. Hence the modified higher order moments are a source of noise, but should not bias the ensemble averaged measurement. This argument is correct in the presence of a axisymmetric PSF, but we note that PSF anisotropy will lead to a coupling with the higher order moments of the galaxy surface brightness and the PSF. Hence, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
 
-We fit the bulge and disk model, convolved with the PSF, to  the noisy images in each band and use the best fit model to compute the CG bias. To perform the fit, we use {\sc Galfit} \citep{Peng10} with 
-the prior constraints on the galaxy parameters (S{\'e}rsic index, effective radius, and axis ratio) listed in Table~\ref{fitpar}.
- %
+We fit the bulge and disk model, convolved with the PSF, to  the noisy images in each band and use the best fit model to compute the CG bias. To perform the fit, we use {\sc GALFIT} \citep{Peng10} with 
+the prior constraints on the galaxy parameters (S{\'e}rsic index, effective radius, and axis ratio) listed in Table~\ref{fitpar}. We combine the images in the two filters and use {\sc SExtractor} to estimate the center and some of the initial galaxy parameters to be used as the starting point by {\sc GALFIT}. The resulting best fit images depend somewhat on these initial values, and thus could affect the  estimate for the CG bias. This will be more important when the SNR of the images is lower. To explore this we perform the fits using two sets of initial parameters: in the first we leave all parameters free, while in the other case we fix the S{\'e}rsic index to its simulated value, but leave the other parameters free.
+%
 \begin{table}
 \begin{center}
 \begin{tabular}{ccc|cc}
@@ -395,7 +395,7 @@ $R_{\rm disk}$  &5-30 &5-30  &10-60 &10-60 \\
 $q$      &0.6-1  &0.6-1  &0.6-1 &0.6-1 \\ 
 \hline
 \end{tabular}
-\caption{\label{fitpar} Constraints for the fitting parameters in {\sc Galfit}.
+\caption{\label{fitpar} Constraints for the fitting parameters in {\sc GALFIT}.
 The first two columns are for two images of the S-galaxy, the other two are
 the image of B-galaxy.
 $n_1$ is the Sersic index for bulge, and $n_2$ is the Sersic index for disk.
@@ -403,21 +403,7 @@ The effect radius is given in unit of pixel ($0.05$ arcsec).}
 \end{center}
 \end{table}
 
-We use combine the images in the two filters and use {\sc SExtractor}
-to estimate the center and some initial galaxy parameters that are used
-as the starting point by {\sc Galfit}. The resulting best fit images
-depend somewhat on these initial values, and thus could affect the 
-estimate for the CG bias. This will be more prominent as the SNR of
-the images decreases. To explore this we perform the fits using two
-sets of initial parameters: in the first we leave all parameters free,
-while in the other case we fix the Sersic index to its simulated value,
-but leave the other parameters free.
-
-
-We use the best fit models to compute the CG bias, following the same
-algorithm as was used to compute the signal in the noiseless case. 
-We show the resulting average inferred CG bias in Fig.~\ref{fig:biasofz50} for SNR=50 as a function
-of redshift for the two reference galaxies (`B' in the left panel and `S' in the
+We use the best fit models to compute the CG bias, following the same algorithm as was used to compute the signal in the noiseless case. We show the resulting average inferred CG bias in Fig.~\ref{fig:biasofz50} for SNR=50 as a function of redshift for the two reference galaxies (`B' in the left panel and `S' in the
 right panel). The bottom panels in Fig.~\ref{fig:biasofz50} show the residuals 
 $\Delta m$ with respect to the true multiplicative CG bias. To  determine the average
 bias we analyse 6 rotations of the galaxy and use the average value as our estimate of 
@@ -442,54 +428,26 @@ ellipticities for the images without and with a colour gradient, respectively.
   redshifts.}
   \label{fig:histogrambias}
 \end{figure}
-We find that fixing the Sersic index (blue line) or leaving all parameters free (red line)
-results in a similar CG bias as a function of redshift. Moreover, the results
-closely resemble the noiseless case (dashed lines).  The residuals
-presented in the bottom panel of Fig.~\ref{fig:biasofz50} show that 
-for the SNR=50 case, we expect that the average CG bias can be determined with an
-overall accuracy that meets the adopted {\it Euclid} tolerance, indicated by the grey band.
 
-
+We find that fixing the S{\'e}rsic index (blue line) or leaving all parameters free (red line) results in a similar CG bias as a function of redshift. Moreover, the results closely resemble the noiseless case (dashed lines).  
+The residuals presented in the bottom panel of Fig.~\ref{fig:biasofz50} show that  for the SNR=50 case, we expect that the average CG bias can be determined with an overall accuracy that meets the adopted {\it Euclid} tolerance, indicated by the grey band. Only for the `S' galaxy is the residual outside the nominal range at low redshifts, but we note that the reference galaxies have rather extreme colour gradients.
+Moreover, the significant deviations at $z=0.5$ and $0.9$ arise because the adopted SED of the disk (Irr) contains strong emission lines  \citepalias[see Fig.~1 in][]{Semboloni13}. These lines enter and exit the F606W filter at these redshifts, respectively, and the linear approximation for the wavelength
+dependence fails. In these, albeit extreme cases, two-band imaging may not be sufficient. To what extent this will affect the estimate of the CG bias requires further study.
 
 \begin{figure*}
   \includegraphics[width=8.0cm]{zs2n_b_snrtt15_medians.eps}
   \includegraphics[width=8.0cm]{zs2n_s_snrtt15_medians.eps}
 \caption{Same as Fig.\ref{fig:biasofz50} but for images of SNR=15.
-  $1000$ realizations are used at each redshift bin for both B- and
+The red curve shows the mean bias, whereas the blue curve corresponds to the median.
+To compute the error bars, $1000$ realizations are used at each redshift bin for both B- and
   S-galaxy.}
 \label{fig:biasofz15}
 \end{figure*}
 %
 
-Significant deviations occur  at $z=0.5$ and $0.9$, and these can be understood
-because the adopted SED of the disk (Irr) contains strong emission lines 
-\citepalias[see Fig.~1 in][]{Semboloni13}. These lines enter and exit the F606W filter
-at these redshifts, respectively, and the linear approximation for the wavelength
-dependence fails. In these, albeit extreme cases, two-band imaging may not
-be sufficient. To what extent this will affect the estimate of the CG bias requires
-further study.
-
-
-
-Figure~\ref{fig:histogrambias} shows the distribution of biases (combining results for the
-full redshift range) when the galaxies are detected in the narrow-band images with SNR=15.
-The distribution is skewed and especially for the `S' galaxy quite broad. Therefore we 
-increased the number of noise realisation to 1000 to ensure robust estimates of the average
-CG bias as a function of redshift. The resulting CG bias as a function of redshift are shown
-in Fig.~\ref{fig:biasofz15}. We also show the median bias as a function of redshift, which
-is slightly different, because the distribution itself is skewed. Nonetheless the bias is
-recovered to a level that is acceptable for {\it Euclid}. 
-
-
-
-
-\subsection{PSF variations in calibration data from HST}
-
-So far we implicitly assumed that the simple axisymmetric PSF used to mimic the HST data
-is perfectly known. In reality, however, the HST PSF is more complex, and varies spatially
-and as a function of time. The small field-of-view of ACS leads to a typically a small number
-of stars that can be used to model the PSF.  We therefore examine how well the HST PSF 
-properties need to be determined so that they do not affect the CG bias measurement significantly. 
+The average CG bias for a particular subset of galaxies can be used to correct the ellipticity correlation function. This, however, increases the shape noise, especially if the distribution of biases is broad. 
+Fortunately, Fig.~\ref{fig:histogrambias} shows the distribution of multiplicative CG bias (combining results for the full redshift range) when the galaxies are detected in the narrow-band images with SNR=15.
+The distribution is skewed, and as expected, the broadest for the `S' galaxy. Nonetheless the increase in shape noise due to an empirical correction for CG bias is negligible. We did increase the number of noise realisation to 1000 to ensure robust estimates of the average CG bias as a function of redshift. The resulting CG bias as a function of redshift are shown in Fig.~\ref{fig:biasofz15}. We also show the median bias as a function of redshift, which is slightly different, because the distribution itself is skewed. Nonetheless the bias is recovered to a level that is acceptable for {\it Euclid}. 
 
 \begin{figure}
 \includegraphics[width=\hsize]{varpsfB.eps}
@@ -501,10 +459,19 @@ lines we  increase the size of PSF for the F606W images.}
 \label{fig:psfacc1}
 \end{figure}
 
+\subsection{PSF variations narrow-band data}
+
+So far we implicitly assumed that the simple axisymmetric PSF used to mimic the HST data
+is perfectly known. In reality, however, the HST PSF is more complex, and varies spatially
+and as a function of time. The small field-of-view of ACS typically results in a relatively small number
+of stars that can be used to model the PSF, although most of the variation can be captured with
+few parameters \citep[e.g.][]{Schrabback10}. We therefore examine how well the HST PSF 
+properties need to be determined so that they do not affect the CG bias measurement significantly. 
+
+
 To do so, we generate models where we slightly increase the PSF size in the two bands by computing the 
 Airy profile when the wavelength in the calculation is increased by a factor 1.05, 1.10 and 1.15 for the three
-cases. This results in increases in the FWHM of 0.9\% between the difference cases.  These models are used 
-only in the step where we deconvolve the simulated HST images in the absence
+cases. This results in increases in the FWHM of 0.9\% between the difference cases.  These models are used only in the step where we deconvolve the simulated HST images in the absence
 of noise. The change in CG bias, $\Delta m$ as a function of redshift is shown in Fig.~\ref{fig:psfacc1}
 for the `B' galaxy (top panel) and `S' galaxy (bottom panel).  The results for an increase in the PSF size in 
 the F606W band are indicated by the solid, dashed and dotted lines, respectively; the red, green and blue 
