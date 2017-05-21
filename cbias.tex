@@ -4,7 +4,7 @@
 %\linespread{1.0}
 %\usepackage[utf8]{inputenc}
 \usepackage{tabularx,amsmath,amssymb,hyperref}
-\usepackage{graphicx,epsfig,color,latexsym}
+\usepackage{graphicx,epsfig,color,latexsym,nicefrac,textcomp}
 
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
@@ -273,28 +273,23 @@ In high density regions, higher order distortions of the images can become domin
 \citep[e.g.][]{2002ApJ...564...65G,bacon2006}. Rather than simply shearing the images, as we have done so far, in this section we use the full lens equation to perform ray tracing simulations instead. This enables
 us to capture the effect of the higher order distortion. For this exercise we use the {\sc C} code, as it has
 this functionality fully implemented. As a lens we consider a singular isothermal sphere (SIS) with
-an Einstein radius $\theta_{\rm E}=1$ arcsec. The image sizes are increased to $2048\times2048$ pixels, with a resolution $0.0125$ arcsec/pixel. 
+an Einstein radius $\theta_{\rm E}$; in this case the (tangential) shear is given by 
+$\gamma_{\rm t}=$\textonehalf$\,\theta_{\rm E}/\theta$. To minimise numerical effects, the image sizes are increased to $2048\times2048$ pixels, with a resolution $0\farcs0125$/pixel. 
 
-
-{\bf we need to clarify what was exactly done; very interesting result so we need to explain this well.}
-
-We move the lens from a large distance to the image and
-calculate the CG bias at each distance. Fig.~\ref{fig:biasofgamma}
-presents the bias with the tangential shear $\gamma_t$. The dotted
-lines are the reference for the bias of sole shear, which agree with
-the output of full lensing process (solid lines) when the shear is
-small ($\gamma_t<0.1$). The difference becomes non-negligible if the
-image is strongly lensed, and the full lensing process is necessary.
-However, the typical cosmic shear is of order a few per cents. Hence
-the large distortions will not cause significant effect in this work.
-
+In Fig.~\ref{fig:biasofgamma} we show the CG bias as a function of the tangential shear
+for different values of $\theta_{\rm E}$. The red lines indicate the results for the `B' galaxy
+and the blue lines show the biases for the `S' galaxy. For small shears, i.e. far away from the lens,
+the CG bias converges to the shear-only case that we have studied thus far (the thin horizontal lines).
+Hence, for cosmic shear studies we can safely ignore this complication. However, as the source approaches the lens, the flexion signal increases, resulting in an increase in the  CG bias. The change depends on the value of $\theta_{\rm E}$, because flexion is lower for a given shear when the source is further away from the lens. Hence, the additional CG bias due to higher order distortions is expected to be relatively small for clusters of galaxies (for which $\theta_{\rm E}>10''$), but it can be relevant for studies 
+of massive galaxies; in this case the Einstein radius is smaller, and the flexion signal larger. Figure~\ref{fig:biasofgamma} shows that for a lens with $\theta_{\rm E}=1''$ the CG bias rapidly increase when the shear $\gamma>0.15$, i.e. for $\theta<3''$. Thanks to the small PSF of {\it Euclid} it is possible to measure the galaxy-galaxy lensing signal on such small scales, which could in principle provide interesting constraints on the enclosed stellar mass. However, our findings indicate that colour gradients may prevent a robust measurement of the small-scale galaxy-galaxy lensing signal. This warrants further study that is beyond the scope of this paper.
 
 %
 \begin{figure}
   \centerline{\includegraphics[width=\hsize]{zcg_sis.eps}}
-  \caption{The CG bias versus tangential shear in complete lensing
-    process (solid lines). The dotted lines correspond to the results
-    from only shear process. }
+  \caption{The CG bias versus tangential shear when the full lens equation is used to compute the 
+  image distortions. The red lines indicate the resulting CG bias for the `B' galaxy, whereas the blue
+  lines correspond to the `S' galaxy. The bias depends on the Einstein radius, $\theta_{\rm E}$, of the
+  lens, and is more prominent for small values of  $\theta_{\rm E}$ at a given shear amplitude.}
   \label{fig:biasofgamma}
 \end{figure}
 %
