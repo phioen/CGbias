@@ -33,7 +33,7 @@
 
 \title[Colour gradient bias]
 {Calibration of colour gradient bias in shear measurement using CANDELS}
-\author[Xer et al.]%
+\author[X. Er et al.]%
 {
 X. Er$^1$ \thanks{er.xinzhong@oa-roma.inaf.it},
 H. Hoekstra$^2$, T. Schrabback$^3$, V. F. Cardone$^1$, R. Scaramella$^1$, R. Maoli$^4$,
@@ -463,7 +463,6 @@ of stars that can be used to model the PSF, although most of the variation can b
 few parameters \citep[e.g.][]{Schrabback10}. We therefore examine how well the HST PSF 
 properties need to be determined so that they do not affect the CG bias measurement significantly. 
 
-
 To do so, we generate models where we slightly increase the PSF size in the two bands by computing the 
 Airy profile when the wavelength in the calculation is increased by a factor 1.05, 1.10 and 1.15 for the three
 cases. This results in increases in the FWHM of 0.9\% between the difference cases.  These models are used only in the step where we deconvolve the simulated HST images in the absence
@@ -475,10 +474,9 @@ errors is typically larger for low redshift galaxies, but the change in CG bias 
 itself.  As expected, small galaxies are more sensitive to errors in the estimate of the PSF size.
 
 
-{\bf I do not understand what is done here; why is Tiny Tim used here? I do not understand
-why binary stars are introduced. They should not really affect the average PSF model in this
-case, but only individual stars. If we want to study this we need realistic distribution, but
-the HST stars are faint, and hence distant, and so binary stars are less of an issue anyway.}
+{\bf I do not understand what is done here; One question to address is whether we think we can
+determine the HST PSF well enough such that we do not introduce additional biases. Is that the
+objective of similar tiny tim images?}
 
 
 To test the impact of imperfect PSF modelling, we make two
@@ -560,24 +558,26 @@ determine the expected CG bias in {\it Euclid} shape measurements using
 filters in the three CANDELS fields (AEGIS, COSMOS, and UDS), which have
 a roughly homogeneous coverage in both bands \citep[see][]{davis2007,grogin2011,Koekemoer11}.
 
+\begin{figure*}
+  \hbox{
+    \includegraphics[width=8.0cm]{zhisrh.eps}
+    \includegraphics[width=8.0cm]{zhisratio.eps}}
+    \hbox{
+    \includegraphics[width=8.0cm]{zhisphotoz.eps}
+    \includegraphics[width=8.0cm]{zhiscolor.eps}}
+  \caption{The histogram for basic galaxy properties in our
+    sample. The lines with different colours represent galaxies from
+    different catalogues (AEGIS, COSMOS, UDS). From left to right: half
+    light radius, axis ratio, photometric redshift, and colour
+    ($m_{V-I}$).}
+  \label{fig:datapro1}
+\end{figure*}
+%
+
 \subsection{Analysis of CANDELS data}
 
-We base our analysis on a tile-wise reduction of the ACS data, incorporating pointings
-that have at least four exposures to facilitate good cosmic ray
-removal, yielding combined exposure times of 1.3-2.3ks in F606W and
-2.1-3.0ks in F814W.  We employ the updated correction for
-charge-transfer inefficiency from \cite{massey2014},
-\texttt{MultiDrizzle} \citep{koekemoer2003} for the cosmic ray removal
-and stacking, as well as careful shift refinement, optimised
-weighting, and masking for stars and image artefacts as detailed in
-\cite{schrabback2010}.  Schrabback et al. (in prep.) describe the
-generation of weak lensing catalogues for these images.  We base our
-analysis on the galaxies passing their source selection and apply
-additional magnitude cuts as detailed below. To investigate the
-dependence of the colour gradient influence on galaxy colour and
-redshift, we match this galaxy catalogue to the photometric redshift
-catalogue from \cite{skelton14}.  We list the total non-masked areas
-in which these catalogues overlap in Table \ref{table:mag}.
+We base our analysis on a tile-wise reduction of the ACS data, incorporating pointings that have at least four exposures to facilitate good cosmic ray removal, yielding combined exposure times of 1.3-2.3ks in F606W and 2.1-3.0ks in F814W.  We employ the updated correction for charge-transfer inefficiency from \cite{massey2014}, \texttt{MultiDrizzle} \citep{koekemoer2003} for the cosmic ray removal and stacking, as well as careful shift refinement, optimised weighting, and masking for stars and image artefacts as detailed in \cite{schrabback2010}.  Schrabback et al. (in prep.) describe the generation of weak lensing catalogues for these images.  We base our analysis on the galaxies that pass their source selection and apply
+additional magnitude cuts as detailed below. To investigate the dependence of the colour gradient influence on galaxy colour and redshift, we match this galaxy catalogue to the photometric redshift catalogue from \cite{skelton14}.  We list the total non-masked areas in which these catalogues overlap in Table \ref{table:mag}.
 
 \begin{center}
 \begin{table}
@@ -599,174 +599,52 @@ in which these catalogues overlap in Table \ref{table:mag}.
 \end{center}
 %
 
-We match the galaxy from F606W and F814W bands by selecting that
-the difference of galaxy coordinates in two bands is smaller than 1
-pixel ($0.05$ arcsec). Moreover, in order to resemble the {\it Euclid} 
-wide survey, we apply a selection based on the magnitude of two bands. In the
-first selection, the galaxy must be brighter than magnitude $25$ in
-the F606W band and $24.5$ in the F814W band. In the second selection (VIS, N2 sample),
-we apply the linear interpolation from F606W and F814W band using the
-effective wavelength to approximate the Euclid VIS magnitude, and
-select the galaxy brighter than $24.5$ in VIS. In the last one (N3
-sample), we enlarge the sample by using lower threshold in two bands:
-$25.5$ in V and $25.0$ in I band. The number of galaxies is listed in
-Table\ref{table:mag}.
-
-
-{\bf We need to discuss the low number density for the N2 sample; is is low
-by a factor 3.}
-
-
-The galaxy VIS magnitudes will determined by several factors, such as
-exposure time and filter transmission, etc. Thus, the actual number of
-galaxies can be different from what we have shown in this work. The
-approximation that we use rely on the flatness of the source
-spectrum. In the VIS sample, the number of galaxies is similar to that in
-the first selection in all three fields, which suggest that the
-spectra of our galaxies are relatively smooth. In the N3 sample the galaxy
-number is much higher.
-%
-The total galaxy number and number density ($\sim$12/arcmin$^2$) is
-lower than that in \citetalias{Semboloni13} for several reasons: we only selected
-galaxies for  which the 3D-HST photometric redshift are available, and those
-suitable for weak lensing analysis, e.g. the very big or bright
-galaxies are not include. Moreover, in \citetalias{Semboloni13} the galaxies are selected
-by the magnitude of F814W. However we select galaxies by the estimated
-VIS magnitude and well match in F606W and F814W.
-
-There is no significant difference found in the distribution of galaxy
-parameters, such as effective radius, axis ratio, photometric redshift
-and colour (we use $m_{F606}-m_{F814}$ as colour in this work, and
-will write as $m_{V-I}$ later). The SNR of most images in VIS sample
-are larger than $15$, thus they will be able to provide relatively
-stable estimate for CG bias.
-%while the low SNR images may suffer from large uncertainty of bias estimation. Thus we only show the result in the VIS sample.
-
-We also compare the galaxies from 3 catalogues (AEIGS, COSMOS, UDS).  In
-the distribution of galaxy parameters (Fig.\ref{fig:datapro1}), we
-find no significant difference in half light radius ($r_h$), galaxy
-axis ratio or redshift distribution. However, in the colour
-distribution, there are more blue galaxies (small $m_{V-I}$) in AEGIS,
-which is more significant in N3 sample. We will see later that the
-colour of galaxy is also related to the CG bias in shape measurement.
-%There is slight difference in the SNR of two filters: the SNR of galaxies in AEGIS are larger than the other two in V-band, while smaller in I-band.
-%
-
-
-\begin{figure*}
-  \hbox{
-    \includegraphics[width=8.0cm]{zhisrh.eps}
-    \includegraphics[width=8.0cm]{zhisratio.eps}}
-    \hbox{
-    \includegraphics[width=8.0cm]{zhisphotoz.eps}
-    \includegraphics[width=8.0cm]{zhiscolor.eps}}
-  \caption{The histogram for basic galaxy properties in our
-    sample. The lines with different colours represent galaxies from
-    different catalogues (AEGIS, COSMOS, UDS). From left to right: half
-    light radius, axis ratio, photometric redshift, and colour
-    ($m_{V-I}$).}
-  \label{fig:datapro1}
-\end{figure*}
-%
+We match the galaxy from F606W and F814W bands by requiring that the difference in galaxy coordinates 
+in two bands is smaller than 1 pixel ($0.05$ arcsec). Moreover, in order to resemble the {\it Euclid} 
+wide survey, we derive an approximate estimate for the VIS magnitude using:
+\be
+m_{\rm VIS}=m_{606}+ 0.55\,(m_{606}-m_{814}),
+\ee
+and select galaxies brighter than $m_{\rm VIS}=25$. The resulting sample sizes for the 
+three CANDELS fields are listed in Table\ref{table:mag}. Most galaxies in our sample are detected with an $SNR>15$, and we thus  expect to be able to determine the CG bias accurately. In Fig.~\ref{fig:datpro1} we present histograms of some of the relevant galaxy properties for the three fields. We observe no significant differences, but note that we find more blue galaxies in AEGIS.
 
 \subsection{CG bias from CANDELS}
 
-In this section, we use the real galaxy images to estimate the CG bias
-which will appear in the Euclid weak lensing survey. For the reference
-PSF of Euclid, we use the Airy model (Eq.\,\ref{eq:psfairy}), and we use
-the PSF model from TinyTim for the HST data.
+We now proceed to apply the procedure we tested on synthetic galaxies on the HST observations to determine the expected CG bias for {\it Euclid}. We use the default TinyTim when we fit the single component S{\'e}rsic models to the observations using {\sc GALFIT}. We adopt priors on the S{\'e}rsic index ($0.5<n<5.0$), the effective radius ($1<r_e<50$ pixel) and axis ratio ($0.6<q<1.0$). We assume that the 
+Airy model (Eq.\,\ref{eq:psfairy}) is a good representation of the {\it Euclid} PSF. As described in
+\ref{sec:noisy} we interpolate the SED on each pixel of the model galaxy to generate a wavelength dependent image (Eq.\ref{eq:linearitp} - \ref{eq:lineareq}), which is integrated and convolved to 
+create the images with and without colour gradients. We create images with six different orientations
+to reduce estimate the multiplicative shear bias $m$ caused by colour gradients.
 
-We estimate the CG bias following the same procedure for the simulated galaxy:
-\begin{itemize}
-  \item
-    fit the galaxy using one Sersic component for both band
-    images. Some constraints such as Sersic index ($0.5<n<5.0$),
-    effective radius ($1<r_e<50$ pixel) and axis ratio ($0.6<q<1.0$)
-    are adopted in Galfit.
-  \item
-    interpolate the SED on each pixel of the galaxy image, and
-    generate the galaxy at each wavelength (Eq.\ref{eq:linearitp} -
-    \ref{eq:lineareq}), and then integrate over the wavelength to
-    simulate the CG and NCG galaxy image.
-  \item
-    measure the shape of two images and calculate the bias $m$. We
-    also apply $6$ different orientation of the images in order
-    to reduce the intrinsic shape noise.
-\end{itemize}
-%
-In Fig.\ref{fig:cgbhis}, we show the histogram of the CG bias. The CG
-bias in most of the galaxies is smaller than $0.01$ ($94\%$). We did
-not perform averaging as we did for the simulated noisy images, which
-can further reduce the scatter of the bias. Thus the actual bias,
-especially the scatter in the sample, is smaller. In the bottom
-panel, we estimate the CG bias using a larger weight function
-($2r_h$). As one expected, the bias decreases by about one order of
-magnitude.
-
-%
-%The red line show the CG bias if we perform lensing instead of shearing
-%the images. We can see that the bias becomes larger, and the effect is
-%stronger than the PSF variations. However, it is highly possible that we
-%overestimate the flexion and the effect due to that, since we did not
-%consider the real lens property. In the rest, we only show the result using
-%shearing.
+The top panel of Fig.~\ref{fig:cgbhis} shows the histogram of the CG bias for the three CANDELS fields that we study here. The mean bias is {\bf give the mean bias} and the distribution is quite peaked, with bias less than 0.01 for 94\% of the galaxies. Note that the observed distribution will be slightly broadened due to noise in the HST images (cf. the red histogram in Fig.~\ref{fig:histogrambias}). For reference we show in the bottom panel of Fig.~\ref{fig:cgbhis} the histogram if we adopt a  weight function that is twice as large
+($2\times r_{\rm h}$) to measure the shapes. As expected, the bias decreases by about one order of magnitude. Although an increase in the width of the weight function is thus a potentially interesting approach to reduce the impact of the CG bias, we note that our nominal implementation already suggests that the average  bias is small. 
 
 %
 \begin{figure}
-  \includegraphics[width=7.0cm]{zhiscgb.eps}
-  \includegraphics[width=7.0cm]{zhiscgbno.eps}
-\caption{CG bias histogram from CANDELS: different colours show the
-  result from three catalogues. In the bottom panel we show the CG
-  bias using different weight function ($r_w = 2r_h$).  }
+  \includegraphics[width=\hsize]{zhiscgb.eps}
+  \includegraphics[width=\hsize]{zhiscgbno.eps}
+\caption{Histogram of the estimated multiplicative bias caused by colour gradients using HST 
+observations. The results for the three different CANDELS fields are indicated by the different
+colours. The top panel shows the distribution for our nominal choice for the width of the weight
+function, whereas the bottom panel shows that increasing the width to twice the half-light radius
+reduces the biases by an order of magnitude. }
 \label{fig:cgbhis}
 \end{figure}
-%
-%\begin{figure}
-%  \includegraphics[width=7.0cm]{zcgbhis_psf.eps}
-%  \caption{CG bias histogram of CANDELS using three different PSF
-%    models from TinyTim.}
-%  \label{fig:candelspsf}
-%\end{figure}
-%
+
+The amplitude of the CG bias depends on a number of parameters, such as the redshift and colour. Hence it is not sufficient to consider the average bias for the source sample. We therefore need to explore such trends using our HST measurements. We start with two quantities that should be directly related to 
+the CG bias, namely the ratio of the S{\'e}rsic index in the two HST filters and the ratio of the effective
+radii in the two band. 
+
 \begin{figure}
-\includegraphics[width=7.0cm]{zcgb-ne17.eps}
-\includegraphics[width=7.0cm]{zcgb-re17.eps}
+\includegraphics[width=\hsize]{zcgb-ne17.eps}
+\includegraphics[width=\hsize]{zcgbheat-re17.eps}
 \caption{CG bias as a function of galaxy properties: ratio of Sersic
   index between two band (top) and effective radius between two bands
   (bottom). The blue lines are the average CG bias over the parameter
   bins.}
 \label{fig:cg2fitpar}
 \end{figure}
-%
-\begin{figure}
-\includegraphics[width=7.0cm]{zcolor17.eps}
-\includegraphics[width=7.0cm]{zphotoz17.eps}
-\caption{CG bias as a function of galaxy properties, top: color
-  ($m_{V-I}$), bottom: photo-z. In the bottom panel, the red and blue
-  points are the bias for red ($m_{V-I}>0.5$) and blue ($m_{V-I}<0.5$)
-  galaxies respectively. The lines are the average CG bias in the
-  redshift bins.}
-\label{fig:cg2color}
-\end{figure}
-%
-\begin{figure}
-\includegraphics[width=7.0cm]{zcgb-magt17.eps}
-\caption{CG bias as a function of mock VIS magnitude. }
-\label{fig:cg2magvis}
-\end{figure}
-%
-\begin{figure}
-\includegraphics[width=7.0cm]{z2s-ne17.eps}
-\includegraphics[width=7.0cm]{z2nscl-re17.eps}
-\caption{CG bias with Sersic index (top) and effective radius (bottom)
-  from the mock VIS images. The unit of radius is a pixel ($=0.05$
-  arcsec). In the top panel, the blue (red) is the average of small
-  (big) galaxies. In the bottom panel, the red line is average bias of
-  red galaxy ($m_{V-I}>1$); the green line is that of elliptical
-  galaxy ($n_{Sersic}>2.75$); the blue line is for the disk galaxy.}
-\label{fig:cg2re}
-\end{figure}
-%
+
 The colour gradients as a tracer of galaxy evolution have been found
 to be correlate with some aspects. We try to explore relations between
 CG bias and the properties of galaxy. First we show the relation
@@ -786,6 +664,39 @@ is confirmed in our result: the blue line (bin average) in
 Fig. \ref{fig:cg2fitpar} meets zero at $r_{e814}/r_{e606}=1$. However,
 those colour gradients information will not be available in Euclid. We
 also need the relation between the bias with other parameters.
+
+The study of the synthetic galaxies already indicated that the CG bias depends 
+
+
+
+
+\
+%
+\begin{figure}
+\includegraphics[width=\hsize]{zheatcolor17.eps}
+\includegraphics[width=\hsize]{zphotoz17.eps}
+\caption{CG bias as a function of galaxy properties, top: color
+  ($m_{V-I}$), bottom: photo-z. In the bottom panel, the red and blue
+  points are the bias for red ($m_{V-I}>0.5$) and blue ($m_{V-I}<0.5$)
+  galaxies respectively. The lines are the average CG bias in the
+  redshift bins.}
+\label{fig:cg2color}
+\end{figure}
+
+
+\begin{figure}
+\includegraphics[width=\hsize]{z2s-ne17.eps}
+\includegraphics[width=\hsize]{z2nscl-re17.eps}
+\caption{CG bias with Sersic index (top) and effective radius (bottom)
+  from the mock VIS images. The unit of radius is a pixel ($=0.05$
+  arcsec). In the top panel, the blue (red) is the average of small
+  (big) galaxies. In the bottom panel, the red line is average bias of
+  red galaxy ($m_{V-I}>1$); the green line is that of elliptical
+  galaxy ($n_{Sersic}>2.75$); the blue line is for the disk galaxy.}
+\label{fig:cg2re}
+\end{figure}
+%
+
 
 
 In Fig.\ref{fig:cgbhis}, the galaxies in AEGIS field have more
@@ -809,19 +720,6 @@ are obviously more negative than that of the blue ones. It again
 confirms that the colour/colour gradients is an important tracer of
 the galaxy evolution, since apparently galaxies at different redshift
 proceed at different stages of the evolution.
-
-In addition, we stack the images from two bands as our mock VIS band
-images, together with the mock VIS magnitude ($m_{VIS}$).  In
-Fig.\ref{fig:cg2magvis}, we show the bias as a function of
-$m_{VIS}$. There is no obvious dependence on $m_{VIS}$, which seems
-conflict with some study of colour gradients,
-e.g. \citet{2010MNRAS.407..144T} find tight relation between colour
-gradients and $r$-band magnitude. However, there are two points one
-needs to notice: 1) the actual $m_{VIS}$ is different from our linear
-approximation, also the filter transmission are different of two
-telescope. 2) the more important thing is that the wide band magnitude
-may not contain sufficient information about the type or colour of
-galaxy, thus may not be a good tracer for CG bias.
 
 The VIS image, on the other hand, contains more information
 Fig.\ref{fig:cg2re} shows the CG bias with the Sersic index
