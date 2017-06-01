@@ -583,18 +583,17 @@ additional magnitude cuts as detailed below. To investigate the dependence of th
 \begin{table}
   \begin{tabular}{lllll}
     \hline
-    Field   &Area (arcmin$^2$) &$N_1$ &$N_2$ &$N_3$\\
+    Field               &AEGIS   &COSMOS   &UDS  &Total\\
     \hline
-    AEGIS   &180   &2094  &2112  &3460\\
-    COSMOS  &139   &1593  &1656  &2449\\
-    UDS     &146   &1455  &1497  &2341\\
-    Total   &465   &5142  &5265  &8250\\
+    Area (arcmin$^2$)   &180    &139    &146   &465\\
+    N                  &5518    &4794   &4311  &14623\\
+    density            &30.7    &34.5   &29.5  &31.4
     \hline
   \end{tabular}
-  \caption{\label{table:mag} Size of the HST CANDELS data sample in F606W
-    and F814W bands.  The number of galaxies are shown in three selection
-    methods to match the Euclid survey, $N_1$: $m_V<25$ and $m_I<24.5$,
-    $N_2$: $m_{VIS}<24.5$, $N_3$: $m_V<25.5$ and $m_I<25$. }
+  \caption{\label{table:mag} Size of the HST CANDELS data sample in
+    F606W and F814W bands. We select the galaxy by estimated $VIS$
+    magnitude: $m_{\rm VIS}<25$. The number density is given in the number
+    of galaxies per arcmin$^2$.}
 \end{table}
 \end{center}
 %
@@ -673,8 +672,8 @@ The study of the synthetic galaxies already indicated that the CG bias depends
 \
 %
 \begin{figure}
-\includegraphics[width=\hsize]{zheatcolor17.eps}
-\includegraphics[width=\hsize]{zphotoz17.eps}
+\includegraphics[width=\hsize]{zheatcolor26.eps}
+\includegraphics[width=\hsize]{zphotozheat26.eps}
 \caption{CG bias as a function of galaxy properties, top: color
   ($m_{V-I}$), bottom: photo-z. In the bottom panel, the red and blue
   points are the bias for red ($m_{V-I}>0.5$) and blue ($m_{V-I}<0.5$)
