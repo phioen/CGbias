@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -245,11 +245,19 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Rowe}, B.~T.~P., {Jarvis}, M., {Mandelbaum}, R., {et~al.} 2015, Astronomy and
   Computing, 10, 121
 
+\bibitem[{{Schrabback} {et~al.}(2016){Schrabback}, {Applegate}, {Dietrich},
+  {Hoekstra}, {Bocquet}, {Gonzalez}, {von der Linden}, {McDonald}, {Morrison},
+  {Raihan}, {Allen}, {Bayliss}, {Benson}, {Bleem}, {Chiu}, {Desai}, {Foley},
+  {de Haan}, {High}, {Hilbert}, {Mantz}, {Massey}, {Mohr}, {Reichardt}, {Saro},
+  {Simon}, {Stern}, {Stubbs}, \& {Zenteno}}]{Schrabback16}
+{Schrabback}, T., {Applegate}, D., {Dietrich}, J.~P., {et~al.} 2016, ArXiv
+  e-prints
+
 \bibitem[{{Schrabback} {et~al.}(2010){Schrabback}, {Hartlap}, {Joachimi},
   {Kilbinger}, {Simon}, {Benabed}, {Brada{\v c}}, {Eifler}, {Erben},
   {Fassnacht}, {High}, {Hilbert}, {Hildebrandt}, {Hoekstra}, {Kuijken},
   {Marshall}, {Mellier}, {Morganson}, {Schneider}, {Semboloni}, {van Waerbeke},
-  \& {Velander}}]{schrabback2010}
+  \& {Velander}}]{Schrabback10}
 {Schrabback}, T., {Hartlap}, J., {Joachimi}, B., {et~al.} 2010, \aap, 516, A63
 
 \bibitem[{{Semboloni} {et~al.}(2013){Semboloni}, {Hoekstra}, {Huang},
