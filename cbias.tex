@@ -457,6 +457,7 @@ lines we  increase the size of PSF for the F606W images.}
 \end{figure}
 
 \subsection{PSF variations narrow-band data}
+\label{sec:psfmodel}
 
 So far we implicitly assumed that the simple axisymmetric PSF used to mimic the HST data
 is perfectly known. In reality, however, the HST PSF is more complex, and varies spatially
@@ -469,10 +470,11 @@ To do so, we first generate models where we slightly increase the PSF size in th
 \begin{figure}
 \includegraphics[width=8.0cm]{ztinytim_b.eps}
 \includegraphics[width=8.0cm]{ztinytim_s.eps}
-\caption{Comparison of PSF between TinyTim model and stars.
-  Top (Bottom) is for the B-galaxy (S-galaxy). The solid (dashed) 
-  lines are the result using undrizzled (drizzled) PSF. 
-  The dotted lines are that if we also include binary PSF effect.}
+\caption{Difference in CG bias when the reference {\sc TinyTim} PSF is used to deconvolve
+the synthetic HST data (blue lines) or when we mimic the PSF modelling (red lines). The top
+panel shows the results for the reference galaxy `B', whereas the bottom panel shows results
+for galaxy `S'. The differences are small, suggesting that the bias is not particularly sensitive to 
+errors in the adopted HST PSF model.}
 \label{fig:psfacc2}
 \end{figure}
 
@@ -537,11 +539,8 @@ select galaxies with $m_{\rm VIS}<25$.}
 
 \subsection{CG bias from CANDELS}
 
-We now proceed to apply the procedure we tested on synthetic galaxies on the HST observations to determine the expected CG bias for {\it Euclid}. We use the default TinyTim when we fit the single component S{\'e}rsic models to the observations using {\sc GALFIT}. We adopt priors on the S{\'e}rsic index ($0.5<n<5.0$), the effective radius ($1<r_e<50$ pixel) and axis ratio ($0.6<q<1.0$). We assume that the 
-Airy model (Eq.\,\ref{eq:psfairy}) is a good representation of the {\it Euclid} PSF. As described in
-\ref{sec:noisy} we interpolate the SED on each pixel of the model galaxy to generate a wavelength dependent image (Eq.\ref{eq:linearitp} - \ref{eq:lineareq}), which is integrated and convolved to 
-create the images with and without colour gradients. We create images with six different orientations
-to reduce estimate the multiplicative shear bias $m$ caused by colour gradients.
+We now proceed to apply the procedure we tested on synthetic galaxies on the HST observations to determine the expected CG bias for {\it Euclid}. We use the default TinyTim PSF when we fit the single component S{\'e}rsic models to the observations using {\sc GALFIT} (see \S\ref{sec:psfmodel}).
+We adopt priors on the S{\'e}rsic index ($0.5<n<5.0$), the effective radius ($1<r_e<50$ pixel) and axis ratio ($0.6<q<1.0$). We assume that the Airy model (Eq.\,\ref{eq:psfairy}) is a good representation of the {\it Euclid} PSF. As described in \ref{sec:noisy} we interpolate the SED on each pixel of the model galaxy to generate a wavelength dependent image (Eq.\ref{eq:linearitp} - \ref{eq:lineareq}), which is integrated and convolved to  create the images with and without colour gradients. We create images with six different orientations to reduce estimate the multiplicative shear bias $m$ caused by colour gradients.
 
 The top panel of Fig.~\ref{fig:cgbhis} shows the histogram of the CG bias for the three CANDELS fields that we study here. The mean bias is {\bf give the mean bias} and the distribution is quite peaked, with bias less than 0.01 for 94\% of the galaxies. Note that the observed distribution will be slightly broadened due to noise in the HST images (cf. the red histogram in Fig.~\ref{fig:histogrambias}). For reference we show in the bottom panel of Fig.~\ref{fig:cgbhis} the histogram if we adopt a  weight function that is twice as large
 ($2\times r_{\rm h}$) to measure the shapes. As expected, the bias decreases by about one order of magnitude. Although an increase in the width of the weight function is thus a potentially interesting approach to reduce the impact of the CG bias, we note that our nominal implementation already suggests that the average  bias is small. 
@@ -560,17 +559,23 @@ reduces the biases by an order of magnitude. }
 
 The amplitude of the CG bias depends on a number of parameters, such as the redshift and colour. Hence it is not sufficient to consider the average bias for the source sample. We therefore need to explore such trends using our HST measurements. We start with two quantities that should be directly related to 
 the CG bias, namely the ratio of the S{\'e}rsic index in the two HST filters and the ratio of the effective
-radii in the two band. 
+radii in the two band. The results are presented in Fig.~\ref{fig:cg2fitpar}. The top panel shows that the
+average CG bias does not depend significantly on the ratio of S{\'e}rsic indices; we do observe a significant trend when we consider the ratio of effective radii (bottom panel). This is not surprising, because the bias in shape measurements depends to leading order on the galaxy size \citep{Massey13}.
 
 \begin{figure}
 \includegraphics[width=\hsize]{zcgb-ne17.eps}
 \includegraphics[width=\hsize]{zcgbheat-re17.eps}
-\caption{CG bias as a function of galaxy properties: ratio of Sersic
-  index between two band (top) and effective radius between two bands
-  (bottom). The blue lines are the average CG bias over the parameter
-  bins.}
+\caption{Multiplicative CG bias as a function of structural parameters in the fit to the surface brightness
+profiles in the F606W and F814W filters. {\it Top panel:} bias as a function
+of the ratio of the best fit S{\'e}rsic index in the F814W and F606W filters. The line with
+errorbars shows the average and its uncertainty. {\it Bottom panel:} bias as a function of effective
+radii in the F814W and F606W filters. We observe a clear trend in the average bias as a function of
+this ratios}
 \label{fig:cg2fitpar}
 \end{figure}
+
+These structural parameters are, however, not observable using the {\it Euclid} data. Instead
+we examine 
 
 The colour gradients as a tracer of galaxy evolution have been found
 to be correlate with some aspects. We try to explore relations between
