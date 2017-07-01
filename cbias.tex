@@ -59,10 +59,7 @@ $^8$California Institute of Technology, 1200 East California Blvd, Pasadena, CA 
 \maketitle
 
 \begin{abstract}
-Accurate shape measurements are essential to infer cosmological parameters from large area weak gravitational lensing studies. To exploit the precision afforded by the next generation of surveys, such as 
-{\it Euclid} a number of new instrumental effects that could hitherto be safely ignored need to be carefully accounted for. Its compact diffraction-limited point spread function (PSF) is greatly beneficial for shape measurements, but the chromaticity cannot be ignored: the PSF of a galaxy is no longer uniquely defined 
-and spatial variations in the colours of galaxies result in biases in the inferred lensing signal.  We show that this colour-gradient bias (CG bias) can be quantified with sufficient accuracy and precision using available multi-colour {\it Hubble} Space Telescope (HST) data. In particular we study how noise in the HST observation might impact such measurements and find them to be negligible. We determine the CG bias using HST observations in the F606W and F814W filters and observe a correlation with the colour, in line with expectations, whereas the dependence with redshift is weak. The biases for individual galaxies are well below 1\%, which may be reduced further using morphological information from the {\it Euclid} data.
-Our results demonstrate that, although the impact of CG bias cannot be ignored, it is possible to determine the impact with sufficient precision that it does not pose a serious problem for the weak lensing analysis of {\it Euclid} data.
+Accurate shape measurements are essential to infer cosmological parameters from large area weak gravitational lensing studies. The compact diffraction-limited point spread function (PSF) in space-based observations is greatly beneficial, but its chromaticity can lead to new subtle effects that could hitherto be ignored: the PSF of a galaxy is no longer uniquely defined  and spatial variations in the colours of galaxies result in biases in the inferred lensing signal. Taking {\it Euclid} as a reference, we show that this colour-gradient bias (CG bias) can be quantified with high accuracy using available multi-colour {\it Hubble} Space Telescope (HST) data. In particular we study how noise in the HST observations might impact such measurements and find them to be negligible. We determine the CG bias using HST observations in the F606W and F814W filters and observe a correlation with the colour, in line with expectations, whereas the dependence with redshift is weak. The biases for individual galaxies are generally well below 1\%, which may be reduced further using morphological information from the {\it Euclid} data. Our results demonstrate that, although the impact of CG bias cannot be ignored, it is possible to determine the impact with sufficient precision that it will not significantly bias the weak lensing measurements using {\it Euclid} data.
 \end{abstract}
 \begin{keywords} cosmology, weak lensing, systematics
 \end{keywords}
@@ -81,8 +78,8 @@ Such a measurement is the objective of {\it Euclid} \citep{Laureijs11}, the dark
 is a major advantage, but the diffraction-limited PSF leads to new complications. 
 
 The most prominent one is that the correction for the smearing by the chromatic PSF depends on the spectral energy distribution (SED) of the galaxy of interest \citep{Cypriano10, Eriksen17} and ignoring this would lead to significant biases in the case of {\it Euclid}. Fortunately this can be accounted for using the supporting broad-band observations that are used to derive photometric redshifts for the sources: the correction employs an effective PSF which is derived from the estimate of the observed SED of the galaxy. This correction is sufficient if the SED does not vary spatially. If this is not the case, the underlying brightness distribution, which is needed for an unbiased estimate of the shear, cannot be unambiguously recovered from the observed images.
-This results in a higher order systematic bias, which we call colour-gradient (hereafter CG) bias.
-As shown by \cite{Semboloni13} (\citetalias{Semboloni13} in the rest of this paper) the amplitude depends on several factors: the SED of the galaxy, the relative size of the galaxy compared to the PSF, and the width of the bandpass, $\Delta\lambda$.  For instance, the bias scales as $\Delta\lambda^2$, and thus is particularly relevant in the case of {\it Euclid}.
+This results in a higher order systematic bias, which we call colour-gradient bias (or CG bias in short).
+As shown by \cite{Semboloni13} (\citetalias{Semboloni13} hereafter) the amplitude depends on several factors: the SED of the galaxy, the relative size of the galaxy compared to the PSF, and the width of the bandpass, $\Delta\lambda$.  For instance, the bias scales as $\Delta\lambda^2$, and thus is particularly relevant in the case of {\it Euclid}.
 
 Galaxies show a wide variety in colour gradients, with elliptical galaxies typically showing negative colour gradients (redder in the centre and bluer in the outskirts), with steeper gradients more commonly found in bluer or more luminous early type galaxies \citep[e.g.][]{2011MNRAS.414.3052D,
 2011MNRAS.411.1151G}. Moreover, correlations between colour gradients and the overall colours and luminosities of the galaxies have been inferred \citep[e.g.][]{2010AJ....140.1528L, 2016A&A...593A..84K}.
@@ -134,11 +131,24 @@ Q^0_{ij} = {1 \over F} \int  I^{0}({\bm \theta})\, \theta_i \theta_j \, \d^2 {\b
 %
 where $F=\int \d^2{{\bm\theta}}  I^{0}({\bm\theta})$ is the total observed photon flux.
 
+%
+\begin{figure*}
+\includegraphics[width=12.5cm]{colourg.eps}
+\caption{Flowchart describing how the colour-gradient bias is determined. The initial image
+is the same in both flows, but in the top flow an image without a colour gradient is created
+to which a shear is applied. In the bottom flow, the image is sheared before the PSF steps
+are applied. The ellipticities of the resulting images differ slightly, and can be used to quantify
+the bias that is introduced.}
+\label{fig:flowchart}
+\end{figure*}
+%
+
+
 In practice, however, the observed moments are measured from the PSF-convolved image given by
 Eqn.~(\ref{eq:iobs}). Moreover, the moments are evaluated using a weight function $W({\bm\theta})$  to reduce the effect of noise in the images. Hence, the observed quadrupole moments are given by
 \be
 Q^{\rm obs}_{ij} = {1 \over F_{\rm w}} \int_{\Delta\lambda} \d\lambda \int \d^2 {\bm\theta} \,
-I^0(\theta; \lambda) *  P(\theta,\lambda)\, \theta_i \theta_j \, W({\bm \theta})\,,
+I^0({\bm\theta}; \lambda) *  P({\bm\theta},\lambda)\, \theta_i \theta_j \, W({\bm \theta})\,,
 \ee
 %
 where $F_{\rm w}$ is the weighted flux. The use of a weight function biases the observed moments, 
@@ -158,17 +168,6 @@ P_{\rm eff}({\bm \theta}) = \frac{1}{F} \int \d \lambda\, P({\bm \theta},\lambda
 \ee
 where   $F(\lambda)$ is the photon flux as a function of wavelength, which is directly related to the spectral energy distribution (SED) of the galaxy. Hence the correction for the chromatic PSF requires an estimate of the SED.  \cite{Eriksen17} have shown that the broadband observations that are used to determine photometric redshifts for {\it Euclid} can also be used to estimate the effective PSF with sufficient accuracy to meet the stringent requirements presented in \cite{Cropper13}.
 
-%
-\begin{figure*}
-\includegraphics[width=12.5cm]{colourg.eps}
-\caption{Flowchart describing how the colour-gradient bias is determined. The initial image
-is the same in both flows, but in the top flow an image without a colour gradient is created
-to which a shear is applied. In the bottom flow, the image is sheared before the PSF steps
-are applied. The ellipticities of the resulting images differ slightly, and can be used to quantify
-the bias that is introduced.}
-\label{fig:flowchart}
-\end{figure*}
-%
 
 We limit our study of the CG bias to the multiplicative bias it introduces, and our approach to quantify 
 the impact on the lensing signal is similar to \citetalias{Semboloni13}. Figure~\ref{fig:flowchart} shows the flowchart of the steps that enable us to evaluate the CG bias.  In both cases we start with the same wavelength dependent image $I^0({\bm \theta};\lambda)$, but the bottom flow resembles what happens in the actual observations: the original image is sheared\footnote{We use 
@@ -181,12 +180,12 @@ m= {\epsilon_i^{\rm CG} \over \epsilon_i^{\rm NCG} }-1,
 \ee
 %
 where `CG' indicates the case where the galaxy has a colour gradient, and `NCG' is the galaxy
-with a uniform colour. Note that our approach differs slightly from that in \citetalias{Semboloni13}, who quantify the response of the observed ellipticity to an applied shear. Hence, they do not apply the last step
-in the bottom flow (the deconvolution), but rather convolve the final image in the top flow. 
+with a uniform colour. Note that our approach differs slightly from that in \citetalias{Semboloni13}, who quantify the response of the observed ellipticity to an applied shear. Consequently their definition
+of $m$ has the opposite sign. The procedural difference with \citetalias{Semboloni13} is that they do not apply the last step in the bottom flow (the deconvolution), but rather convolve the final image in the top flow. 
 The steps presented in Fig.~\ref{fig:flowchart} yield a more symmetric result, highlighting the fact
 that the CG bias is the consequence of the fact that the shearing of the image does not commute 
 with the convolution with the PSF. However, we verify in Sect.~\ref{sec:simulations} that we recover
-the results of \citetalias{Semboloni13} (see Fig.~\ref{fig:biasofweight}). 
+the results of \citetalias{Semboloni13} (but with an opposite sign). 
 
 Recently, \cite{Huff17} proposed a technique to infer multiplicative shear calibration parameters that avoids the use of extensive image simulations, such as those described in \citep{Hoekstra17}. They quantify the 
 sensitivity to a known shear by applying it to the observed data. Hence, their approach follows the top flow in Fig.~\ref{fig:flowchart} and thus cannot account for CG bias. 
@@ -197,7 +196,7 @@ sensitivity to a known shear by applying it to the observed data. Hence, their a
 The CG bias is a higher order systematic bias, and thus the changes in the measured ellipticities are small. It is therefore important to verify that numerical errors in the calculations are subdominant compared to the small effects we aim to measure. To do so, we compare results from two independent codes that are used to generate the simulated images: one is written in C/C++ and the other uses the
 python-based {\sc GalSim} package \citep{Rowe15}, which is widely used to created simulated images \citep[e.g.][]{FenechConti17, Hoekstra17}. 
   
-In the C code we compute the image by multiplying the surface brightness at the centre of each pixel using a sheared S{\'e}rsic profile with the pixel area. In the case of {\sc GalSim} we use the {\sc Shear()} function (which convolves the image by the pixel). Since we are interested in small differences in the shapes of
+In the C code we compute the images by multiplying the surface brightness at the centre of each pixel using a sheared S{\'e}rsic profile with the pixel area. In the case of {\sc GalSim} we use the {\sc Shear()} function (which convolves the image by the pixel). Since we are interested in small differences in the shapes of
 deconvolved images, we first examined the size of potential numerical errors. We therefore convolved and
 subsequently deconvolved elliptical images. Comparison of the recovered ellipticities revealed small differences between the codes that ranged from $10^{-7}$ to $10^{-6}$, two orders of magnitude
 smaller than the CG biases we are concerned with. Hence can safely neglect this numerical artefacts here.
@@ -220,7 +219,7 @@ P(\theta) = {I_0 \over (1-\epsilon^2)^2} \rund{{2J_1(\theta)\over \theta} -
 %
 where $I_0$ is the maximum intensity at the center, $\epsilon$ is the aperture obscuration ratio, and $J_1(x)$ is the first kind of Bessel function of order one; $x$ is defined as $x=\pi \theta/\lambda\, D $.
 In the case of {\it Euclid}, $D=1.2$m and $\epsilon=1/3$. We compare this model to the Gaussian
-case and PSF3 from \citetalias{Semboloni13} in Fig.~\ref{fig:psfmodel} at the 550\,nm and 920\,nm.
+case and PSF3 from \citetalias{Semboloni13} in Fig.~\ref{fig:psfmodel} at 550\,nm and 920\,nm.
 
 \begin{figure}
 \centerline{\includegraphics[width=\hsize]{zairy.eps}}
@@ -232,11 +231,9 @@ the results for 920\,nm are shown in red.}
 \end{figure}
 %
 
-As discussed in Sect.~\ref{sec:concepts} the amplitude of the noise bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. In Fig.~\ref{fig:biasofweight} we show the CG bias for the two reference galaxies as a function of $\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments. The results from the {\sc C} code (dashed lines) and the {\sc GalSim} code (dotted lines) agree very well for both the large galaxy `B' (red lines) and the small galaxy `S' (blue lines). Given the consistent results between the {\sc C} and {\sc GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\tt GalSim}.
+As discussed in Sect.~\ref{sec:concepts} the amplitude of the noise bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. In Fig.~\ref{fig:biasofweight} we show the CG bias for the two reference galaxies as a function of $\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments. The results from the {\sc C} code (dashed lines) and the {\sc GalSim} code (dotted lines) agree very well for both the large galaxy `B' (red lines) and the small galaxy `S' (blue lines). Given the consistent results between the {\sc C} and {\sc GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\sc GalSim}.
 
-Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the width of the weight function is increased. This allows for an interesting trade-off between CG bias and noise bias. The latter increases with increasing $\theta_{\rm w}$ but relatively slowly (see Fig.~4 in \citetalias{Semboloni13}). As a proxy for the optimal weight function (which maximizes the signal-to-noise ratio) we adopt the value of the 
-half-light radius in the remainder of this paper. This yields $m=0.8\times10^{-3}$ for galaxy `B' and
-$m=2\times10^{-3}$ for galaxy `S', demonstrating that the CG bias is a strong function of galaxy size.
+Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the width of the weight function is increased. This allows for an interesting trade-off between CG bias and noise bias. The latter increases with increasing $\theta_{\rm w}$ but relatively slowly (see Fig.~4 in \citetalias{Semboloni13}). It also highlights that the CG bias itself differs between shape measurement methods that typically use different weight functions. As a proxy for the optimal weight function (which maximizes the signal-to-noise ratio) we adopt the value of the  half-light radius in the remainder of this paper. This yields $m=0.8\times10^{-3}$ for galaxy `B' and $m=2\times10^{-3}$ for galaxy `S', demonstrating that the CG bias is a strong function of galaxy size.
 
 %
 \begin{figure}
@@ -293,7 +290,7 @@ The {\it Euclid} observations lack high-resolution multi-band images to measure 
 and colour. The former is relevant for tomographic cosmic shear studies, whereas the latter avoids
 significant spatial variation in the bias because of the correlation between galaxy colour, or morphology, and density.
 
-\citetalias{Semboloni13} showed that HST observations  in both the F606W and F814W filters can be used to determine the CG bias to meet {\it Euclid} requirements. However, \citetalias{Semboloni13} did not consider the complicating factor that the HST images themselves are noisy. Although the HST data are typically deeper than the nominal {\it Euclid} data, and the HST PSF is considerably smaller, it is nonetheless necessary to investigate the impact of noise in more detail. We address this particular question here, before we determine the CG bias from actual HST data in Sect.~\ref{sec:candels}.
+\citetalias{Semboloni13} showed that HST observations  in both the F606W and F814W filters can be used to determine the CG bias to meet {\it Euclid} requirements. However, \citetalias{Semboloni13} did not consider the complicating factor that the HST images themselves are noisy. Although the HST observations are typically deeper than the nominal {\it Euclid} data, and the HST PSF is considerably smaller, it is nonetheless necessary to investigate the impact of noise in more detail. We address this particular question here, before we determine the CG bias from actual HST data in Sect.~\ref{sec:candels}.
 
 The method to calibrate the CG bias using observations in two bands is described in detail
 in \citetalias{Semboloni13}, but here we outline the main steps for completeness. To model the
@@ -312,7 +309,7 @@ I({\bm \theta},\lambda) \approx  a_0({\bm \theta})+a_1({\bm \theta})\lambda.
 \ee
 %
 Eqs.\ref{eq:linearitp} and \ref{eq:interpolate} yield a linear set of
-equations on each pixel, which can be used to solved for the
+equations for each pixel, which can be used to solve for the
 coefficients $a_i$:
 %
 \be
@@ -327,9 +324,9 @@ T_{ji}=\int_{\Delta\lambda_i} \d \lambda\,T_i(\lambda)\lambda^j.
 %
 We thus obtain approximate galaxy images at each wavelength, which we use to estimate the CG bias, following the same procedure as we used in the previous section.
 
-We first consider the recovery of the CG bias for noiseless observations of the two reference galaxies, as this represents the best-case scenario. We simulate the images in the F606W and F814W filters at different redshifts. We adopt the native sampling of the Advanced Camera for Surveys (ACS) on HST of  $0\farcs05$ pixel$^{-1}$. As shown in \citetalias{Semboloni13}, we cannot ignore the blurring of the observed images by the HST PSF; to mimic this we assume an obscured Airy function for a mirror with diameter $D=2.5$ and obscuration  $0.33$ as a proxy for the HST PSF. We deconvolve our synthetic HST images and create the images at different wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
+We first consider the recovery of the CG bias for noiseless observations of the two reference galaxies, as this represents the best-case scenario. We simulate the images in the F606W and F814W filters at different redshifts. We adopt the native sampling of the Advanced Camera for Surveys (ACS) on HST of  $0\farcs05$ pixel$^{-1}$. As shown in \citetalias{Semboloni13}, we cannot ignore the blurring of the observed images by the HST PSF; to mimic this we assume an obscured Airy function for a mirror with diameter $D=2.5$m and obscuration  $0.33$ as a proxy for the HST PSF. We deconvolve our synthetic HST images and create the images at different wavelengths as the starting point for the flow presented in Fig.~\ref{fig:flowchart}.
 
-Following \citetalias{Semboloni13}, we show Fig.~\ref{fig:biasofz50} the CG bias as a function of redshift for galaxy `B' (left panels) and `S' (right panels), demonstrating that the CG bias varies significantly with redshift. The results for the actual CG bias are indicated by the solid black lines, whereas the dashed black lines indicate the recovered values from the noiseless synthetic HST observations in the F606W and F814W filters.  The bottom panels show the residuals between the recovered and the true bias. The residual bias is within the target tolerance for {\it Euclid}, indicated by the grey band, for all redshifts.
+Following \citetalias{Semboloni13}, we show  the CG bias as a function of redshift for galaxy `B' (left panels) and `S' (right panels) in Fig.~\ref{fig:biasofz50}, demonstrating that the CG bias varies significantly with redshift. Note that we ignored any evolution in the galaxy SEDs, which will occur in practice. The results for the actual CG bias are indicated by the solid black lines, whereas the dashed black lines indicate the recovered values from the noiseless synthetic HST observations in the F606W and F814W filters.  The bottom panels show the residuals between the recovered and the true bias. The residual bias is within the target tolerance for {\it Euclid}, indicated by the grey band, for all redshifts.
 
 \begin{figure*}
   \includegraphics[width=8.0cm]{zs2n_b_snrtt50.eps}
@@ -390,10 +387,10 @@ The effect radius is given in unit of pixel ($0.05$ arcsec).}
 \end{center}
 \end{table}
 
-We use the best fit models to compute the CG bias, following the same algorithm as was used to compute the signal in the noiseless case. We show the resulting average inferred CG bias in Fig.~\ref{fig:biasofz50} for SNR=50 as a function of redshift for the two reference galaxies (`B' in the left panel and `S' in the
+We use the best fit models to compute the CG bias, following the algorithm that was used to compute the signal in the noiseless case. We show the resulting average inferred CG bias in Fig.~\ref{fig:biasofz50} for SNR=50 as a function of redshift for the two reference galaxies (`B' in the left panel and `S' in the
 right panel). The bottom panels in Fig.~\ref{fig:biasofz50} show the residuals 
 $\Delta m$ with respect to the true multiplicative CG bias. To  determine the average
-bias we analyse 6 rotations of the galaxy and use the average value as our estimate of 
+bias we analyse six rotations of the galaxy and use the average value as our estimate of 
 the galaxy ellipticity \citep{Nakajima07}.  Moreover we create 40 noise realisations for 
 each redshift to estimate the statistical uncertainty in our estimate of the multiplicative
 CG bias, which is given by
@@ -469,7 +466,7 @@ errors in the adopted HST PSF model.}
 \end{figure}
 
 To mimic a more realistic scenario we generated mock star fields using simulated PSFs generated with
-the {\sc TinyTim} tool \citep{2011SPIE.8127E..0JK}. To compute the reference PSFs at the various positions on the detector in the F606W and F814W filters we used the default parameters where possible, including the appropriate camera, detector, and filter passband settings for each image. We adopt the K7V spectrum for the SED, which represents a typical stellar SED in the sample (the choice of a fixed spectrum for stars was found to have a negligible impact on the models.). We select stars with a signal-to-noise ratio larger than $50$, and ensure there are no detected objects within $1$ arcsecond ($20$ pixels), and outlier rejection is performed in the fitting procedure. The postage stamps of the star images for each filter are normalised and then stacked using inverse-variance weighting. This PSF is then used to determine the colour gradient bias from the synthetic HST images of the two reference galaxies (which are convolved with an obscured Airy function for a mirror with diameter D = 2.5 and obscuration 0.33 as a proxy for the HST PSF). The blue lines in Fig.~\ref{fig:psfacc2} show the resulting difference in CG bias for the `B' (top panel) and `S' galaxy (bottom panel) as a function of redshift. Although this represents a relatively significant mismatch in PSFs, the change in bias is quite small.
+the {\sc TinyTim} tool \citep{2011SPIE.8127E..0JK}. To compute the reference PSFs at the various positions on the detector in the F606W and F814W filters we used the default parameters where possible, including the appropriate camera, detector, and filter passband settings for each image. We adopt the K7V spectrum for the SED, which represents a typical stellar SED in the sample (the choice of a fixed spectrum for stars was found to have a negligible impact on the models.). We select stars with a signal-to-noise ratio larger than $50$, and ensure there are no detected objects within $1$ arcsecond ($20$ pixels), and outlier rejection is performed in the fitting procedure. The postage stamps of the star images for each filter are normalised and then stacked using inverse-variance weighting. This PSF is then used to determine the colour gradient bias from the synthetic HST images of the two reference galaxies (which are convolved with an obscured Airy function for a mirror with diameter $D = 2.5$m and obscuration 0.33 as a proxy for the HST PSF). The blue lines in Fig.~\ref{fig:psfacc2} show the resulting difference in CG bias for the `B' (top panel) and `S' galaxy (bottom panel) as a function of redshift. Although this represents a relatively significant mismatch in PSFs, the change in bias is quite small.
 
 To mimic modeling errors that would occur in reality we select simulated PSF images at a nearby position on the detector (from a grid of points) and fitted for the focus values. The corresponding model PSFs are stacked using the same weights as before. The resulting change in CG bias for the `B' (top panel) and `S' galaxy (bottom panel) as a function of redshift as shown by the red lines. The differences between the two TinyTim PSF models is well within requirements, even for the `S' galaxy. These results therefore confirm the
 conclusion of \citetalias{Semboloni13}  that the uncertainty in the HST PSF model has a negligible impact on the determination of the CG bias.
@@ -533,8 +530,8 @@ select galaxies with $m_{\rm VIS}<25$.}
 We now proceed to apply the procedure we tested on synthetic galaxies on the HST observations to determine the expected CG bias for {\it Euclid}. We use the default {\sc TinyTim} PSF when we fit the single component S{\'e}rsic models to the observations using {\sc GALFIT} (see \S\ref{sec:psfmodel}).
 We adopt priors on the S{\'e}rsic index ($0.5<n<5.0$), the effective radius ($1<r_e<50$ pixel) and axis ratio ($0.6<q<1.0$). As before, we approximate the {\it Euclid} PSF using Eqn.\,(\ref{eq:psfairy}).  As described in \ref{sec:noisy} we interpolate the SED on each pixel of the model galaxy to generate a wavelength dependent image, which is subsequently integrated and convolved to  create the images with and without colour gradients. We create images with six different orientations that are sheared to estimate the multiplicative shear bias $m$ caused by colour gradients.
 
-Figure~\ref{fig:cgbhis} shows the histogram of the CG bias for the three CANDELS fields that we study here. The mean bias is $1.1\times 10^{-4}$ and the distribution is quite peaked, with biases less than 0.01 for 
-94\% of the galaxies. Note that the observed distribution will be slightly broadened due to noise in the HST images (cf. the red histogram in Fig.~\ref{fig:histogrambias}). The biases decrease by about a factor five when we double the width of the weight function that is used to measure the shapes. This demonstrates that the amplitude of the CG bias will be quite sensitive to the adopted weight function and thus depends on the adopted shape measurement algorithm: the CG bias will need to be determined for each algorithm that is applied to the data.
+Figure~\ref{fig:cgbhis} shows the histogram of the CG bias for the three CANDELS fields that we study here. 
+Note that the observed distribution will be slightly broadened due to noise in the HST images (cf. the red histogram in Fig.~\ref{fig:histogrambias}). The mean bias is $1.1\times 10^{-4}$ and the distribution is quite peaked, with biases less than 0.01 for 94\% of the galaxies.  The biases decrease by about a factor five when we double the width of the weight function that is used to measure the shapes. This demonstrates that the amplitude of the CG bias will be quite sensitive to the adopted weight function and thus depends on the adopted shape measurement algorithm: the CG bias will need to be determined for each algorithm that is applied to the data.
 
 %
 \begin{figure}
@@ -619,8 +616,7 @@ the average bias is positive, with slightly larger values for $n\sim 4$.
 In the bottom panel of Fig.~\ref{fig:cg2re} the galaxies are divided into three groups: red galaxies
 with $m_{606}-m_{814}>1.0$; the remaining galaxies are subdivided into those with 
 large S{\'e}rsic indices ($n>2.25$, `early type galaxies') or small S{\'e}rsic indices (`disk galaxies').
-The lines show the average CG bias as a function of effective radius. {\bf Are these results
-consistent with the top panel?}
+The lines show the average CG bias as a function of effective radius. 
 
 These results suggest that the VIS image can provide additional information that can be 
 used in combination with the observed colour and redshift to refine the estimate of the 
@@ -632,30 +628,14 @@ are considered. In particular machine-learning techniques could be used to explo
 parameter combinations that reduce the scatter in the estimate for the CG bias for individual galaxies.
 
 We can use the values for the scatter in the CG bias (listed in Table~\ref{table:calibration}) to
-estimate  the number of galaxies that we need to calibrate the bias with high precision. We estimate
+estimate the number of galaxies that we need to calibrate the bias with high precision. We estimate
 we need approximately $200$ galaxies for each type of galaxy in every redshift bin. If we consider
 relatively wide bins, for instance, two types of colour: red and blue; five different sizes from
 about $0.1$ arcsec to $1.0$ arcsec (Fig.\,\ref{fig:cg2re}), and five redshift bins, we require at least 
-$20\,000$ galaxies. 
-
-
-For more
- realistic SED classifications and redshift bins, several times larger
-sample are also necessary.
-
-
-
-
-However, we note that the biases we observe are small, and the corresponding scatter remains
-negligible in comparison to the intrinsic ellipticities of galaxies.
-
-
-
-The dispersions of
-the bias in each bin are large, which probably indicate that in each
-bin there are several kinds and sizes of galaxies. Therefore, in
-order to calibrate the bias with high precision, one need bigger
-galaxy samples. From our simulation, we need about 
+$20\,000$ galaxies. The numbers increase if we wish to use a finer SED classification (rather than
+simply blue and red). In our study we restricted the sample of observations that overlap with CANDELS, resulting in a total of almost 15,\,000 galaxies. Table~4 in \citetalias{Semboloni13} estimates that the total area for which suitable HST data are available is significantly larger, yielding $50,\,000--65,\,000$
+galaxies (where the exact number depends whether one would also accept F850LP observations).
+Hence we conclude that ample HST observations exist to determine the CG bias with sufficient accuracy and precision so that it does not significantly biases the {\it Euclid} cosmic shear measurements.
 
 \begin{figure}
 \includegraphics[width=\hsize]{z2s-ne29.eps}
@@ -670,116 +650,23 @@ galaxy samples. From our simulation, we need about
 \end{figure}
 %
 
-
-
-
-
-
-%\be
-%c=m{e_{\rm PSF} \over P_{\gamma}P_{ePSF}},
-%\ee
-%follow Massey $P_{ePSF}=1$, $P_{\gamma}=0.93$ and using a conservative choice, which corresponds to the maximum value for the polarization allowed for the Euclid PSF $e_{PSF}=0.07$.
-
-
 \section{Summary and Discussion}
-In the image survey for weak gravitational lensing, the wide band
-filter can provide high signal-to-noise images and large coverage of
-redshift range. There is however a shape bias due to the chromatic
-shape of galaxy and the PSF, which is named as colour gradient
-bias. For very wide band surveys, such as Euclid, this effect can
-cause a non-negligible bias.
-%
-In this work, we exam such a kind of bias in measuring the shape of a
-galaxy using both simulated images and real data taken from the HST
-ACS CANDELS survey. In the simulated galaxy images, we confirm the
-bias behaviour from previous results (\citetalias{Semboloni13}). We further apply the
-calibration method to the noisy images in the simulations, and find
-that with reasonable signal-to-noise ratio (SNR$=15$) and sufficient
-numbers of galaxies ($300$ images for one type of galaxy in one
-redshift bin), we can estimate the CG bias to a high precision.
-However, the underestimate cannot be avoided due to strong emission
-lines, or the uneven SED of source galaxies. Moreover, the simulations
-are performed with only two galaxy models, and the SNR of the
-simulated images in two bands are assigned with equal value. In
-reality, the relation between the SNR with the size and SED of the
-galaxies has to be taken into account.
-%
-We also perform comparison of TinyTim and star PSF models. The
-inaccuracy, especially that due to the binary stars, will cause errors
-in estimating the CG bias.
 
+The next generation of wide area deep imaging surveys will dramatically improve the precision with which the correlations in galaxy shapes caused by weak gravitational lensing will be measured. However, to exploit these data, it is paramount that instrumental effects are accounted for. Many of these could hitherto be ignored, but this will not be the case any longer in the case of {\it Euclid}, {\it WFIRST} and LSST.
+Although the shape measurements greatly benefit from the compact diffraction-limited point spread function (PSF) in space-based observations, it is important that chromatic effects are accounted for. This is particularly relevant in the case of {\it Euclid}, which employs a broad pass band to maximise the signal-to-noise ratio of the measurements. This enhances its sensitivity to spatial variations in the colours of galaxies,
+which result in biases in the inferred lensing signal, unless accounted for.
 
-In the estimation using CANDELS data, we select the images from two
-filters (F606W, F814W). For most of the galaxy, the bias ($|m|$) is
-smaller than $0.01$.  As we find from simulated images, the estimation
-using noisy image has a large scatter, thus the CG bias in reality may
-be even smaller than that shown here.
-%
-In our sample of galaxies, the CG bias shows a correlation with the
-colour of galaxies, and a linear relation with the ratio of two band
-images. We also generate the mock VIS band images. From the parameters
-of the image (Sersic index and effective radius), one can classify the
-galaxy in order to obtain tighter constraints on the bias. For example,
-the galaxies with small Sersic index, i.e. disk-like, have smaller CG
-bias. On the other hand, those with large Sersic index have large bias
-and also bias variation. The relations show consistent results about
-the colour gradient dependence on the properties of galaxy
-\citep[e.g.][]{2010MNRAS.407..144T}. However, since the CG bias also
-depends on the relative size with respect to the PSF, the dependence
-of CG bias is certainly more complicate. We did not provide any
-fitting formula for the bias at current sample, since the scatters are
-too large. More importantly, it has to be performed according to the
-types or morphology of the galaxies, which require larger sample of data.
+In this paper we showed that the CG bias can be quantified with high accuracy using available multi-colour {\it Hubble} Space Telescope (HST) data. We validated our approach against earlier work presented by
+\citetalias{Semboloni13}. Our implementation is different but yields consistent results (note that our definition does have the opposite sign compared to \citetalias{Semboloni13}). We also extended the analysis to higher order lensing effects, which occur in high-density regions. Flexion leads to enhanced CG bias, but only close to the lens. Hence this can be relevant for small-scale galaxy-galaxy lensing studies with {\it Euclid}. It can, however, be safely ignored in the case of cluster studies and cosmic shear. 
 
-The multi-band photometry from several bands, which can be used to
-estimate the redshift, can be also use for the CG bias analysis.
-Although the redshift dependence is not significant in our sample of
-galaxies, this may not be the case for a larger survey, or if we look
-at the bias according to the type of galaxy. Moreover, the colour of
-galaxy also indicates the evolution history, or the large scale tide
-force.  It can be also used for the study of intrinsic alignment
-analysis in weak lensing \citep[e.g.][]{2015SSRv..193....1J}.
-Therefore, the dependence of the CG bias on the colour of the galaxies
-will further increase the sysmatics of the intrinsic alignment. The
-detail behaviour will require large cosmological simulations, which is
-beyond the scope of this paper, but definitely needs further studies for
-the project such as Euclid.
+Previous studies ignored the potential detrimental effect of noise in the HST observations that are used to infer the CG bias. Fortunately, our results indicate that this does not bias the CG bias estimates significantly for {\it Euclid} source galaxies, given the noise levels in the HST data used. It does slightly increase the noise in the shape measurements, but the biases for individual galaxies are generally well below 1\%; much smaller than the intrinsic shapes of galaxies. The inferred bias depends strongly on the weight function used to measure shapes. Consequently the CG bias will need to be determined for each shape measurement algorithm separately.
 
-The role of environment on the colour gradients is not clear. On the
-one hand, it has been shown that colour gradients depend on the
-environment where galaxies reside, with steeper colour gradients in
-poor rather than rich clusters \citep[e.g.][]{2005ApJ...626L..19L},
-which is possible due to the different processes during galaxy
-formation. On the other hand, in recent study using integral field
-spectra from SDSS-IV, the metallicity gradients show weak or no
-correlation with density environment \citep{2017MNRAS.465.4572Z}. In
-any cases, close galaxy pairs or nearby bright star(s) may also cause
-weak brightness/colour gradient, which will affect our estimate for CG
-bias as well. 
+After testing our approach on simulated data, we measured the CG bias using HST/ACS observations
+in the F606W and F814W passbands. We used observations from three CANDELS fields, which have 
+fairly uniform coverage in both filters, and for which redshift information is available. This allowed us to quantify the CG bias as a function of redshift and colour. As expected, the CG bias correlates with observed colour, but the dependence with redshift is weak. Although the observed biases are small, they cannot be ignored for {\it Euclid}. Although further study is required, we find that it should be possible to reduce the bias for individual galaxies by using morphological information (e.g. S{\'e}rsic index, effective radius) that can be obtained from the {\it Euclid} data themselves. 
 
-In this work, we use the brightness moments to estimate the
-ellipticity of the galaxy. The PSF correction is not taken into
-account. The bias thus will appear in every method of measurement.
-However, the bias using the measurement method for real data
-will be different, since every method has its own property and weight
-function. The CG bias will have method-dependent properties as well,
-although they will in principle have same dependence on the colour
-gradient of the galaxy images. As the first step of the CG bias
-analysis, we did not adopt any specific method in order to obtain
-general properties of the CG bias. Before the real analysis of Euclid
-data, one needs to study the bias with specific methods and simulated
-images with real properties in the Euclid weak lensing survey.
-
-%
-%Moreover, as we point out that higher order image distortions, such as
-%flexion may increase the CG bias. It can be seen from our analysis
-%using both simulated and CANDELS data. Although the higher order
-%effect can be neglected most times, it can still significantly
-%increase the CG bias when the source images are located close to the
-%strong lensing region. Therefore, such a kind of effect may cause
-%significant bias in the strong lensing analysis using wide band
-%images. In galaxy-galaxy lensing and cluster lensing, one needs to
-%be careful about such higher order effects as well.
+We use the observed trends and scatter in the bias to estimate the number of galaxies for which similar high-quality HST data are needed. This leads to a minimum requirement of more than $20,\,000$ galaxies,
+but much larger samples can already be obtained using existing HST data. If we restrict CG bias studies to F606W and F814W observations only, \citetalias{Semboloni13} estimated that a sample of $50,\,000$ galaxies could be studied. Hence, our results demonstrate that, although the impact of CG bias cannot be ignored, it is possible to determine the impact with sufficient precision that it will not significantly bias the weak lensing measurements using {\it Euclid} data.
 
 \section*{Acknowledgments}
 
