@@ -59,20 +59,10 @@ $^8$California Institute of Technology, 1200 East California Blvd, Pasadena, CA 
 \maketitle
 
 \begin{abstract}
-{\it Euclid} will image about two billion galaxies that can be used to infer cosmological
-parameters using weak gravitational lensing. Exploiting the precision afforded by these
-data relies critically on our ability to correct for instrumental effects, such as the convolution
-by the point spread function (PSF). A complication is the fact  that the optical data
-are obtained using a broad bandpass (550-920\,nm) while the diffraction-limited PSF depends
-on wavelength. This leads to biases in the recovered galaxy shapes because the colours of 
-galaxies vary spatially.  We show that the colour-gradient bias can be determined with high accuracy in simulated
-noisy data. We also find that higher order image distortions, such as flexion, enhance
-the bias, which may be relevant for the study of lensing in high density regions.
-We estimate the size of this colour-gradient biases using multi-band observations 
-from the {\it Hubble} Space Telescope and find correlations with the colours and sizes of
-the galaxies, but do not observe a significant dependence with redshift. 
-{\bf We need some concluding remark about the impact for Euclid.}
-
+Accurate shape measurements are essential to infer cosmological parameters from large area weak gravitational lensing studies. To exploit the precision afforded by the next generation of surveys, such as 
+{\it Euclid} a number of new instrumental effects that could hitherto be safely ignored need to be carefully accounted for. Its compact diffraction-limited point spread function (PSF) is greatly beneficial for shape measurements, but the chromaticity cannot be ignored: the PSF of a galaxy is no longer uniquely defined 
+and spatial variations in the colours of galaxies result in biases in the inferred lensing signal.  We show that this colour-gradient bias (CG bias) can be quantified with sufficient accuracy and precision using available multi-colour {\it Hubble} Space Telescope (HST) data. In particular we study how noise in the HST observation might impact such measurements and find them to be negligible. We determine the CG bias using HST observations in the F606W and F814W filters and observe a correlation with the colour, in line with expectations, whereas the dependence with redshift is weak. The biases for individual galaxies are well below 1\%, which may be reduced further using morphological information from the {\it Euclid} data.
+Our results demonstrate that, although the impact of CG bias cannot be ignored, it is possible to determine the impact with sufficient precision that it does not pose a serious problem for the weak lensing analysis of {\it Euclid} data.
 \end{abstract}
 \begin{keywords} cosmology, weak lensing, systematics
 \end{keywords}
@@ -375,7 +365,7 @@ VIS magnitude of $m_{\rm VIS}=23.7$, a bit brighter than the typical
 galaxy used in the {\it Euclid} weak lensing analysis; a SNR=15 approximately 
 corresponds to $m_{\rm VIS}=25.2$, the faintest galaxies that might be used.
 
-The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To first order, however, the radial surface brightness profile is the most important quantity. This can be understood if we consider a galaxy and redistribute the flux in an arbitrary annulus equally into two points on the minor and two points on the major axis. In this case the azimuthally average profile is unchanged, as are the unweighted quadrupole moments. Hence Eqn.~(\ref{eq:unweighted}) is unchanged. The higher order moments are modified, thus affecting realistic shape measurements. However, the ensemble average of such galaxies with random position angles corresponds to the original galaxy. Hence the modified higher order moments are a source of noise, but should not bias the ensemble averaged measurement. This argument is correct in the presence of a axisymmetric PSF, but we note that PSF anisotropy will lead to a coupling with the higher order moments of the galaxy surface brightness and the PSF. Hence, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
+The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
 
 We fit the bulge and disk model, convolved with the PSF, to  the noisy images in each band and use the best fit model to compute the CG bias. To perform the fit, we use {\sc GALFIT} \citep{Peng10} with 
 the prior constraints on the galaxy parameters (S{\'e}rsic index, effective radius, and axis ratio) listed in Table~\ref{fitpar}. We combine the images in the two filters and use {\sc SExtractor} to estimate the center and some of the initial galaxy parameters to be used as the starting point by {\sc GALFIT}. The resulting best fit images depend somewhat on these initial values, and thus could affect the  estimate for the CG bias. This will be more important when the SNR of the images is lower. To explore this we perform the fits using two sets of initial parameters: in the first we leave all parameters free, while in the other case we fix the S{\'e}rsic index to its simulated value, but leave the other parameters free.
