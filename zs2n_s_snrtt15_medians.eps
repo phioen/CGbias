@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: ../cbias/2noise/zs2n_s_snrtt15_medians.eps
 %%Creator: matplotlib version 1.4.0, http://matplotlib.org/
-%%CreationDate: Wed Jun 21 20:14:57 2017
+%%CreationDate: Mon Jun 26 13:13:58 2017
 %%Orientation: portrait
 %%BoundingBox: 18 180 594 612
 %%EndComments
 %%BeginProlog
-/mpldict 10 dict def
+/mpldict 11 dict def
 mpldict begin
 /m { moveto } bind def
 /l { lineto } bind def
@@ -525,6 +525,64 @@ end readonly def
 
 FontName currentdict end definefont pop
 %!PS-Adobe-3.0 Resource-Font
+%%Title: cmsy10
+%%Copyright: Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B.
+%%Creator: Converted from TrueType to type 3 by PPR
+25 dict begin
+/_d{bind def}bind def
+/_m{moveto}_d
+/_l{lineto}_d
+/_cl{closepath eofill}_d
+/_c{curveto}_d
+/_sc{7 -1 roll{setcachedevice}{pop pop pop pop pop pop}ifelse}_d
+/_e{exec}_d
+/FontName /Cmsy10 def
+/PaintType 0 def
+/FontMatrix[.001 0 0 .001 0 0]def
+/FontBBox[-29 -960 1123 779]def
+/FontType 3 def
+/Encoding [ /bar ] def
+/FontInfo 10 dict dup begin
+/FamilyName (cmsy10) def
+/FullName (cmsy10) def
+/Notice (Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B. ) def
+/Weight (Regular) def
+/Version (1.1/12-Nov-94) def
+/ItalicAngle 0.0 def
+/isFixedPitch false def
+/UnderlinePosition -133 def
+/UnderlineThickness 20 def
+end readonly def
+/CharStrings 1 dict dup begin
+/bar{277 0 119 -249 159 750 _sc
+119 -231 _m
+119 732 _l
+119 737 121 741 125 745 _c
+129 748 133 750 139 750 _c
+143 750 148 748 152 745 _c
+156 741 159 737 159 732 _c
+159 -231 _l
+159 -236 156 -240 152 -244 _c
+148 -247 143 -249 139 -249 _c
+133 -249 129 -247 125 -244 _c
+121 -240 119 -236 119 -231 _c
+_cl}_d
+end readonly def
+
+/BuildGlyph
+ {exch begin
+ CharStrings exch
+ 2 copy known not{pop /.notdef}if
+ true 3 1 roll get exec
+ end}_d
+
+/BuildChar {
+ 1 index /Encoding get exch get
+ 1 index /BuildGlyph get exec
+}_d
+
+FontName currentdict end definefont pop
+%!PS-Adobe-3.0 Resource-Font
 %%Title: Bitstream Vera Sans
 %%Copyright: Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved.
 %%Creator: Converted from TrueType to type 3 by PPR
@@ -541,7 +599,7 @@ FontName currentdict end definefont pop
 /FontMatrix[.001 0 0 .001 0 0]def
 /FontBBox[-183 -236 1287 928]def
 /FontType 3 def
-/Encoding [ /space /one /three /e /m /z /bar /minus ] def
+/Encoding [ /one /three /e /z /minus ] def
 /FontInfo 10 dict dup begin
 /FamilyName (Bitstream Vera Sans) def
 /FullName (Bitstream Vera Sans) def
@@ -553,9 +611,7 @@ FontName currentdict end definefont pop
 /UnderlinePosition -213 def
 /UnderlineThickness 143 def
 end readonly def
-/CharStrings 8 dict dup begin
-/space{318 0 0 0 0 0 _sc
-}_d
+/CharStrings 5 dict dup begin
 /one{636 0 110 0 544 729 _sc
 124 83 _m
 285 83 _l
@@ -626,36 +682,6 @@ _cl}_e}_d
 174 413 156 373 152 322 _c
 472 322 _l
 _cl}_e}_d
-/m{{974 0 91 0 889 560 _sc
-520 442 _m
-542 482 569 511 600 531 _c
-631 550 668 560 711 560 _c
-767 560 811 540 842 500 _c
-873 460 889 403 889 330 _c
-889 0 _l
-799 0 _l
-799 327 _l
-799 379 789 418 771 444 _c
-752 469 724 482 686 482 _c
-639 482 602 466 575 435 _c
-548 404 535 362 535 309 _c
-535 0 _l
-445 0 _l
-445 327 _l
-445 379 435 418 417 444 _c
-398 469 369 482 331 482 _c
-}_e{285 482 248 466 221 435 _c
-194 404 181 362 181 309 _c
-181 0 _l
-91 0 _l
-91 547 _l
-181 547 _l
-181 462 _l
-201 495 226 520 255 536 _c
-283 552 317 560 357 560 _c
-397 560 430 550 458 530 _c
-486 510 506 480 520 442 _c
-_cl}_e}_d
 /z{525 0 43 0 482 547 _sc
 55 547 _m
 482 547 _l
@@ -668,13 +694,6 @@ _cl}_e}_d
 381 475 _l
 55 475 _l
 55 547 _l
-_cl}_d
-/bar{337 0 127 -235 210 764 _sc
-210 764 _m
-210 -235 _l
-127 -235 _l
-127 764 _l
-210 764 _l
 _cl}_d
 /minus{838 0 106 272 732 355 _sc
 106 355 _m
@@ -1630,15 +1649,28 @@ gsave
 10.179688 0.000000 m /period glyphshow
 15.265625 0.000000 m /five glyphshow
 grestore
-/BitstreamVeraSans-Roman findfont
-23.000 scalefont
-setfont
 gsave
-42.094375 315.478750 translate
+41.516250 315.510000 translate
 90.000000 rotate
-0.000000 0.000000 m /bar glyphshow
-7.749023 0.000000 m /m glyphshow
-30.153809 0.000000 m /bar glyphshow
+/Cmsy10 findfont
+23.0 scalefont
+setfont
+0.000000 0.750000 moveto
+/bar glyphshow
+
+/Cmr10 findfont
+23.0 scalefont
+setfont
+6.367676 0.750000 moveto
+/m glyphshow
+
+/Cmsy10 findfont
+23.0 scalefont
+setfont
+25.526855 0.750000 moveto
+/bar glyphshow
+
+
 grestore
 /BitstreamVeraSans-Roman findfont
 12.000 scalefont
@@ -3248,7 +3280,7 @@ gsave
 15.265625 0.000000 m /five glyphshow
 grestore
 gsave
-30.172500 112.990000 translate
+30.172500 117.990000 translate
 90.000000 rotate
 /Cmr10 findfont
 22.0 scalefont
@@ -3256,13 +3288,7 @@ setfont
 0.000000 0.250000 moveto
 /Delta glyphshow
 
-/BitstreamVeraSans-Roman findfont
-22.0 scalefont
-setfont
 18.326172 0.250000 moveto
-/space glyphshow
-
-25.319336 0.250000 moveto
 /m glyphshow
 
 
