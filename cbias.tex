@@ -101,7 +101,7 @@ In Sect.~\ref{sec:candels} we estimate the CG bias using HST observations from t
 \label{sec:concepts}
 
 Following the notation of \citetalias{Semboloni13}, we consider an image of a galaxy, and denote the photon brightness
-distribution of the image at each position $\bm \theta$ and wavelength $\lambda$ by $I({\bm \theta};\lambda)$, which is related to the intensity $S({\bm\theta};\lambda)$ by $I^0(\theta;\lambda)=\lambda S({\bm\theta};\lambda)
+distribution of the image at each position $\bm \theta$ and wavelength $\lambda$ by $I({\bm \theta};\lambda)$, which is related to the intensity $S({\bm\theta};\lambda)$ by $I^0({\bm\theta};\lambda)=\lambda S({\bm\theta};\lambda)
 T(\lambda)$, where $T(\lambda)$ is the normalised transmission. We take this to be a top-hat with a
 width $\Delta\lambda$ around a central wavelength $\lambda_{\rm cen}$. The resulting image of the galaxy, observed using a telescope with a PSF $P({\bm \theta};\lambda)$  is given by:
 %
@@ -164,9 +164,10 @@ Q^{\rm obs}_{ij}=Q^0_{ij}+P^{\rm eff}_{ij} \,\label{eq:unweighted}
 %
 for unweighted moments, where $P^{\rm eff}_{ij}$ are the quadrupole moments of the effective PSF,  defined as
 \be
-P_{\rm eff}({\bm \theta}) = \frac{1}{F} \int \d \lambda\, P({\bm \theta},\lambda)\, F(\lambda) \,,
+P^{\rm eff}({\bm \theta}) = \frac{1}{F} \int \d \lambda\, P({\bm \theta},\lambda)\, F(\lambda) \,,
 \ee
-where   $F(\lambda)$ is the photon flux as a function of wavelength, which is directly related to the spectral energy distribution (SED) of the galaxy. Hence the correction for the chromatic PSF requires an estimate of the SED.  \cite{Eriksen17} have shown that the broadband observations that are used to determine photometric redshifts for {\it Euclid} can also be used to estimate the effective PSF with sufficient accuracy to meet the stringent requirements presented in \cite{Cropper13}.
+%
+where $F(\lambda)$ is the photon flux as a function of wavelength, which is directly related to the spectral energy distribution (SED) of the galaxy. Hence the correction for the chromatic PSF requires an estimate of the SED.  \cite{Eriksen17} have shown that the broadband observations that are used to determine photometric redshifts for {\it Euclid} can also be used to estimate the effective PSF with sufficient accuracy to meet the stringent requirements presented in \cite{Cropper13}.
 
 
 We limit our study of the CG bias to the multiplicative bias it introduces, and our approach to quantify 
@@ -586,15 +587,15 @@ Fig.~\ref{fig:cg2color}.  Because the bias depends on colour, we split the sampl
     \hline
     photo-z    &Number &$\langle m\rangle$  &$\sigma_m$ \\
     \hline
-    $0-0.4$    &399  &$-5.6\times10^{-4}$  &$0.012$\\
-    $0.4-0.8$  &3163 &$-7.1\times10^{-4}$  &$0.011$\\
-    $0.8-1.2$  &2960 &$-6.4\times10^{-4}$  &$0.013$\\
-    $>1.2$     &958  &$-1.4\times10^{-3}$  &$0.024$\\
+    $0-0.4$    &399  &$-5.6\times10^{-4}$  &$0.0024$\\
+    $0.4-0.8$  &3163 &$-7.1\times10^{-4}$  &$0.0036$\\
+    $0.8-1.2$  &2960 &$-6.4\times10^{-4}$  &$0.0046$\\
+    $>1.2$     &958  &$-1.4\times10^{-3}$  &$0.0062$\\
     \\
-    $0-0.4$  &1513  &$6.2\times10^{-4}$  &$0.0081$\\
-    $0.4-0.8$ &1154  &$1.9\times10^{-4}$  &$0.0042$\\
-    $0.8-1.2$ &537  &$1.3\times10^{-3}$  &$0.0061$\\
-    $>1.2$  & 3921  &$4.8\times10^{-4}$  &$0.0095$\\
+    $0-0.4$  &1513  &$6.2\times10^{-4}$  &$0.0026$\\
+    $0.4-0.8$ &1154  &$1.9\times10^{-4}$  &$0.0029$\\
+    $0.8-1.2$ &537  &$1.3\times10^{-3}$  &$0.0039$\\
+    $>1.2$  & 3921  &$4.8\times10^{-4}$  &$0.0040$\\
     \hline
   \end{tabular}
   \caption{The number of objects, average and r.m.s. CG bias 
