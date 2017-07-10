@@ -53,7 +53,7 @@ $^8$California Institute of Technology, 1200 East California Blvd, Pasadena, CA 
 %$$
 }
 \date{Accepted --;  received --;  in original from \today}
-\pubyear{2016}
+\pubyear{2017}
 
 \begin{document}
 \maketitle
@@ -383,14 +383,14 @@ $q$      &0.6-1  &0.6-1  &0.6-1 &0.6-1 \\
 \caption{\label{fitpar} Constraints for the fitting parameters in {\sc GALFIT}.
 The first two columns are for two images of the S-galaxy, the other two are
 the image of B-galaxy.
-$n_1$ is the Sersic index for bulge, and $n_2$ is the Sersic index for disk.
+$n_1$ is the S{\'e}rsic index for bulge, and $n_2$ is the S{\'e}rsic index for disk.
 The effect radius is given in unit of pixel ($0.05$ arcsec).}
 \end{center}
 \end{table}
 
 We use the best fit models to compute the CG bias, following the algorithm that was used to compute the signal in the noiseless case. We show the resulting average inferred CG bias in Fig.~\ref{fig:biasofz50} for SNR=50 as a function of redshift for the two reference galaxies (`B' in the left panel and `S' in the
 right panel). The bottom panels in Fig.~\ref{fig:biasofz50} show the residuals
-$\Delta m$ with respect to the true multiplicative CG bias. To  determine the average
+$\Delta m$ with respect to the true multiplicative CG bias. To determine the average
 bias we analyse six rotations of the galaxy and use the average value as our estimate of
 the galaxy ellipticity \citep{Nakajima07}.  Moreover we create 40 noise realisations for
 each redshift to estimate the statistical uncertainty in our estimate of the multiplicative
@@ -490,7 +490,7 @@ a roughly homogeneous coverage in both bands \citep[see][]{davis2007,grogin2011,
     \includegraphics[width=5.8cm]{zhisphotoz.eps}
     \includegraphics[width=5.8cm]{zhiscolor.eps}}
   \caption{Histogram of the distributions in observed half-light radii ($R_{\rm h}$; left panel),
-  photometric redshift (middle panel) and F606W-F814W colour (right panel) for the three
+  photometric redshift (middle panel) and $m_{606}-m_{814}$ colour (right panel) for the three
   CANDELS fields (AEGIS, COSMOS, UDS). We show results for galaxies with $m_{\rm VIS}<25$,
   where the results for the three fields are normalised by area.}
   \label{fig:datapro1}
@@ -641,11 +641,11 @@ Hence we conclude that ample HST observations exist to determine the CG bias wit
 \begin{figure}
 \includegraphics[width=\hsize]{z2s-ne29.eps}
 \includegraphics[width=\hsize]{z2nscl-re29.eps}
-\caption{CG bias with Sersic index (top) and effective radius (bottom)
-  from the mock VIS images. The unit of radius is a pixel ($=0.05$
-  arcsec). In the top panel, the blue (red) is the average of small
+\caption{CG bias with S{\'e}rsic index (top) and effective radius (bottom)
+  from the mock VIS images. 
+  In the top panel, the blue (red) is the average of small
   (big) galaxies. In the bottom panel, the red line is average bias of
-  red galaxy ($m_{V-I}>1$); the green line is that of elliptical
+  red galaxy ($m_{606}-m_{814}>1$); the green line is that of elliptical
   galaxy ($n>2.75$); the blue line is for the disk galaxy.}
 \label{fig:cg2re}
 \end{figure}
