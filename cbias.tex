@@ -39,7 +39,7 @@
 {
 X. Er$^1$ \thanks{er.xinzhong@oa-roma.inaf.it},
 H. Hoekstra$^2$, T. Schrabback$^3$, V. F. Cardone$^1$, R. Scaramella$^1$, R. Maoli$^4$,
-\newauthor{M. Vicinanza$^{1,4,5}$, B. Gillis$^{6}$ L. Miller$^{7}$, J. Rhodes$^{8,9}$}
+\newauthor{M. Vicinanza$^{1,4,5}$, B. Gillis$^{6}$ J. Rhodes$^{7,8}$}
 \\
 $^1$ I.N.A.F. - Osservatorio Astronomico di Roma, via Frascati 33, 00040 - Monte Porzio Catone, Roma, Italy\\
 $^2$Leiden Observatory, Leiden University, PO Box 9513, NL-230 RA, Leiden, the Netherlands \\
@@ -47,8 +47,7 @@ $^3$Argelander Instutite fuer Astronomie, Auf dem Huegel 71, D-53121 Bonn, Germa
 $^4$Dipartimento di Fisica, Universita di Roma "La Sapienza", Piazzale Aldo Moro, 00185 - Roma, Italy\\
 $^5$Dipartimento di Fisica, Universita di Roma "Tor Vergata", via della Ricerca Scientifica 1, 00133 - Roma, Italy\\
 $^6$Royal Observatory, University of Edinburgh, Blackford Hill, Edinburgh EH9 3HJ, UK\\
-$^7$Department of Physics, Oxford University, keble Road, Oxford OX I 3RH, UK\\
-$^8$Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA 91109, USA\\
+$^7$Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA 91109, USA\\
 $^8$California Institute of Technology, 1200 East California Blvd, Pasadena, CA 91125, USA
 %$$
 }
@@ -59,7 +58,7 @@ $^8$California Institute of Technology, 1200 East California Blvd, Pasadena, CA 
 \maketitle
 
 \begin{abstract}
-Accurate shape measurements are essential to infer cosmological parameters from large area weak gravitational lensing studies. The compact diffraction-limited point spread function (PSF) in space-based observations is greatly beneficial, but its chromaticity can lead to new subtle effects that could hitherto be ignored: the PSF of a galaxy is no longer uniquely defined  and spatial variations in the colours of galaxies result in biases in the inferred lensing signal. Taking {\it Euclid} as a reference, we show that this colour-gradient bias (CG bias) can be quantified with high accuracy using available multi-colour {\it Hubble} Space Telescope (HST) data. In particular we study how noise in the HST observations might impact such measurements and find this to be negligible. We determine the CG bias using HST observations in the F606W and F814W filters and observe a correlation with the colour, in line with expectations, whereas the dependence with redshift is weak. The biases for individual galaxies are generally well below 1\%, which may be reduced further using morphological information from the {\it Euclid} data. Our results demonstrate that CG bias should not be ignored, but it possible to determine its amplitude with sufficient precision, so that it will not significantly bias the weak lensing measurements using {\it Euclid} data.
+Accurate shape measurements are essential to infer cosmological parameters from large area weak gravitational lensing studies. The compact diffraction-limited point spread function (PSF) in space-based observations is greatly beneficial, but its chromaticity can lead to new subtle effects that could hitherto be ignored: the PSF of a galaxy is no longer uniquely defined  and spatial variations in the colours of galaxies result in biases in the inferred lensing signal. Taking {\it Euclid} as a reference, we show that this colour-gradient bias (CG bias) can be quantified with high accuracy using available multi-colour {\it Hubble} Space Telescope (HST) data. In particular we study how noise in the HST observations might impact such measurements and find this to be negligible. We determine the CG bias using HST observations in the F606W and F814W filters and observe a correlation with the colour, in line with expectations, whereas the dependence with redshift is weak. The biases for individual galaxies are generally well below 1\%, which may be reduced further using morphological information from the {\it Euclid} data. Our results demonstrate that CG bias should not be ignored, but it is possible to determine its amplitude with sufficient precision, so that it will not significantly bias the weak lensing measurements using {\it Euclid} data.
 \end{abstract}
 \begin{keywords} cosmology, weak lensing, systematics
 \end{keywords}
@@ -172,7 +171,7 @@ where $F(\lambda)$ is the photon flux as a function of wavelength, which is dire
 
 We limit our study of the CG bias to the multiplicative bias it introduces, and our approach to quantify
 the impact on the lensing signal is similar to \citetalias{Semboloni13}. Figure~\ref{fig:flowchart} shows the flowchart of the steps that enable us to evaluate the CG bias.  In both cases we start with the same wavelength dependent image $I^0({\bm \theta};\lambda)$, but the bottom flow resembles what happens in the actual observations: the original image is sheared\footnote{We use
-$\gamma_1=0.05$  and $\gamma_2=0.02$ as reference, but we verified that other values yield similar results.} before the convolution with the PSF. The deconvolution with the effective PSF then yields the PSF-corrected shape. In the top flow the PSF steps are applied first, resulting in an image without a colour gradient that is subsequently sheared.
+$\gamma_1=0.05$  and $\gamma_2=0.02$ as reference, but we verified that other values yield similar results.} before the convolution with the PSF. The deconvolution with the effective PSF then yields the PSF-corrected shape\footnote{We divide the effective PSF in Fourier space (Eqs.\,12 and 13 in \citetalias{Semboloni13}). For the noisy image, we perform deconvolution to the fitted image without the residual pixel noise.}. In the top flow the PSF steps are applied first, resulting in an image without a colour gradient that is subsequently sheared.
 
 We measure the ellipticities of the resulting images to estimate the CG bias. To reduce noise in our estimate of the multiplicative bias $m$ we use the ring-test method \citep{Nakajima07} where we create eight copies of the original galaxy but with different orientations. The ensemble averaged ellipticities then  provide an estimate of the multiplicative CG bias, $m$ (we do not explore additive bias here), via
 %
@@ -197,7 +196,8 @@ sensitivity to a known shear by applying it to the observed data. Hence, their a
 The CG bias is a higher order systematic bias, and thus the changes in the measured ellipticities are small. It is therefore important to verify that numerical errors in the calculations are subdominant compared to the small effects we aim to measure. To do so, we compare results from two independent codes that are used to generate the simulated images: one is written in C/C++ and the other uses the
 python-based {\sc GalSim} package \citep{Rowe15}, which is widely used to created simulated images \citep[e.g.][]{FenechConti17, Hoekstra17}.
 
-In the C code we compute the images by multiplying the surface brightness at the centre of each pixel using a sheared S{\'e}rsic profile with the pixel area. In the case of {\sc GalSim} we use the {\sc Shear()} function (which convolves the image by the pixel). Since we are interested in small differences in the shapes of
+In the C code we compute the images using a sheared S{\'e}rsic profile, 
+by multiplying the surface brightness at the centre of each pixel with the pixel area. In the case of {\sc GalSim} we use the {\sc Shear()} function (which convolves the image by the pixel). Since we are interested in small differences in the shapes of
 deconvolved images, we first examined the size of potential numerical errors. We therefore convolved and
 subsequently deconvolved elliptical images. Comparison of the recovered ellipticities revealed small differences between the codes that ranged from $10^{-7}$ to $10^{-6}$, two orders of magnitude
 smaller than the CG biases we are concerned with. Hence can safely neglect this numerical artefacts here.
@@ -213,8 +213,8 @@ To create the PSF-convolved images we consider several PSF profiles. For a direc
 To better approximate the {\it Euclid} PSF \citetalias{Semboloni13} also considered a model that  consists of a compact Gaussian core and an appropriately scaled top-hat (their PSF3). Instead we use here a more realistic obscured Airy profile, which is actually close to the {\it Euclid} design profile \citep{Laureijs11}:
 %
 \be
-P(\theta) = {I_0 \over (1-\epsilon^2)^2} \rund{{2J_1(\theta)\over \theta} -
-{2\epsilon J_1(\epsilon \theta) \over \theta}}^2,
+P(x) = {I_0 \over (1-\epsilon^2)^2} \rund{{2J_1(x)\over x} -
+{2\epsilon J_1(\epsilon x) \over x}}^2,
 \elabel{psfairy}
 \ee
 %
@@ -232,7 +232,7 @@ the results for 920\,nm are shown in red.}
 \end{figure}
 %
 
-As discussed in Sect.~\ref{sec:concepts} the amplitude of the noise bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. In Fig.~\ref{fig:biasofweight} we show the CG bias for the two reference galaxies as a function of $\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments. The results from the {\sc C} code (dashed lines) and the {\sc GalSim} code (dotted lines) agree very well for both the large galaxy `B' (red lines) and the small galaxy `S' (blue lines). Given the consistent results between the {\sc C} and {\sc GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\sc GalSim}.
+As discussed in Sect.~\ref{sec:concepts} the amplitude of the bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. In Fig.~\ref{fig:biasofweight} we show the CG bias for the two reference galaxies as a function of $\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments. The results from the {\sc C} code (dashed lines) and the {\sc GalSim} code (dotted lines) agree very well for both the large galaxy `B' (red lines) and the small galaxy `S' (blue lines). Given the consistent results between the {\sc C} and {\sc GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\sc GalSim}.
 
 Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the width of the weight function is increased. This allows for an interesting trade-off between CG bias and noise bias. The latter increases with increasing $\theta_{\rm w}$ but relatively slowly (see Fig.~4 in \citetalias{Semboloni13}). It also highlights that the CG bias itself differs between shape measurement methods, which typically use different weight functions. As a proxy for the optimal weight function (which maximizes the signal-to-noise ratio) we adopt the value of the  half-light radius in the remainder of this paper. This yields $m=0.8\times10^{-3}$ for galaxy `B' and $m=2\times10^{-3}$ for galaxy `S', demonstrating that the CG bias is a strong function of galaxy size.
 
@@ -501,7 +501,7 @@ We base our analysis on a tile-wise reduction of the ACS data, incorporating poi
 To resemble the selection of galaxies in the {\it Euclid}  wide survey, we derive an approximate estimate for the flux in the VIS-band using:
 %
 \be
-f_{\rm VIS}=f_{606}+ 0.55\,(f_{606}-f_{814}),
+f_{\rm VIS}=f_{606}+ 0.55\,(f_{814}-f_{606}),
 \ee
 %
 where $f_{606}$ and $f_{814}$ are the total fluxes from \cite{skelton14} and convert this to a magnitude. This estimate is a simple linear interpolation of the fluxes in the two HST filters to the adopted central wavelength of VIS, which we took to be 735\,nm (which defines the slope of 0.55). We select galaxies brighter than $m_{\rm VIS}=25$.  The resulting sample sizes for the  three CANDELS fields are listed in Table~\ref{table:mag}. The number densities are in line with expectations for {\it Euclid} \citep{Laureijs11}.
@@ -670,11 +670,12 @@ but much larger samples can already be obtained using existing HST data. If we r
 \section*{Acknowledgments}
 
 We would like to thank Emiliano Merlin, Marco Castellano for helping
-on {\sc SExtractor} and {\sc GALFIT}, Gary Berstein, Adam Rogers and
-the members of the Euclid Consortium for useful discussions.  XE and VFC
+on {\sc SExtractor} and {\sc GALFIT}, Lance Miller, Gary Berstein, Adam Rogers and also
+the members of the Euclid Consortium for useful discussions. XE and VFC
 are funded by Italian Space Agency (ASI) through contract Euclid -IC (I/031/10/0) and
 acknowledge financial contribution from the agreement ASI/INAF/I/023/12/0. XE is also partly
-support by NSFC Grant No. 11473032. HH acknowledges support from the EuropeanResearch Council FP7 grant number 279396. JR is supported by JPL, which is
+support by NSFC Grant No. 11473032. HH acknowledges support from the European
+Research Council FP7 grant number 279396. JR is supported by JPL, which is
 run by Caltech under a contract for NASA, and is supported by grant
 NASA ROSES 12-EUCLID12- 0004. The fast Fourier transforms are supplied
 by the FFTW library \citep{fftw05}. We use CFITSIO
