@@ -80,9 +80,14 @@ The most prominent one is that the correction for the smearing by the chromatic 
 This results in a higher order systematic bias, which we call colour-gradient bias (or CG bias in short).
 As shown by \cite{Semboloni13} (\citetalias{Semboloni13} hereafter) the amplitude depends on several factors: the SED of the galaxy, the relative size of the galaxy compared to the PSF, and the width of the bandpass, $\Delta\lambda$.  For instance, the bias scales as $\Delta\lambda^2$, and thus is particularly relevant in the case of {\it Euclid}.
 
-Galaxies show a wide variety in colour gradients, with elliptical galaxies typically showing negative colour gradients (redder in the centre and bluer in the outskirts), with steeper gradients more commonly found in bluer or more luminous early type galaxies \citep[e.g.][]{2011MNRAS.414.3052D,
-2011MNRAS.411.1151G}. Moreover, correlations between colour gradients and the overall colours and luminosities of the galaxies have been inferred \citep[e.g.][]{2010AJ....140.1528L, 2016A&A...593A..84K}.
-Hence the relation between galaxy morphology and density may cause the CG bias to vary across the sky and may lead to correlations with the lensing signal itself.
+Galaxies show a wide variety in colour gradients, probably caused by changes in the properties
+of the underlying stellar populations. In particular, elliptical galaxies (ETGs) show mostly 
+negative colour gradients (redder in the centre and bluer in the outskirts), with steeper gradients more commonly found in bluer or more luminous ETGs \citep[e.g.][]{2005ApJ...635..243F, 2011MNRAS.414.3052D, 2011MNRAS.411.1151G}. Contrasting these colour gradients with population 
+synthesis models suggest a dominant radial trend in metallicity for red sequence ETGs 
+\citep[e.g.][]{2011ApJ...740L..41L,2016A&A...593A..84K}. However, towards $z>0.5$ a sizeable
+fraction of ETGs display blue cores, leading to a substantial population of young stars in these
+galaxies, a trend that can be expected to increase with redshift \citep{2009MNRAS.395..554F, 2010ApJS..187..374S}. In contrast, the more complex distribution of age and metallicity in 
+late-type galaxies translates into a different behaviour regarding colour gradient \citep{2005ApJ...630..784T}. Hence the relation between galaxy morphology and density may cause the CG bias to vary across the sky and may lead to correlations with the lensing signal itself.
 
 It is important that all systematic sources of biases are accounted for to a level that is smaller than the
 statistical uncertainties. In the case of {\it Euclid} this leads to tight requirements, as detailed in
@@ -196,7 +201,7 @@ sensitivity to a known shear by applying it to the observed data. Hence, their a
 The CG bias is a higher order systematic bias, and thus the changes in the measured ellipticities are small. It is therefore important to verify that numerical errors in the calculations are subdominant compared to the small effects we aim to measure. To do so, we compare results from two independent codes that are used to generate the simulated images: one is written in C/C++ and the other uses the
 python-based {\sc GalSim} package \citep{Rowe15}, which is widely used to created simulated images \citep[e.g.][]{FenechConti17, Hoekstra17}.
 
-In the C code we compute the images using a sheared S{\'e}rsic profile, 
+In the C code we compute the images using a sheared S{\'e}rsic profile,
 by multiplying the surface brightness at the centre of each pixel with the pixel area. In the case of {\sc GalSim} we use the {\sc Shear()} function (which convolves the image by the pixel). Since we are interested in small differences in the shapes of
 deconvolved images, we first examined the size of potential numerical errors. We therefore convolved and
 subsequently deconvolved elliptical images. Comparison of the recovered ellipticities revealed small differences between the codes that ranged from $10^{-7}$ to $10^{-6}$, two orders of magnitude
@@ -670,7 +675,8 @@ but much larger samples can already be obtained using existing HST data. If we r
 \section*{Acknowledgments}
 
 We would like to thank Emiliano Merlin, Marco Castellano for helping
-on {\sc SExtractor} and {\sc GALFIT}, Lance Miller, Gary Berstein, Adam Rogers and also
+on {\sc SExtractor} and {\sc GALFIT}, Lance Miller, Gary Berstein, Adam Rogers, 
+Ignacio Ferreras and also
 the members of the Euclid Consortium for useful discussions. XE and VFC
 are funded by Italian Space Agency (ASI) through contract Euclid -IC (I/031/10/0) and
 acknowledge financial contribution from the agreement ASI/INAF/I/023/12/0. XE is also partly

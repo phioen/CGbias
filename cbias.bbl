@@ -57,6 +57,16 @@
 {Fenech Conti}, I., {Herbonnet}, R., {Hoekstra}, H., {et~al.} 2016, ArXiv
   1606.05337
 
+\bibitem[{{Ferreras} {et~al.}(2005){Ferreras}, {Lisker}, {Carollo}, {Lilly}, \&
+  {Mobasher}}]{2005ApJ...635..243F}
+{Ferreras}, I., {Lisker}, T., {Carollo}, C.~M., {Lilly}, S.~J., \& {Mobasher},
+  B. 2005, \apj, 635, 243
+
+\bibitem[{{Ferreras} {et~al.}(2009){Ferreras}, {Lisker}, {Pasquali}, \&
+  {Kaviraj}}]{2009MNRAS.395..554F}
+{Ferreras}, I., {Lisker}, T., {Pasquali}, A., \& {Kaviraj}, S. 2009, \mnras,
+  395, 554
+
 \bibitem[{Frigo \& Johnson(2005)}]{fftw05}
 Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   issue on ``Program Generation, Optimization, and Platform Adaptation''
@@ -132,11 +142,6 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Schmidt}, \& {Wittman}}]{Jee16}
 {Jee}, M.~J., {Tyson}, J.~A., {Hilbert}, S., {et~al.} 2016, \apj, 824, 77
 
-\bibitem[{{Joachimi} {et~al.}(2015){Joachimi}, {Cacciato}, {Kitching},
-  {Leonard}, {Mandelbaum}, {Sch{\"a}fer}, {Sif{\'o}n}, {Hoekstra}, {Kiessling},
-  {Kirk}, \& {Rassat}}]{2015SSRv..193....1J}
-{Joachimi}, B., {Cacciato}, M., {Kitching}, T.~D., {et~al.} 2015, \ssr, 193, 1
-
 \bibitem[{{Kaiser} {et~al.}(1995){Kaiser}, {Squires}, \&
   {Broadhurst}}]{Kaiser1995}
 {Kaiser}, N., {Squires}, G., \& {Broadhurst}, T. 1995, \apj, 449, 460
@@ -185,15 +190,10 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Krist}, J.~E., {Hook}, R.~N., \& {Stoehr}, F. 2011, in \procspie, Vol. 8127,
   Optical Modeling and Performance Predictions V, 81270J
 
-\bibitem[{{La Barbera} {et~al.}(2010){La Barbera}, {De Carvalho}, {De La Rosa},
-  {Gal}, {Swindle}, \& {Lopes}}]{2010AJ....140.1528L}
-{La Barbera}, F., {De Carvalho}, R.~R., {De La Rosa}, I.~G., {et~al.} 2010,
-  \aj, 140, 1528
-
-\bibitem[{{La Barbera} {et~al.}(2005){La Barbera}, {de Carvalho}, {Gal},
-  {Busarello}, {Merluzzi}, {Capaccioli}, \& {Djorgovski}}]{2005ApJ...626L..19L}
-{La Barbera}, F., {de Carvalho}, R.~R., {Gal}, R.~R., {et~al.} 2005, \apjl,
-  626, L19
+\bibitem[{{La Barbera} {et~al.}(2011){La Barbera}, {Ferreras}, {de Carvalho},
+  {Lopes}, {Pasquali}, {de la Rosa}, \& {De Lucia}}]{2011ApJ...740L..41L}
+{La Barbera}, F., {Ferreras}, I., {de Carvalho}, R.~R., {et~al.} 2011, \apjl,
+  740, L41
 
 \bibitem[{{Laureijs} {et~al.}(2011){Laureijs}, {Amiaux}, {Arduini},
   {Augu{\`e}res}, {Brinchmann}, {Cole}, {Cropper}, {Dabin}, {Duvet}, {Ealet},
@@ -250,8 +250,8 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Raihan}, {Allen}, {Bayliss}, {Benson}, {Bleem}, {Chiu}, {Desai}, {Foley},
   {de Haan}, {High}, {Hilbert}, {Mantz}, {Massey}, {Mohr}, {Reichardt}, {Saro},
   {Simon}, {Stern}, {Stubbs}, \& {Zenteno}}]{Schrabback16}
-{Schrabback}, T., {Applegate}, D., {Dietrich}, J.~P., {et~al.} 2016, ArXiv
-  e-prints
+{Schrabback}, T., {Applegate}, D., {Dietrich}, J.~P., {et~al.} 2016, ArXiv:
+  1611.03866
 
 \bibitem[{{Schrabback} {et~al.}(2010){Schrabback}, {Hartlap}, {Joachimi},
   {Kilbinger}, {Simon}, {Benabed}, {Brada{\v c}}, {Eifler}, {Erben},
@@ -274,19 +274,17 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Skelton}, R.~E., {Whitaker}, K.~E., {Momcheva}, I.~G., {et~al.} 2014, \apjs,
   214, 24
 
-\bibitem[{{Tortora} {et~al.}(2010){Tortora}, {Napolitano}, {Cardone},
-  {Capaccioli}, {Jetzer}, \& {Molinaro}}]{2010MNRAS.407..144T}
-{Tortora}, C., {Napolitano}, N.~R., {Cardone}, V.~F., {et~al.} 2010, \mnras,
-  407, 144
+\bibitem[{{Suh} {et~al.}(2010){Suh}, {Jeong}, {Oh}, {Yi}, {Ferreras}, \&
+  {Schawinski}}]{2010ApJS..187..374S}
+{Suh}, H., {Jeong}, H., {Oh}, K., {et~al.} 2010, \apjs, 187, 374
+
+\bibitem[{{Taylor} {et~al.}(2005){Taylor}, {Jansen}, {Windhorst}, {Odewahn}, \&
+  {Hibbard}}]{2005ApJ...630..784T}
+{Taylor}, V.~A., {Jansen}, R.~A., {Windhorst}, R.~A., {Odewahn}, S.~C., \&
+  {Hibbard}, J.~E. 2005, \apj, 630, 784
 
 \bibitem[{{Voigt} {et~al.}(2012){Voigt}, {Bridle}, {Amara}, {Cropper},
   {Kitching}, {Massey}, {Rhodes}, \& {Schrabback}}]{Voigt12}
 {Voigt}, L.~M., {Bridle}, S.~L., {Amara}, A., {et~al.} 2012, \mnras, 421, 1385
-
-\bibitem[{{Zheng} {et~al.}(2017){Zheng}, {Wang}, {Ge}, {Mao}, {Li}, {Li}, {Mo},
-  {Goddard}, {Bundy}, {Li}, {Nair}, {Lin}, {Long}, {Riffel}, {Thomas},
-  {Masters}, {Bizyaev}, {Brownstein}, {Zhang}, {Law}, {Drory}, {Roman Lopes},
-  \& {Malanushenko}}]{2017MNRAS.465.4572Z}
-{Zheng}, Z., {Wang}, H., {Ge}, J., {et~al.} 2017, \mnras, 465, 4572
 
 \end{thebibliography}
