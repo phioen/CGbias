@@ -1,4 +1,4 @@
-\begin{thebibliography}{47}
+\begin{thebibliography}{48}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -119,7 +119,7 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Hoekstra}, H., {Viola}, M., \& {Herbonnet}, R. 2017, \mnras, 468, 3295
 
 \bibitem[{{Huff} \& {Mandelbaum}(2017)}]{Huff17}
-{Huff}, E. \& {Mandelbaum}, R. 2017, ArXiv e-prints
+{Huff}, E. \& {Mandelbaum}, R. 2017, ArXiv 1702.02600
 
 \bibitem[{{Jarvis} {et~al.}(2016){Jarvis}, {Sheldon}, {Zuntz}, {Kacprzak},
   {Bridle}, {Amara}, {Armstrong}, {Becker}, {Bernstein}, {Bonnett}, {Chang},
@@ -198,7 +198,7 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 \bibitem[{{Laureijs} {et~al.}(2011){Laureijs}, {Amiaux}, {Arduini},
   {Augu{\`e}res}, {Brinchmann}, {Cole}, {Cropper}, {Dabin}, {Duvet}, {Ealet},
   \& et~al.}]{Laureijs11}
-{Laureijs}, R., {Amiaux}, J., {Arduini}, S., {et~al.} 2011, ArXiv e-prints
+{Laureijs}, R., {Amiaux}, J., {Arduini}, S., {et~al.} 2011, ArXiv 1110.3193
 
 \bibitem[{{Massey} {et~al.}(2013){Massey}, {Hoekstra}, {Kitching}, {Rhodes},
   {Cropper}, {Amiaux}, {Harvey}, {Mellier}, {Meneghetti}, {Miller},
@@ -282,6 +282,10 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Hibbard}}]{2005ApJ...630..784T}
 {Taylor}, V.~A., {Jansen}, R.~A., {Windhorst}, R.~A., {Odewahn}, S.~C., \&
   {Hibbard}, J.~E. 2005, \apj, 630, 784
+
+\bibitem[{{Velander} {et~al.}(2011){Velander}, {Kuijken}, \&
+  {Schrabback}}]{2011MNRAS.412.2665V}
+{Velander}, M., {Kuijken}, K., \& {Schrabback}, T. 2011, \mnras, 412, 2665
 
 \bibitem[{{Voigt} {et~al.}(2012){Voigt}, {Bridle}, {Amara}, {Cropper},
   {Kitching}, {Massey}, {Rhodes}, \& {Schrabback}}]{Voigt12}
