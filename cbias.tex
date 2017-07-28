@@ -201,7 +201,7 @@ in an image without a colour gradient that is subsequently sheared.
 We measure the ellipticities of the resulting images to estimate the CG bias. To reduce noise in our estimate of the multiplicative bias $m$ we use the ring-test method \citep{Nakajima07} where we create eight copies of the original galaxy (i.e. pre-lensed and pre-PSF convolution) but with different orientations. The ensemble-averaged ellipticities then  provide an estimate of the multiplicative CG bias, $m$ (we do not explore additive bias here), via
 %
 \be
-m= {\epsilon^{\rm CG} \over \epsilon^{\rm NCG} }-1,
+m= {\langle \epsilon^{\rm CG}\rangle \over \langle \epsilon^{\rm NCG}\rangle }-1,
 \ee
 %
 where `CG' indicates the case where the galaxy has a colour gradient, and `NCG' is the galaxy
@@ -259,7 +259,7 @@ the results for 920\,nm are shown in red.}
 
 As discussed in Sect.~\ref{sec:concepts} the amplitude of the bias depends on the width of the weight function that is used to compute the (weighted) quadrupole moments. In Fig.~\ref{fig:biasofweight} we show the CG bias for the two reference galaxies as a function of $\theta_{\rm w}$, the width of the weight function that is used to compute the quadrupole moments. The results from the {\sc C} code (dashed lines) and the {\sc GalSim} code (dotted lines) agree very well for both the large galaxy `B' (red lines) and the small galaxy `S' (blue lines). Given the consistent results between the {\sc C} and {\sc GalSim} code we conclude that numerical errors are negligible in our implementation. In the remainder, we limit the simulations to those generated with {\sc GalSim}.
 
-Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the width of the weight function is increased. This allows for an interesting trade-off between CG bias and noise bias. The latter increases with increasing $\theta_{\rm w}$ but relatively slowly (see Fig.~4 in \citetalias{Semboloni13}). It also highlights that the CG bias itself differs between shape measurement methods, which typically use different weight functions. As a proxy for the optimal weight function (which maximizes the signal-to-noise ratio) we adopt the value of the  half-light radius in the remainder of this paper. This yields $m=0.6\times10^{-3}$ for galaxy `B' and $m=1\times10^{-3}$ for galaxy `S', demonstrating that the CG bias is a strong function of galaxy size.
+Figure~\ref{fig:biasofweight} shows that the CG bias decreases rapidly when the width of the weight function is increased. This allows for an interesting trade-off between CG bias and noise bias. The latter increases with increasing $\theta_{\rm w}$ but relatively slowly (see Fig.~4 in \citetalias{Semboloni13}). It also highlights that the CG bias itself differs between shape measurement methods, which typically use different weight functions. As a proxy for the optimal weight function (which maximizes the signal-to-noise ratio) we adopt the value of the  half-light radius in the remainder of this paper. This yields $m=0.650\times10^{-3}$ for galaxy `B' and $m=1.17\times10^{-3}$ for galaxy `S', demonstrating that the CG bias is a strong function of galaxy size.
 
 %
 \begin{figure}
@@ -379,6 +379,18 @@ Following \citetalias{Semboloni13}, we show  the CG bias as a function of redshi
   nominal {\it Euclid} requirement.}
 \label{fig:biasofz50}
 \end{figure*}
+%
+\begin{figure*}
+  \includegraphics[width=8.0cm]{zs2n_b_snrtt15_medians.eps}
+  \includegraphics[width=8.0cm]{zs2n_s_snrtt15_medians.eps}
+\caption{Same as Fig.\ref{fig:biasofz50} but for images of
+  $\mathrm{SNR}=15$. The red curve shows the mean bias, whereas the
+  blue curve corresponds to the median.  To compute the error-bars,
+  $1000$ realizations are used at each redshift bin for both the B- and
+  the S-galaxy.}
+\label{fig:biasofz15}
+\end{figure*}
+%
 
 We now proceed to explore the impact of noise in the HST images. To do so, we add Gaussian noise to the simulated HST images, where the r.m.s. noise level $\sigma$ is determined by the signal-to-noise ratio of the galaxy, SNR; the total flux within an aperture of radius $1.5\times r_{\rm h}$, $F_{\rm tot}$; and the number of pixels within this aperture, $N_{\rm tot}$, such that
 %
@@ -463,21 +475,10 @@ The residuals presented in the bottom panel of Fig.~\ref{fig:biasofz50} show tha
 Moreover, the significant deviations at $z=0.5$ and $0.9$ arise because the adopted SED of the disk (Irr) contains strong emission lines  \citepalias[see Fig.~1 in][]{Semboloni13}. These lines enter and exit the F606W filter at these redshifts, respectively, and the linear approximation for the wavelength
 dependence fails. In these, albeit extreme cases, two-band imaging may not be sufficient. To what extent this will affect the estimate of the CG bias requires further study.
 
-\begin{figure*}
-  \includegraphics[width=8.0cm]{zs2n_b_snrtt15_medians.eps}
-  \includegraphics[width=8.0cm]{zs2n_s_snrtt15_medians.eps}
-\caption{Same as Fig.\ref{fig:biasofz50} but for images of
-  $\mathrm{SNR}=15$. The red curve shows the mean bias, whereas the
-  blue curve corresponds to the median.  To compute the error-bars,
-  $1000$ realizations are used at each redshift bin for both the B- and
-  the S-galaxy.}
-\label{fig:biasofz15}
-\end{figure*}
-%
+Fig.~\ref{fig:biasofz15} shows the mean and median of the inferred CG bias for galaxies `S' and `B' as a function of redshift when estimated from noisier simulated images with \mbox{$\mathrm{SNR}=15$}. As for the case with \mbox{$\mathrm{SNR}=50$}, the bias is recovered to a level that is acceptable for {\it Euclid}, whereas we did increase the number of noise realisation to $1000$ to ensure robust estimates of the average CG bias. As ecpected, the CG bias estimates from the individual noisy images have a larger scatter with a slightly skewed distributions. In Fig.~\ref{fig:histogrambias}, we show the distribution of the CG bias combining results for the full redshift range (\mbox{$\mathrm{SNR}=15$}). Given this increased scatter, a larger sample of real HST galaxy images will be required at these \mbox{$\mathrm{SNR}$} levels in order to calibrate the CG bias at sufficient precision (see Sect.~\ref{sec:candels}).
 
-The average CG bias for a particular subset of galaxies can be used to correct the ellipticity correlation function. This, however, increases the scatter of the estimate, especially if the distribution of biases is broad.
-Fortunately, Fig.~\ref{fig:histogrambias} shows the distribution of multiplicative CG bias (combining results for the full redshift range) when the galaxies are detected in the narrow-band images with SNR=15.
-The distribution is skewed, and as expected, the broadest for the `S' galaxy. Nonetheless the increase in shape noise due to an empirical correction for CG bias is negligible. We did increase the number of noise realisation to 1000 to ensure robust estimates of the average CG bias as a function of redshift. The resulting CG bias as a function of redshift are shown in Fig.~\ref{fig:biasofz15}. We also show the median bias as a function of redshift, which is slightly different, because the distribution itself is skewed. Nonetheless the bias is recovered to a level that is acceptable for {\it Euclid}.
+
+%The average CG bias for a particular subset of galaxies can be used to correct the ellipticity correlation function. This, however, increases the scatter of the estimate, especially if the distribution of biases is broad. Fortunately, Fig.~\ref{fig:histogrambias} shows the distribution of multiplicative CG bias (combining results for the full redshift range) when the galaxies are detected in the narrow-band images with SNR=15. The distribution is skewed, and as expected, the broadest for the `S' galaxy. Nonetheless the increase in shape noise due to an empirical correction for CG bias is negligible. We did increase the number of noise realisation to 1000 to ensure robust estimates of the average CG bias as a function of redshift. The resulting CG bias as a function of redshift are shown in Fig.~\ref{fig:biasofz15}. We also show the median bias as a function of redshift, which is slightly different, because the distribution itself is skewed. Nonetheless the bias is recovered to a level that is acceptable for {\it Euclid}.
 
 \begin{figure}
 \includegraphics[width=\hsize]{varpsfB.eps}
@@ -679,11 +680,11 @@ parameter combinations that reduce the scatter in the estimate for the CG bias f
 
 We can use the values for the scatter in the CG bias (listed in Table~\ref{table:calibration}) to
 estimate the number of galaxies that we need to calibrate the bias with high precision. We estimate
-we need approximately $200$ galaxies for each type of galaxy in every redshift bin. If we consider
+we need approximately $400$ galaxies for each type of galaxy in every redshift bin. If we consider
 relatively wide bins, for instance, two types of colour: red and blue; five different sizes from
 about $0.1$ arcsec to $1.0$ arcsec (Fig.\,\ref{fig:cg2re}), and five redshift bins, we require at least
-$20\,000$ galaxies. The numbers increase if we wish to use a finer SED classification (rather than
-simply blue and red). In our study we restricted the sample of observations that overlap with CANDELS, resulting in a total of almost 15\,000 galaxies. Table~4 in \citetalias{Semboloni13} estimates that the total area for which suitable HST data are available is significantly larger, yielding $50\,000--65\,000$
+$40\,000$ galaxies. The numbers increase if we wish to use a finer SED classification (rather than
+simply blue and red). In our study we restricted the sample of observations that overlap with CANDELS, resulting in a total of almost 15\,000 galaxies. Table~4 in \citetalias{Semboloni13} estimates that the total area for which suitable HST data are available is significantly larger, yielding $50\,000\,$--$\,65\,000$
 galaxies (where the exact number depends whether one would also accept F850LP observations).
 Hence we conclude that ample HST observations exist to determine the CG bias with sufficient accuracy and precision so that it does not significantly bias the {\it Euclid} cosmic shear measurements.
 
