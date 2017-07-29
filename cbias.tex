@@ -409,8 +409,9 @@ roughly to a VIS magnitude of $m_{\rm VIS}=23.7$, a bit brighter than
 the typical galaxy used in the {\it Euclid} weak lensing analysis; a
 \mbox{$\mathrm{SNR}=15$} approximately corresponds to $m_{\rm VIS} =
 25.4$ (the corresponding magnitude of the two narrow bands is
-$m_{606}=25.7$ and $m_{814}=25.3$), the faintest galaxies that might
-be used.
+$m_{606}=25.7$ and $m_{814}=25.3$, and the magnitude are obtained by
+comparing with the HST data that we use in Sect.~\ref{sec:candels}),
+the faintest galaxies that might be used.
 
 The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
 
@@ -544,7 +545,7 @@ and UDS), which have a roughly homogeneous coverage in both bands
 \end{figure*}
 %
 
-We base our analysis on a tile-wise reduction of the ACS data, incorporating pointings that have at least four exposures to facilitate good cosmic ray removal, yielding combined exposure times of 1.3--2.3ks in F606W and 2.1--3.0ks in F814W.  We employ the updated correction for charge-transfer inefficiency from \cite{massey2014}, \textsc{MultiDrizzle} \citep{koekemoer2003} for the cosmic ray removal and stacking, as well as careful shift refinement, optimised weighting, and masking for stars and image artefacts as detailed in \cite{Schrabback10}. \cite{Schrabback16} created weak lensing catalogues based on these images, and we refer to this paper for more detail.  We base our analysis on the galaxies that pass their source selection and apply additional magnitude cuts as detailed below. To investigate the dependence of the colour gradient influence on galaxy colour and redshift, we match this galaxy catalogue to the photometric redshift catalogue from \cite{skelton14}.
+We base our analysis on a tile-wise reduction of the ACS data, incorporating pointings that have at least four exposures to facilitate good cosmic ray removal, yielding combined exposure times of 1.3--2.3ks in F606W and 2.1--3.0ks in F814W.  We employ the updated correction for charge-transfer inefficiency from \cite{massey2014}, \textsc{MultiDrizzle} \citep{koekemoer2003} for the cosmic ray removal and stacking, as well as careful shift refinement, optimised weighting, and masking for stars and image artefacts as detailed in \cite{Schrabback10}. \cite{Schrabback16} created weak lensing catalogues based on these images, and we refer to this paper for more detail. A small number of extended galaxies are excluded in the catalogues, which will not cause significant selection effects in our analysis.  We base our analysis on the galaxies that pass their source selection and apply additional magnitude cuts as detailed below. To investigate the dependence of the colour gradient influence on galaxy colour and redshift, we match this galaxy catalogue to the photometric redshift catalogue from \cite{skelton14}.
 
 To resemble the selection of galaxies in the {\it Euclid} wide survey,
 we approximately estimate for the flux in the VIS-band by
