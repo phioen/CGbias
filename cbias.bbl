@@ -1,4 +1,4 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{49}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
@@ -259,6 +259,17 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Marshall}, {Mellier}, {Morganson}, {Schneider}, {Semboloni}, {van Waerbeke},
   \& {Velander}}]{Schrabback10}
 {Schrabback}, T., {Hartlap}, J., {Joachimi}, B., {et~al.} 2010, \aap, 516, A63
+
+\bibitem[{{Scoville} {et~al.}(2007){Scoville}, {Abraham}, {Aussel}, {Barnes},
+  {Benson}, {Blain}, {Calzetti}, {Comastri}, {Capak}, {Carilli}, {Carlstrom},
+  {Carollo}, {Colbert}, {Daddi}, {Ellis}, {Elvis}, {Ewald}, {Fall},
+  {Franceschini}, {Giavalisco}, {Green}, {Griffiths}, {Guzzo}, {Hasinger},
+  {Impey}, {Kneib}, {Koda}, {Koekemoer}, {Lefevre}, {Lilly}, {Liu},
+  {McCracken}, {Massey}, {Mellier}, {Miyazaki}, {Mobasher}, {Mould}, {Norman},
+  {Refregier}, {Renzini}, {Rhodes}, {Rich}, {Sanders}, {Schiminovich},
+  {Schinnerer}, {Scodeggio}, {Sheth}, {Shopbell}, {Taniguchi}, {Tyson}, {Urry},
+  {Van Waerbeke}, {Vettolani}, {White}, \& {Yan}}]{scoville07hst}
+{Scoville}, N., {Abraham}, R.~G., {Aussel}, H., {et~al.} 2007, \apjs, 172, 38
 
 \bibitem[{{Semboloni} {et~al.}(2013){Semboloni}, {Hoekstra}, {Huang},
   {Cardone}, {Cropper}, {Joachimi}, {Kitching}, {Kuijken}, {Lombardi}, {Maoli},

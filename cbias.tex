@@ -404,14 +404,17 @@ galaxies to that estimated by {\sc SExtractor} \citep{Bertin96}
 agreement for galaxy `B' for SNR values ranging from 5 to 50 in both
 HST filters. The agreement is also good for the `S' galaxy, but {\sc
   SExtractor} returns lower values if the input SNR is larger than 30.
-We consider two noise levels: a \mbox{$\mathrm{SNR}=50$} corresponds
-roughly to a VIS magnitude of $m_{\rm VIS}=23.7$, a bit brighter than
-the typical galaxy used in the {\it Euclid} weak lensing analysis; a
-\mbox{$\mathrm{SNR}=15$} approximately corresponds to $m_{\rm VIS} =
-25.4$ (the corresponding magnitude of the two narrow bands is
-$m_{606}=25.7$ and $m_{814}=25.3$, and the magnitude are obtained by
-comparing with the HST data that we use in Sect.~\ref{sec:candels}),
-the faintest galaxies that might be used.
+We consider two noise levels for the simulated HST data, which correspond
+to a \mbox{$\mathrm{SNR}=50$} and \mbox{$\mathrm{SNR}=15$}. For simulated
+HST data with a depth matching the real HST data analysed in
+Sect.~\ref{sec:candels}), \mbox{$\mathrm{SNR}=15$} corresponds to
+magnitudes $m_{606}=25.7$ and $m_{814}=25.3$ in the HST bands
+or approximately a VIS magnitude of $m_{\rm VIS}=25.4$. This is
+significantly fainter than the galaxies included in the {\it Euclid}
+weak lensing analysis. For comparison, \mbox{$\mathrm{SNR}=50$}
+corresponds roughly to $m_{\rm VIS} = 23.7$, a bit brighter than
+the typical galaxy used in the {\it Euclid} weak lensing analysis.
+
 
 The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
 
@@ -685,9 +688,19 @@ we need approximately $400$ galaxies for each type of galaxy in every redshift b
 relatively wide bins, for instance, two types of colour: red and blue; five different sizes from
 about $0.1$ arcsec to $1.0$ arcsec (Fig.\,\ref{fig:cg2re}), and five redshift bins, we require at least
 $40\,000$ galaxies. The numbers increase if we wish to use a finer SED classification (rather than
-simply blue and red). In our study we restricted the sample of observations that overlap with CANDELS, resulting in a total of almost 15\,000 galaxies. Table~4 in \citetalias{Semboloni13} estimates that the total area for which suitable HST data are available is significantly larger, yielding $50\,000\,$--$\,65\,000$
-galaxies (where the exact number depends whether one would also accept F850LP observations).
-Hence we conclude that ample HST observations exist to determine the CG bias with sufficient accuracy and precision so that it does not significantly bias the {\it Euclid} cosmic shear measurements.
+simply blue and red). In our study we restricted the observations to three of the CANDELS fields
+with homogeneous coverage and included only the area with high-quality redshift estimates from
+3D-HST, yielding a total sample of approximately $15\,000$ galaxies. When improved data for photometric
+redshifts are obtained for the parts of these fields outsides 3D-HST, and when the additional 
+two CANDELS fields are included, the total galaxy sample approximately matches this number 
+(see also Table~4 in \citetalias{Semboloni13}, where we exclude the F850LP observations given the
+significantly lower SNR. Hence, we conclude that a course correction for CG bias can be inferred 
+from these data. However, a larger number of galaxies is needed for the CG calibration if a finer
+SED classification (rather than simply blue and red) or a larger number of redshift bins should be
+used. Such a finer calibration would be enabled by additional HST observations. These must target
+representative ``blank fields", include an HST coverage in bands that fully cover the VIS filter,
+and have high quality redshift estimates available.
+
 
 \begin{figure}
 \includegraphics[width=\hsize]{z2s-ne29.eps}
@@ -717,15 +730,22 @@ After testing our approach on simulated data, we measured the CG bias using HST/
 in the F606W and F814W passbands. We used observations from three CANDELS fields, which have
 fairly uniform coverage in both filters, and for which redshift information is available. This allowed us to quantify the CG bias as a function of redshift and colour. As expected, the CG bias correlates with observed colour, but the dependence with redshift is weak. Although the observed biases are small, they cannot be ignored for {\it Euclid}. Although further study is required, we find that it should be possible to reduce the bias for individual galaxies by using morphological information (e.g. S{\'e}rsic index, effective radius) that can be obtained from the {\it Euclid} data themselves.
 
-We use the observed trends and scatter in the bias to estimate the number of galaxies for which similar high-quality HST data are needed. This leads to a minimum requirement of more than $20\,000$ galaxies,
-but much larger samples can already be obtained using existing HST data. If we restrict CG bias studies to F606W and F814W observations only, \citetalias{Semboloni13} estimated that a sample of $50\,000$ galaxies could be studied. Hence, our results demonstrate that, although the impact of CG bias cannot be ignored, it is possible to determine the impact with sufficient precision that it will not significantly bias the weak lensing measurements using {\it Euclid} data.
+We use the observed trends and scatter in the bias to estimate the number of galaxies for which similar high-quality HST data are needed. This leads to a minimum requirement of more than $40\,000$ galaxies for a coarse correction. HST has covered sufficient area in the CANDELS fields in F606W and
+F814W to approximately match this number, but not yet all of this area is covered by sufficient
+multi-wavelength data for high quality redshift estimates (especially outside of the HST/WFC3 footprints). Additional HST observations would provide an improved CG calibration by enabling a 
+finer binning in galaxy redshift and SED. This would be achieved most effectively by adding HST
+observations in a currently missing band to fields that are already covered by one of the required
+HST filters and which high-quality redshift information available, such as the wider ACS/F814W
+mosaic in the HST COSMOS survey \citep{scoville07hst}.
+
+%but much larger samples can already be obtained using existing HST data. If we restrict CG bias studies to F606W and F814W observations only, \citetalias{Semboloni13} estimated that a sample of $50\,000$ galaxies could be studied. Hence, our results demonstrate that, although the impact of CG bias cannot be ignored, it is possible to determine the impact with sufficient precision that it will not significantly bias the weak lensing measurements using {\it Euclid} data.
 
 \section*{Acknowledgments}
 
 We would like to thank Emiliano Merlin, Marco Castellano for helping
 on {\sc SExtractor} and {\sc {\tt GALFIT}}, Lance Miller, Gary Berstein, Adam Rogers,
 Ignacio Ferreras and also
-the members of the Euclid Consortium for useful discussions. XE and VFC
+the members of the {\it Euclid} Consortium for useful discussions. XE and VFC
 are funded by Italian Space Agency (ASI) through contract Euclid -IC (I/031/10/0) and
 acknowledge financial contribution from the agreement ASI/INAF/I/023/12/0. XE is also partly
 support by NSFC Grant No. 11473032. HH acknowledges support from the European
