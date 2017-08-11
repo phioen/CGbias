@@ -1,5 +1,20 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{54}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Amendola} {et~al.}(2016){Amendola}, {Appleby}, {Avgoustidis},
+  {Bacon}, {Baker}, {Baldi}, {Bartolo}, {Blanchard}, {Bonvin}, {Borgani},
+  {Branchini}, {Burrage}, {Camera}, {Carbone}, {Casarini}, {Cropper}, {de
+  Rham}, {Dietrich}, {Di Porto}, {Durrer}, {Ealet}, {Ferreira}, {Finelli},
+  {Garcia-Bellido}, {Giannantonio}, {Guzzo}, {Heavens}, {Heisenberg},
+  {Heymans}, {Hoekstra}, {Hollenstein}, {Holmes}, {Horst}, {Hwang}, {Jahnke},
+  {Kitching}, {Koivisto}, {Kunz}, {La Vacca}, {Linder}, {March}, {Marra},
+  {Martins}, {Majerotto}, {Markovic}, {Marsh}, {Marulli}, {Massey}, {Mellier},
+  {Montanari}, {Mota}, {Nunes}, {Percival}, {Pettorino}, {Porciani},
+  {Quercellini}, {Read}, {Rinaldi}, {Sapone}, {Sawicki}, {Scaramella},
+  {Skordis}, {Simpson}, {Taylor}, {Thomas}, {Trotta}, {Verde}, {Vernizzi},
+  {Vollmer}, {Wang}, {Weller}, \& {Zlosnik}}]{2016arXiv160600180A}
+{Amendola}, L., {Appleby}, S., {Avgoustidis}, A., {et~al.} 2016, ArXiv:
+  1606.00180
 
 \bibitem[{{Bacon} {et~al.}(2006){Bacon}, {Goldberg}, {Rowe}, \&
   {Taylor}}]{bacon2006}
@@ -151,6 +166,11 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Kennedy}, R., {Bamford}, S.~P., {H{\"a}u{\ss}ler}, B., {et~al.} 2016, \aap,
   593, A84
 
+\bibitem[{{Kitching} {et~al.}(2008){Kitching}, {Miller}, {Heymans}, {van
+  Waerbeke}, \& {Heavens}}]{2008MNRAS.390..149K}
+{Kitching}, T.~D., {Miller}, L., {Heymans}, C.~E., {van Waerbeke}, L., \&
+  {Heavens}, A.~F. 2008, \mnras, 390, 149
+
 \bibitem[{{Koekemoer} {et~al.}(2011){Koekemoer}, {Faber}, {Ferguson}, {Grogin},
   {Kocevski}, {Koo}, {Lai}, {Lotz}, {Lucas}, {McGrath}, {Ogaz}, {Rajan},
   {Riess}, {Rodney}, {Strolger}, {Casertano}, {Castellano}, {Dahlen},
@@ -221,6 +241,11 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
   {Schrabback}, {Semboloni}, {Vafaei}, \& {Velander}}]{Miller13}
 {Miller}, L., {Heymans}, C., {Kitching}, T.~D., {et~al.} 2013, \mnras, 429,
   2858
+
+\bibitem[{{Miller} {et~al.}(2007){Miller}, {Kitching}, {Heymans}, {Heavens}, \&
+  {van Waerbeke}}]{2007MNRAS.382..315M}
+{Miller}, L., {Kitching}, T.~D., {Heymans}, C., {Heavens}, A.~F., \& {van
+  Waerbeke}, L. 2007, \mnras, 382, 315
 
 \bibitem[{{Nakajima} \& {Bernstein}(2007)}]{Nakajima07}
 {Nakajima}, R. \& {Bernstein}, G. 2007, \aj, 133, 1763
@@ -294,6 +319,29 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 {Taylor}, V.~A., {Jansen}, R.~A., {Windhorst}, R.~A., {Odewahn}, S.~C., \&
   {Hibbard}, J.~E. 2005, \apj, 630, 784
 
+\bibitem[{{Troxel} {et~al.}(2017){Troxel}, {MacCrann}, {Zuntz}, {Eifler},
+  {Krause}, {Dodelson}, {Gruen}, {Blazek}, {Friedrich}, {Samuroff}, {Prat},
+  {Secco}, {Davis}, {Fert{\'e}}, {DeRose}, {Alarcon}, {Amara}, {Baxter},
+  {Becker}, {Bernstein}, {Bridle}, {Cawthon}, {Chang}, {Choi}, {De Vicente},
+  {Drlica-Wagner}, {Elvin-Poole}, {Frieman}, {Gatti}, {Hartley}, {Honscheid},
+  {Hoyle}, {Huff}, {Huterer}, {Jain}, {Jarvis}, {Kacprzak}, {Kirk}, {Kokron},
+  {Krawiec}, {Lahav}, {Liddle}, {Peacock}, {Rau}, {Refregier}, {Rollins},
+  {Rozo}, {Rykoff}, {S{\'a}nchez}, {Sevilla-Noarbe}, {Sheldon}, {Stebbins},
+  {Varga}, {Vielzeuf}, {Wang}, {Wechsler}, {Yanny}, {Abbott}, {Abdalla},
+  {Allam}, {Annis}, {Bechtol}, {Benoit-L{\'e}vy}, {Bertin}, {Brooks},
+  {Buckley-Geer}, {Burke}, {Carnero Rosell}, {Carrasco Kind}, {Carretero},
+  {Castander}, {Crocce}, {Cunha}, {D'Andrea}, {da Costa}, {DePoy}, {Desai},
+  {Diehl}, {Dietrich}, {Doel}, {Fernandez}, {Flaugher}, {Fosalba},
+  {Garc{\'{\i}}a-Bellido}, {Gaztanaga}, {Gerdes}, {Giannantonio}, {Goldstein},
+  {Gruendl}, {Gschwend}, {Gutierrez}, {James}, {Jeltema}, {Johnson}, {Johnson},
+  {Kent}, {Kuehn}, {Kuhlmann}, {Kuropatkin}, {Li}, {Lima}, {Lin}, {Maia},
+  {March}, {Marshall}, {Martini}, {Melchior}, {Menanteau}, {Miquel}, {Mohr},
+  {Neilsen}, {Nichol}, {Nord}, {Petravick}, {Plazas}, {Romer}, {Roodman},
+  {Sako}, {Sanchez}, {Scarpine}, {Schindler}, {Schubnell}, {Smith}, {Smith},
+  {Soares-Santos}, {Sobreira}, {Suchyta}, {Swanson}, {Tarle}, {Thomas},
+  {Tucker}, {Vikram}, {Walker}, {Weller}, \& {Zhang}}]{2017arXiv170801538T}
+{Troxel}, M.~A., {MacCrann}, N., {Zuntz}, J., {et~al.} 2017, ArXiv: 1708.01538
+
 \bibitem[{{Velander} {et~al.}(2011){Velander}, {Kuijken}, \&
   {Schrabback}}]{2011MNRAS.412.2665V}
 {Velander}, M., {Kuijken}, K., \& {Schrabback}, T. 2011, \mnras, 412, 2665
@@ -301,5 +349,24 @@ Frigo, M. \& Johnson, S.~G. 2005, Proceedings of the IEEE, 93, 216, special
 \bibitem[{{Voigt} {et~al.}(2012){Voigt}, {Bridle}, {Amara}, {Cropper},
   {Kitching}, {Massey}, {Rhodes}, \& {Schrabback}}]{Voigt12}
 {Voigt}, L.~M., {Bridle}, S.~L., {Amara}, A., {et~al.} 2012, \mnras, 421, 1385
+
+\bibitem[{{Zuntz} {et~al.}(2017){Zuntz}, {Sheldon}, {Samuroff}, {Troxel},
+  {Jarvis}, {MacCrann}, {Gruen}, {Prat}, {S{\'a}nchez}, {Choi}, {Bridle},
+  {Bernstein}, {Dodelson}, {Drlica-Wagner}, {Fang}, {Gruendl}, {Hoyle}, {Huff},
+  {Jain}, {Kirk}, {Kacprzak}, {Krawiec}, {Plazas}, {Rollins}, {Rykoff},
+  {Sevilla-Noarbe}, {Soergel}, {Varga}, {Abbott}, {Abdalla}, {Allam}, {Annis},
+  {Bechtol}, {Benoit-L{\'e}vy}, {Bertin}, {Buckley-Geer}, {Burke}, {Carnero
+  Rosell}, {Carrasco Kind}, {Carretero}, {Castander}, {Crocce}, {Cunha},
+  {D'Andrea}, {da Costa}, {Davis}, {Desai}, {Diehl}, {Dietrich}, {Doel},
+  {Eifler}, {Estrada}, {Evrard}, {Fausti Neto}, {Fernandez}, {Flaugher},
+  {Fosalba}, {Frieman}, {Garc{\'{\i}}a-Bellido}, {Gaztanaga}, {Gerdes},
+  {Giannantonio}, {Gschwend}, {Gutierrez}, {Hartley}, {Honscheid}, {James},
+  {Jeltema}, {Johnson}, {Johnson}, {Kuehn}, {Kuhlmann}, {Kuropatkin}, {Lahav},
+  {Li}, {Lima}, {Maia}, {March}, {Martini}, {Melchior}, {Menanteau}, {Miller},
+  {Miquel}, {Mohr}, {Neilsen}, {Nichol}, {Ogando}, {Roe}, {Romer}, {Roodman},
+  {Sanchez}, {Scarpine}, {Schindler}, {Schubnell}, {Smith}, {Smith},
+  {Soares-Santos}, {Sobreira}, {Suchyta}, {Swanson}, {Tarle}, {Thomas},
+  {Tucker}, {Vikram}, {Walker}, {Wechsler}, \& {Zhang}}]{2017arXiv170801533Z}
+{Zuntz}, J., {Sheldon}, E., {Samuroff}, S., {et~al.} 2017, ArXiv: 1708.01533
 
 \end{thebibliography}
