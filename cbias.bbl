@@ -1,5 +1,28 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{55}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Abbott} {et~al.}(2016){Abbott}, {Abdalla}, {Allam}, {Amara},
+  {Annis}, {Armstrong}, {Bacon}, {Banerji}, {Bauer}, {Baxter}, {Becker},
+  {Benoit-L{\'e}vy}, {Bernstein}, {Bernstein}, {Bertin}, {Blazek}, {Bonnett},
+  {Bridle}, {Brooks}, {Bruderer}, {Buckley-Geer}, {Burke}, {Busha}, {Capozzi},
+  {Carnero Rosell}, {Carrasco Kind}, {Carretero}, {Castander}, {Chang},
+  {Clampitt}, {Crocce}, {Cunha}, {D'Andrea}, {da Costa}, {Das}, {DePoy},
+  {Desai}, {Diehl}, {Dietrich}, {Dodelson}, {Doel}, {Drlica-Wagner},
+  {Efstathiou}, {Eifler}, {Erickson}, {Estrada}, {Evrard}, {Fausti Neto},
+  {Fernandez}, {Finley}, {Flaugher}, {Fosalba}, {Friedrich}, {Frieman},
+  {Gangkofner}, {Garcia-Bellido}, {Gaztanaga}, {Gerdes}, {Gruen}, {Gruendl},
+  {Gutierrez}, {Hartley}, {Hirsch}, {Honscheid}, {Huff}, {Jain}, {James},
+  {Jarvis}, {Kacprzak}, {Kent}, {Kirk}, {Krause}, {Kravtsov}, {Kuehn},
+  {Kuropatkin}, {Kwan}, {Lahav}, {Leistedt}, {Li}, {Lima}, {Lin}, {MacCrann},
+  {March}, {Marshall}, {Martini}, {McMahon}, {Melchior}, {Miller}, {Miquel},
+  {Mohr}, {Neilsen}, {Nichol}, {Nicola}, {Nord}, {Ogando}, {Palmese}, {Peiris},
+  {Plazas}, {Refregier}, {Roe}, {Romer}, {Roodman}, {Rowe}, {Rykoff}, {Sabiu},
+  {Sadeh}, {Sako}, {Samuroff}, {Sanchez}, {S{\'a}nchez}, {Seo},
+  {Sevilla-Noarbe}, {Sheldon}, {Smith}, {Soares-Santos}, {Sobreira}, {Suchyta},
+  {Swanson}, {Tarle}, {Thaler}, {Thomas}, {Troxel}, {Vikram}, {Walker},
+  {Wechsler}, {Weller}, {Zhang}, {Zuntz}, \& {Dark Energy Survey
+  Collaboration}}]{2016PhRvD..94b2001A}
+{Abbott}, T., {Abdalla}, F.~B., {Allam}, S., {et~al.} 2016, \prd, 94, 022001
 
 \bibitem[{{Amendola} {et~al.}(2016){Amendola}, {Appleby}, {Avgoustidis},
   {Bacon}, {Baker}, {Baldi}, {Bartolo}, {Blanchard}, {Bonvin}, {Borgani},
