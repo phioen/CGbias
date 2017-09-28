@@ -354,15 +354,14 @@ of massive galaxies; in this case the Einstein radius is smaller, and the flexio
 \label{sec:noisy}
 
 The {\it Euclid} observations lack high-resolution multi-band images to measure the CG bias directly for each source galaxy. However, the cosmological lensing signal is typically inferred from the ellipticity correlation function, which involves  averaging the shapes of large ensembles of galaxies.
-Provided the average bias that is caused by colour gradients is known for a selection of sources, it is possible in principle to obtain unbiased estimates of the ellipticity correlation function. Here it is particularly important that the correction for the average CG bias accounts for the variation in redshift and colour.
+Provided the average bias that is caused by colour gradients is known for a selection of sources, it is possible in principle to obtain unbiased estimates of the ellipticity correlation function.
+{\bf Here it is particularly important that the correction for the CG bias accounts for the variation in redshift and colour.}
 The former is relevant for tomographic cosmic shear studies, whereas the latter avoids significant spatial variation in the bias because of the correlation between galaxy colour, or morphology, and density.
 
 \citetalias{Semboloni13} showed that HST observations in both the F606W and F814W filters can be used to determine the CG bias to meet {\it Euclid} requirements. However, \citetalias{Semboloni13} did not consider the complicating factor that the HST images themselves are noisy. Although the HST observations are typically deeper than the nominal {\it Euclid} data, and the HST PSF is considerably smaller, it is nonetheless necessary to investigate the impact of noise in more detail. We address this particular question here, before we determine the CG bias from actual HST data in Sect.~\ref{sec:candels}.
            {\bf Since we linearly interpolate the SED from two HST bands, the colour gradient within the two band itself is lost. Usually the approximations will not cause large deviations in the bias estimation. However, it may fail if there are strong emission lines (as we will see in the following) and requires further analysis, e.g., to use more band images.}
 
-The method to calibrate the CG bias using observations in two bands is described in detail
-in \citetalias{Semboloni13}, but here we outline the main steps for completeness. To model the
-wavelength dependence of the image we use two narrow-band\footnote{To distinguish these filters from the broad VIS pass-band (from $550$nm to $920$nm) we refer to the F606W (from $470$nm to $719$nm) and F814W (from $680$nm to $960$nm) as narrow bands, but acknowledge that these are commonly referred to broad-band filters and that genuine narrow-band filters are significantly narrower.} images, each of which is given by:
+The method to calibrate the CG bias using observations in two bands is described in detail in \citetalias{Semboloni13}, but here we outline the main steps for completeness. To model the wavelength dependence of the image we use two narrow-band\footnote{To distinguish these filters from the broad VIS pass-band (from $550$nm to $920$nm) we refer to the F606W (from $470$nm to $719$nm) and F814W (from $680$nm to $960$nm) as narrow bands, but acknowledge that these are commonly referred to broad-band filters and that genuine narrow-band filters are significantly narrower.} images, each of which is given by:
 %
 \be
 I_i({\bm\theta}) = \int_{\Delta \lambda_i} T_i(\lambda)\, I({\bm \theta},\lambda) \;\d \lambda,
@@ -432,7 +431,7 @@ the typical galaxy used in the {\it Euclid} weak lensing analysis.
 \label{fig:biasofz15}
 \end{figure*}
 %
-The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture most of the CG bias in real data.
+The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. {\bf In preliminary tests of fitting galaxy using distinct models, the estimates show deviations with respective to the true CG bias. The exact magnitude depends on several factors, such as SNR, and morphology of the galaxy images.} Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture the main properties of the CG bias in real data.
 
 We fit the bulge and disk model, convolved with the PSF, to  the noisy images in each band and use the best fit model to compute the CG bias. To perform the fit, we use {\sc {\tt GALFIT}} \citep{Peng10} with
 the prior constraints on the galaxy parameters (S{\'e}rsic index, effective radius, and axis ratio) listed in Table~\ref{fitpar}. We combine the images in the two filters and use {\sc SExtractor} to estimate the centre and some of the initial galaxy parameters to be used as the starting point by {\sc {\tt GALFIT}}. The resulting best-fit images depend somewhat on these initial values, and thus could affect the  estimate for the CG bias. This will be more important when the SNR of the images is lower. To explore this we perform the fits using two sets of initial parameters: in the first we leave all parameters free, while in the other case we fix the S{\'e}rsic index to its simulated value, but leave the other parameters free.
@@ -609,7 +608,7 @@ colours.}
 
 \subsection{CG bias from CANDELS}
 
-We now proceed to apply the procedure we tested on synthetic galaxies to the HST observations to determine the expected CG bias for {\it Euclid}. We use the {\sc TinyTim} PSF when we fit the single component S{\'e}rsic models\footnote{We also tried to fit the galaxy with two component S{\'e}rsic models, but failed for a large fraction of galaxies. Thus we decided to use a single component in the fitting.} to the observations using {\sc {\tt GALFIT}} (see Sect.~\ref{sec:psfmodel}).
+We now proceed to apply the procedure we tested on synthetic galaxies to the HST observations to determine the expected CG bias for {\it Euclid}. We use the {\sc TinyTim} PSF when we fit the single component S{\'e}rsic models\footnote{We also tried to fit the galaxy with two component S{\'e}rsic models, but failed for a large fraction of galaxies. Thus we decided to use a single component in the fitting. {\bf We realise that it cause extra noise in our estimates. In additional tests with simulations, we find that the main properties of the bias can be extracted.} } to the observations using {\sc {\tt GALFIT}} (see Sect.~\ref{sec:psfmodel}).
 We adopt priors on the S{\'e}rsic index ($0.5<n<5.0$), the effective radius ($1$ pixel$<r_e<50$ pixels) and axis ratio ($0.6<q<1.0$). As before, we approximate the {\it Euclid} PSF using Eqn.\,(\ref{eq:psfairy}).  As described in Sect.~\ref{sec:noisy} we interpolate the SED in each pixel of the model galaxy to generate a wavelength-dependent image, which is subsequently integrated and convolved to  create the images with and without colour gradients. We create images with six different orientations that are sheared to estimate the multiplicative shear bias $m$ caused by colour gradients.
 
 Fig.~\ref{fig:cgbhis} shows the histogram of the CG bias for the three CANDELS fields that we study here.
@@ -766,19 +765,21 @@ mosaic in the HST COSMOS survey \citep{scoville07hst}.
 
 \section*{Acknowledgments}
 
-We would like to thank Emiliano Merlin, Marco Castellano for help
-with {\sc SExtractor} and {\sc {\tt GALFIT}}, Lance Miller, Thomas Kitching, Gary Berstein, Adam Rogers,
-Ignacio Ferreras and also
-the members of the {\it Euclid} Consortium for useful discussions. XE and VFC
-are funded by Italian Space Agency (ASI) through contract Euclid -IC (I/031/10/0) and
-acknowledge financial contribution from the agreement ASI/INAF/I/023/12/0. XE is also partly
-support by NSFC Grant No. 11473032. HH acknowledges support from the European
-Research Council FP7 grant number 279396. TS acknowledges support from the German Federal
- Ministry for Economic Affairs and Energy (BMWi) provided via DLR under project no. 50QE1103.
-JR is supported by JPL, which is
-run by Caltech under a contract for NASA, and is supported by grant
-NASA ROSES 12-EUCLID12- 0004. The fast Fourier transforms are supplied
-by the FFTW library \citep{fftw05}. We use CFITSIO
+We would like to thank Emiliano Merlin, Marco Castellano for help with
+{\sc SExtractor} and {\sc {\tt GALFIT}}, Lance Miller, Thomas
+Kitching, Gary Berstein, Adam Rogers, Ignacio Ferreras and also the
+members of the {\it Euclid} Consortium for useful discussions. We also
+like to thank the referee for very useful comments. XE and VFC are
+funded by Italian Space Agency (ASI) through contract Euclid -IC
+(I/031/10/0) and acknowledge financial contribution from the agreement
+ASI/INAF/I/023/12/0. XE is also partly support by NSFC Grant
+No. 11473032. HH acknowledges support from the European Research
+Council FP7 grant number 279396. TS acknowledges support from the
+German Federal Ministry for Economic Affairs and Energy (BMWi)
+provided via DLR under project no. 50QE1103.  JR is supported by JPL,
+which is run by Caltech under a contract for NASA, and is supported by
+grant NASA ROSES 12-EUCLID12- 0004. The fast Fourier transforms are
+supplied by the FFTW library \citep{fftw05}. We use CFITSIO
 \citep{1999ASPC..172..487P} for the FITS file.
 
 \bibliographystyle{aa}
