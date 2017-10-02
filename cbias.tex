@@ -235,7 +235,7 @@ $10^{-7}$ to $10^{-6}$, two orders of magnitude smaller than the CG
 biases we are concerned with. Hence can safely neglect these numerical
 artefacts here.
 
-As a further test we compare directly to the results obtained by \citetalias{Semboloni13} for two reference galaxy models. {\bf As the main purpose is to validate the approach to measure the CG bias using noisy images and to estimate the necesasry number of galaxies to perform the calibration for {\it Euclid} lensing survey. Although the choise of the galaxy models cannot represent the full sample of {\it Euclid}, the resulting colour gradient are sufficient large, and the CG bias will not be underestimated. The small galaxy model represent the possible smallest galaxies that will be used in the {\it Euclid} weak lensing analysis \citep{Massey13}. Therefore, we think the current two galaxy models are sufficient for our work.}
+As a further test we compare directly to the results obtained by \citetalias{Semboloni13} for two reference galaxy models. {\bf The main purpose is to validate the approach to measure the CG bias using noisy images and to estimate the necesasry number of galaxies to perform the calibration for {\it Euclid} lensing survey. Although the choise of the galaxy models cannot represent the full sample of {\it Euclid}, the resulting colour gradient are sufficient large, and the CG bias will not be underestimated. The small galaxy model represent the possible smallest galaxies that will be used in the {\it Euclid} weak lensing analysis \citep{Massey13}. Therefore, we think the current two galaxy models are sufficient for our work.}
 The reference galaxies are modeled as the sum of a bulge and disk component. To describe the wavelength dependence of the images we use the galaxy SED templates from \citet{1980ApJS...43..393C}: we use the SED for an elliptical galaxy for the bulge and take the SED of an irregular galaxy for the disk. The two components are  described by a circular S{\'e}rsic profile:
 \be
 I_{\rm S}(\theta) = I_0 {\rm e}^{-\kappa\; \left(\frac{\theta}{r_{\rm h}}\right)^{1/n}},
@@ -431,7 +431,7 @@ the typical galaxy used in the {\it Euclid} weak lensing analysis.
 \label{fig:biasofz15}
 \end{figure*}
 %
-The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. {\bf In preliminary tests of fitting galaxy using distinct models, the estimates show deviations with respective to the true CG bias. The exact magnitude depends on several factors, such as SNR, and morphology of the galaxy images.} Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture the main properties of the CG bias in real data.
+The deconvolution of noisy images is problematic, because the presence of noise will lead to biased estimates of the underlying galaxy. Instead we regulate the problem by assuming that galaxies can be fit by a bulge and disk component, each described by a S{\'e}rsic profile. Real galaxies have more complex morphologies, including spiral arms, etc. To leading order, however, the radial surface brightness profile is the most important quantity, because we are interested in ensemble averages of large numbers of sources with random position angles: morphological features tend to average out in this case. {\bf We perform additional tests using distinct models to fit the galaxies. The estimates show deviations with respective to the true CG bias, whereas the detail depends on several factors, such as SNR, and morphology of the galaxy images.} Nonetheless, further investigation with realistic morphologies is needed, but our approach should capture the main properties of the CG bias in real data.
 
 We fit the bulge and disk model, convolved with the PSF, to  the noisy images in each band and use the best fit model to compute the CG bias. To perform the fit, we use {\sc {\tt GALFIT}} \citep{Peng10} with
 the prior constraints on the galaxy parameters (S{\'e}rsic index, effective radius, and axis ratio) listed in Table~\ref{fitpar}. We combine the images in the two filters and use {\sc SExtractor} to estimate the centre and some of the initial galaxy parameters to be used as the starting point by {\sc {\tt GALFIT}}. The resulting best-fit images depend somewhat on these initial values, and thus could affect the  estimate for the CG bias. This will be more important when the SNR of the images is lower. To explore this we perform the fits using two sets of initial parameters: in the first we leave all parameters free, while in the other case we fix the S{\'e}rsic index to its simulated value, but leave the other parameters free.
@@ -765,11 +765,11 @@ mosaic in the HST COSMOS survey \citep{scoville07hst}.
 
 \section*{Acknowledgments}
 
+We like to thank the referee for very useful comments to improve our draft.
 We would like to thank Emiliano Merlin, Marco Castellano for help with
 {\sc SExtractor} and {\sc {\tt GALFIT}}, Lance Miller, Thomas
 Kitching, Gary Berstein, Adam Rogers, Ignacio Ferreras and also the
-members of the {\it Euclid} Consortium for useful discussions. We also
-like to thank the referee for very useful comments. XE and VFC are
+members of the {\it Euclid} Consortium for useful discussions. XE and VFC are
 funded by Italian Space Agency (ASI) through contract Euclid -IC
 (I/031/10/0) and acknowledge financial contribution from the agreement
 ASI/INAF/I/023/12/0. XE is also partly support by NSFC Grant
