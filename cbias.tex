@@ -608,7 +608,9 @@ colours.}
 
 \subsection{CG bias from CANDELS}
 
-We now proceed to apply the procedure we tested on synthetic galaxies to the HST observations to determine the expected CG bias for {\it Euclid}. We use the {\sc TinyTim} PSF when we fit the single component S{\'e}rsic models\footnote{We also tried to fit the galaxy with two component S{\'e}rsic models, but failed for a large fraction of galaxies. Thus we decided to use a single component in the fitting. {\bf We will discuss this problem in more detail later.} } to the observations using {\sc {\tt GALFIT}} (see Sect.~\ref{sec:psfmodel}).
+We now proceed to apply the procedure we tested on synthetic galaxies to the HST observations to determine the expected CG bias for {\it Euclid}. We use the {\sc TinyTim} PSF when we fit the single component S{\'e}rsic models
+%\footnote{We also tried to fit the galaxy with two component S{\'e}rsic models, but failed for a large fraction of galaxies. Thus we decided to use a single component in the fitting. }
+to the observations using {\sc {\tt GALFIT}} (see Sect.~\ref{sec:psfmodel}).
 We adopt priors on the S{\'e}rsic index ($0.5<n<5.0$), the effective radius ($1$ pixel$<r_e<50$ pixels) and axis ratio ($0.6<q<1.0$). As before, we approximate the {\it Euclid} PSF using Eqn.\,(\ref{eq:psfairy}).  As described in Sect.~\ref{sec:noisy} we interpolate the SED in each pixel of the model galaxy to generate a wavelength-dependent image, which is subsequently integrated and convolved to  create the images with and without colour gradients. We create images with six different orientations that are sheared to estimate the multiplicative shear bias $m$ caused by colour gradients.
 
 Fig.~\ref{fig:cgbhis} shows the histogram of the CG bias for the three CANDELS fields that we study here.
@@ -676,8 +678,7 @@ As the mean colour varies with redshift, we show the CG bias as a function of re
 Fig.~\ref{fig:cg2color}.  Because the bias depends on colour, we split the sample into two groups. The average bias for the red galaxies ($m_{606}-m_{814}>0.5$) is indicated by the red line. The bias is negative and nearly constant over the redshift range of interest. Similar results are obtained for the blue galaxies
 (defined as $m_{606}-m_{814}<0.5$), but in this case the mean bias is positive. The average CG biases and their dispersions for the two samples in various broad redshift bins are listed in Table~\ref{table:calibration}.
 
-{\bf We realise that fitting the galaxies with one S{\'e}rsic component may cause extra noise in our estimates. We perform additional analysis, fit the galaxies with two S{\'e}rsic components (similar to that in Sect\,\ref{sec:noisy}). There are about ??? failed the fitting. 
-}
+{\bf In additional tests, we also fit the galaxy with two component S{\'e}rsic models (similar to that in Sect\,\ref{sec:noisy}), but failed for a large fraction of galaxies ($\sim30\%$), since two S{\'e}rsic components may not be a good model for some galaxies, e.g. elliptical ones. The CG bias estimated from those successful fitting shows a large scatter, and a similar relation with colour of the galaxies as that fitting with one component. Moreover, as we test in the simulations, fitting the galaxy using one S{\'e}rsic component can catch the main properties of the CG bias, we think the result of one fitting component can represent the properties of the CG bias. However, detail studies are necessary in the future calibration of the bias. }
 
 \subsection{Use of morphological information}
 
